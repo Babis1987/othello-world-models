@@ -1,0 +1,94 @@
+# Mamba-JEPA v5 hard-disjoint InfoNCE.
+#
+# Same objective as jepa_v5_contrastive_hard_disjoint.yml, but with a Mamba
+# context/target encoder pair.
+
+experiment:
+  name: mamba_jepa_v5_hd_infonce
+  variant: v5
+  description: Mamba encoder with prefix-grouped hard-disjoint action InfoNCE.
+  notes: |
+    Context sees x[:t], EMA target sees only m_{t+1}. Same-prefix rows are
+    positives; different-prefix rows are negatives, with phantom replacement
+    for same-action collisions. This remains pure JEPA, not hybrid AR.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+objective:
+  objective_class: jepa_hard_disjoint_infonce
+  loss_type: infonce
+  view_mode: hard_disjoint_action
+  prediction_horizon: 1
+  use_ema_target: true
+  ema_momentum: 0.996
+  contrastive_temperature: 0.1
+  contrastive_use_prefix_mask: true
+  hard_disjoint_dedup_negative_actions: true
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+  collapse_warning_contrastive_accuracy: 0.05
+
+model:
+  encoder_architecture: mamba
+  n_layers: 15
+  n_heads: 8
+  d_model: 512
+  d_state: 16
+  d_conv: 4
+  expand: 2
+  mamba_backend: mamba_ssm
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp
+  predictor_hidden_mult: 4
+  predictor_n_layers: 2
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+branching:
+  branch_t_min: 4
+  branch_t_max: 10
+  branch_groups_per_batch: 64
+  branch_samples_per_group: 4
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  games_per_chunk: 100000
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

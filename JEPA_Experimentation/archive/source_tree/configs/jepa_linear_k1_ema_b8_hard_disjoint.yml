@@ -1,0 +1,81 @@
+# Minimal hard-disjoint predictive JEPA with EMA target and K=1.
+#
+# The context encoder sees x[:t]. The stop-gradient EMA target encoder sees
+# only the single future token x[t:t+1], while retaining its absolute game
+# position. A linear predictor is intentionally retained as the smallest
+# learned mapping between the context and target latent spaces.
+#
+# This combines a linear predictor, K=1, SmoothL1, and EMA/stop-grad. It is
+# therefore a distinct experiment, not a single-variable v1/v2 ablation.
+
+experiment:
+  name: jepa_linear_k1_ema_b8_run_001_hard_disjoint
+  variant: v2
+  description: Minimal EMA-target hard-disjoint JEPA with a single-step linear predictor.
+  notes: |
+    The target receives no context prefix. It sees only x[t:t+1] at the
+    token's absolute game position. The target encoder is stop-gradient and
+    updated only through EMA. The linear predictor is the minimum learned
+    context-to-target mapping supported by the predictive JEPA path.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_linear_k1_ema_b8_run_001_hard_disjoint
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_linear_k1_ema_b8_run_001_hard_disjoint
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 50
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: linear
+
+objective:
+  view_mode: hard_disjoint_future
+  loss_type: smooth_l1
+  prediction_horizon: 1
+  use_ema_target: true
+  ema_momentum: 0.996
+  smooth_l1_beta: 1.0
+  window_sample_attempts: 8
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+
+optim:
+  batch_size: 512
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

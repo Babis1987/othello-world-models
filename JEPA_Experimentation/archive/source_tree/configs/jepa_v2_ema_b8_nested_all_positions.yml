@@ -1,0 +1,66 @@
+experiment:
+  name: jepa_v2_ema_b8_run_001_nested_allpos_bf16
+  variant: v2
+  description: Transformer JEPA v2 nested-view EMA Smooth L1 with all-position supervision on 8x8 Othello.
+  notes: |
+    v2 objective in the all-position frame. The frozen EMA target encoder
+    produces nested targets (hidden state of x[:t+1] at position t) and the
+    live encoder is trained with Smooth L1 toward them at every valid
+    boundary; the EMA momentum replaces VICReg as the anti-collapse
+    mechanism. The predictor is kept linear so only the target topology and
+    loss differ from the v1 all-position baseline.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v2_ema_b8_run_001_nested_allpos_bf16
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v2_ema_b8_run_001_nested_allpos_bf16
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: linear
+
+objective:
+  objective_class: jepa
+  view_mode: nested
+  loss_type: smooth_l1
+  smooth_l1_beta: 1.0
+  prediction_horizon: 1
+  position_sampling: all
+  use_ema_target: true
+  ema_momentum: 0.996
+  all_position_target_chunk_size: 65536
+  all_position_stats_chunk_size: 64
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+
+runtime:
+  num_workers: 0
+  seed: 42

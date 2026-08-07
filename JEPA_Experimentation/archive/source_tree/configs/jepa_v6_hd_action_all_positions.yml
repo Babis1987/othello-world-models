@@ -1,0 +1,117 @@
+# JEPA v6 - hard-disjoint action-anchored JEPA, ALL-POSITION supervision.
+#
+# Same objective as jepa_v6_hard_disjoint_action.yml (multi-mode predictor +
+# distance-margin loss with pull toward same-prefix targets, push from
+# different-prefix targets, and per-pair phantom-token replacement), but the
+# loss is evaluated at EVERY prefix boundary t' in [1, t] of each prefix-grouped
+# batch instead of only at the constructed depth t.
+#
+# Mechanics (OthelloJEPAHardDisjointAction.forward_all_positions):
+#   - The prefix-grouped sampler (BranchPrefixChunkBatches) still builds each
+#     batch as G groups x S samples sharing an exact prefix of length t.
+#   - The context encoder runs ONCE over x[:t]; because it is causal, the hidden
+#     state at position t'-1 is the context summary for boundary t'.
+#   - Predictor and EMA target encoder are applied once in a flattened batch over
+#     all B*t (summary, target) pairs.
+#   - prefix_ids are RECOMPUTED at each depth t' (torch.unique over x[:, :t']):
+#     groups built at depth t stay grouped for every t' <= t, while distinct deep
+#     groups that share a shallow prefix merge at small t' and supply extra
+#     multi-modal positives.
+#   - Per-boundary losses are averaged with EQUAL weight (each boundary counts
+#     the same; the loss already normalizes per-pair within a boundary).
+#
+# Notes on interpretation:
+#   - At shallow t' the positive groups are large and negatives few, so the mean
+#     cos_sim_offdiag / z_std over boundaries mixes near-duplicate shallow targets
+#     (few distinct actions -> cos ~ 1) with deeper ones. A collapse warning here
+#     can be a shallow-boundary artifact, not true representation collapse.
+#   - Each batch now yields ~t x more loss terms from one context pass, so the LR
+#     may need to be lower than the single-depth v6 run. Treat as experimental.
+
+experiment:
+  name: jepa_v6_hd_action_allpos_run_001
+  variant: v6
+  description: Hard-disjoint action-anchored JEPA (v6) with all-position (every-boundary) distance-margin supervision on 8x8 Othello.
+  notes: |
+    All-position variant of v6. The prefix-grouped batch semantics and the
+    distance-margin / multi-mode / phantom-dedup loss are unchanged; only the
+    supervision is broadened from the single constructed depth t to all
+    boundaries 1..t via forward_all_positions. See the header for the
+    equal-per-boundary weighting and the shallow-boundary diagnostics caveat.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v6_hd_action_allpos_run_001
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v6_hd_action_allpos_run_001
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+objective:
+  objective_class: jepa_hard_disjoint_action
+  loss_type: distance_margin
+  view_mode: hard_disjoint_action
+  position_sampling: all
+  use_ema_target: true
+  ema_momentum: 0.996
+  hard_disjoint_num_modes: 10
+  hard_disjoint_margin: 1.0
+  hard_disjoint_lambda_push: 1.0
+  hard_disjoint_normalize: true
+  hard_disjoint_dedup_negative_actions: true
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp_modes
+  predictor_hidden_mult: 4
+  predictor_n_layers: 2
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+branching:
+  branch_t_min: 4
+  branch_t_max: 10
+  branch_groups_per_batch: 64
+  branch_samples_per_group: 4
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  games_per_chunk: 100000
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

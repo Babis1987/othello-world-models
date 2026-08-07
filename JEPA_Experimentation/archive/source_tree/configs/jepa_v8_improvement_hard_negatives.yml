@@ -1,0 +1,115 @@
+# JEPA v8 improvement with surface-matched hard negatives.
+#
+# This is still pure JEPA / InfoNCE:
+# - no AR next-token CE term
+# - no hybrid grounding objective
+# - lambda_ce stays exactly 0.0
+#
+# Difference from jepa_v8_improvement.yml:
+# - in addition to constructive local reorder pairs, the offline index mines
+#   "near-same surface" hard negatives from states with the same ply,
+#   same side-to-move, high occupied-cell overlap, and different full board
+#   state. These negatives are used only inside the JEPA InfoNCE denominator.
+
+experiment:
+  name: jepa_v8_improvement_hard_negatives
+  variant: v8
+  description: Pure order-aware JEPA with constructive pairs plus surface-matched hard negatives.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  pair_index_path: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/v8_improvement_hard_negatives_pair_index.sqlite
+  out_dir: /content/runs/jepa_v8_improvement_hard_negatives
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v8_improvement_hard_negatives
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 50
+
+pair_index:
+  order_index_use_constructive_pairs: true
+  order_index_use_surface_hard_negatives: true
+  # Jaccard over occupied cells. 0.85 is deliberately looser than exact
+  # same-occupancy but still requires the two boards to look very similar.
+  order_surface_jaccard_threshold: 0.85
+  order_surface_max_pairs_per_anchor: 2
+  order_index_positions_per_game: 2
+  order_index_sampling_seed: 42
+  order_t_min: 4
+  order_t_max: 40
+  order_pair_chunk_cache_size: 4
+  pair_index_build_workers: 8
+
+objective:
+  objective_class: jepa_order_aware
+  loss_type: order_aware_infonce
+  view_mode: order_aware
+  prediction_horizon: 1
+  use_ema_target: true
+  ema_momentum: 0.996
+  lambda_ce: 0.0
+  log_collapse_stats_every_steps: 100
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: action_conditioned_mlp
+  action_dim: 512
+  predictor_hidden_mult: 4
+  predictor_n_layers: 4
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+infonce:
+  order_temperature: 0.1
+  order_groups_per_batch: 16
+  order_samples_per_group: 16
+  order_hard_negatives_per_anchor: 2
+  order_chunk_sample_multiplier: 1.0
+  order_min_pair_anchors_per_group: 4
+
+controls:
+  order_utility_early_stop_threshold: 0.005
+  order_utility_early_stop_window: 500
+  order_utility_early_stop_min_steps: 5000
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 0
+  eval_every_chunks: 5
+  probe_interval_steps: 5000
+  probe_train_games: 512
+  probe_val_games: 512
+  probe_epochs: 1
+  probe_batch_size: 64
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

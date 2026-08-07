@@ -1,0 +1,79 @@
+experiment:
+  name: family_infonce_v1
+  variant: family_infonce
+  description: >
+    Stage 1 transposition-family InfoNCE. Within-family multi-positive
+    contrastive discrimination of board color configurations; no EMA, no
+    VICReg, no predictor, no move cross-entropy anywhere. Trained step-based
+    over prebuilt family_artifacts (built once on a CPU runtime by the
+    training notebook's artifact cell), not over the chunk loop.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  # Drive cache of the self-contained artifacts directory. The notebook's
+  # artifact cell builds it here once (CPU runtime) and later runtimes copy
+  # it to local disk; the local path is passed as a runtime override.
+  artifacts_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/family_artifacts
+  local_stage_dir: /content/family_artifacts
+  out_dir: /content/runs/family_infonce_v1
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/family_infonce_v1
+  verify_manifest: true
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+# Offline index build parameters (consumed by the notebook artifact cell,
+# metadata for the trainer).
+family_index:
+  family_t_min: 4
+  family_t_max: 44
+  # 0 = auto (all cores minus one). Set a small number only to throttle,
+  # e.g. for laptop thermals.
+  family_build_workers: 0
+
+objective:
+  objective_class: family_infonce
+  temperature: 0.1
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+projection:
+  proj_hidden: 512
+  proj_dim: 128
+
+infonce:
+  families_per_batch: 16
+  members_per_family: 16
+  # Leakage filter: exclude positive pairs whose common prefix with the class
+  # representative exceeds this fraction of t. 0 disables. First rerun lever
+  # per the kill-switch is 0.5.
+  max_common_prefix_frac: 0.0
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 500
+  total_steps: 20000
+  precision: bf16
+
+eval:
+  log_every_steps: 100
+  retrieval_every_steps: 500
+  retrieval_anchors: 512
+
+checkpointing:
+  milestone_steps: 5000,10000,15000,20000
+  drive_sync_every_steps: 1000
+
+runtime:
+  seed: 42

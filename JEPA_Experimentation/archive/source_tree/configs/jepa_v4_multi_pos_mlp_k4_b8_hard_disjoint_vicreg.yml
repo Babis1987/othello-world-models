@@ -1,0 +1,87 @@
+# JEPA v4 hard-disjoint multi-position prediction with VICReg.
+#
+# Relative to the existing v4 hard-disjoint experiment, this keeps the target
+# view, K=4 multi-position MLP predictor, model architecture, data budget, and
+# optimization settings. It replaces the EMA target + SmoothL1 objective with
+# a shared-encoder target path + VICReg.
+#
+# There is no separate target encoder and no stop-gradient target branch.
+# Both the context prefix and future-only target tokens update the shared
+# encoder. VICReg variance/covariance terms provide anti-collapse pressure.
+
+experiment:
+  name: jepa_v4_multi_pos_mlp_k4_b8_run_001_hard_disjoint_vicreg
+  variant: v4
+  description: JEPA v4 hard-disjoint K=4 multi-position MLP with shared-encoder VICReg.
+  notes: |
+    The context branch sees x[:t]. The shared encoder target branch sees only
+    x[t:t+K] at absolute positions t..t+K-1 and never sees the prefix.
+    Compared with v4 hard-disjoint EMA/SmoothL1, this experiment replaces both
+    the target-update mechanism and loss: no EMA/stop-grad target is used, and
+    VICReg supplies invariance, variance, and covariance terms.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001_hard_disjoint_vicreg
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001_hard_disjoint_vicreg
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 50
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp_multi_pos
+  predictor_hidden_mult: 4
+  predictor_dropout: 0.0
+
+objective:
+  view_mode: hard_disjoint_future
+  loss_type: vicreg
+  prediction_horizon: 4
+  use_ema_target: false
+  vicreg_lambda: 25.0
+  vicreg_mu: 25.0
+  vicreg_nu: 1.0
+  variance_threshold: 1.0
+  window_sample_attempts: 8
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+
+optim:
+  batch_size: 512
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

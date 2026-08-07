@@ -1,0 +1,98 @@
+# JEPA v5 hard-disjoint InfoNCE variant.
+#
+# Prefix-grouped batches mirror v6: samples are arranged into exact-prefix
+# groups, same-prefix rows are positives, and different-prefix rows are
+# negatives. The target encoder sees only the single next-action token
+# m_{t+1}. Unlike v6, the loss is multi-positive InfoNCE rather than
+# distance-margin pull/push.
+
+experiment:
+  name: jepa_v5_contrastive_prefix_mask_hard_disjoint
+  variant: v5
+  description: Prefix-grouped hard-disjoint action JEPA with multi-positive InfoNCE.
+  notes: |
+    Context sees x[:t], while the EMA target encoder sees only m_{t+1}.
+    Positives and negatives are selected exactly as in v6 via prefix-grouped
+    batches. Same-prefix rows are positives. Different-prefix rows are
+    negatives, except same-action false negatives are handled with the same
+    per-pair phantom-token replacement used by v6. This is intended to isolate
+    the v6 batch/target semantics while using InfoNCE instead of
+    distance-margin loss.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v5_contrastive_prefix_mask_hard_disjoint
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_contrastive_prefix_mask_hard_disjoint
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+objective:
+  objective_class: jepa_hard_disjoint_infonce
+  loss_type: infonce
+  view_mode: hard_disjoint_action
+  prediction_horizon: 1
+  use_ema_target: true
+  ema_momentum: 0.996
+  contrastive_temperature: 0.1
+  # Same-prefix positives are enforced by the prefix-grouped sampler.
+  contrastive_use_prefix_mask: true
+  hard_disjoint_dedup_negative_actions: true
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+  collapse_warning_contrastive_accuracy: 0.05
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp
+  predictor_hidden_mult: 4
+  predictor_n_layers: 2
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+branching:
+  branch_t_min: 4
+  branch_t_max: 10
+  branch_groups_per_batch: 64
+  branch_samples_per_group: 4
+
+optim:
+  # Effective batch = branch_groups_per_batch * branch_samples_per_group.
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  games_per_chunk: 100000
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

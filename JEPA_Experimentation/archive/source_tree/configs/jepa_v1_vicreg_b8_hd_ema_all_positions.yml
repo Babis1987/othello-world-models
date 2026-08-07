@@ -1,0 +1,68 @@
+experiment:
+  name: jepa_vicreg_b8_run_001_hd_ema_allpos_bf16
+  variant: v1
+  description: Transformer JEPA v1 hard-disjoint VICReg + EMA target with all-position supervision on 8x8 Othello.
+  notes: |
+    EMA ablation of the selected all-position v1 run. Identical to
+    jepa_v1_vicreg_b8_hard_disjoint_all_positions.yml except that the
+    hard-disjoint length-one targets are encoded by a frozen EMA copy of the
+    context encoder instead of the shared live encoder. Isolates the effect
+    of a slow-moving target path under the VICReg anti-collapse terms.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_vicreg_b8_run_001_hd_ema_allpos_bf16
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_vicreg_b8_run_001_hd_ema_allpos_bf16
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: linear
+
+objective:
+  objective_class: jepa
+  view_mode: hard_disjoint_future
+  loss_type: vicreg
+  prediction_horizon: 1
+  position_sampling: all
+  use_ema_target: true
+  ema_momentum: 0.996
+  all_position_target_chunk_size: 65536
+  all_position_stats_chunk_size: 64
+  vicreg_lambda: 25.0
+  vicreg_mu: 25.0
+  vicreg_nu: 1.0
+  variance_threshold: 1.0
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+
+runtime:
+  num_workers: 0
+  seed: 42

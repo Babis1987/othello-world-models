@@ -1,0 +1,71 @@
+experiment:
+  name: jepa_v3_hd_k8_run_001_allpos_bf16
+  variant: v3
+  description: Transformer JEPA v3 hard-disjoint weak-MLP (K=8) with all-position supervision on 8x8 Othello.
+  notes: |
+    v3 objective in the all-position frame, a clean sibling of the v1/v2/v5
+    all-position runs: same setup, changed only where v3 differs. The frozen EMA
+    target encoder encodes each future move hard-disjointly at its absolute
+    position; the live encoder is trained with Smooth L1 toward the K=8 future
+    window at every valid boundary. v3-specific parameters are preserved (weak
+    2-layer MLP predictor, K=8, ema_momentum 0.990, warmup 2000); everything
+    else matches the sibling all-position runs (batch 256, etc.).
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v3_hd_k8_run_001_allpos_bf16
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_hd_k8_run_001_allpos_bf16
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp
+  predictor_hidden_dim: 512
+  predictor_n_layers: 2
+  predictor_dropout: 0.1
+  predictor_activation: gelu
+
+objective:
+  objective_class: jepa
+  view_mode: hard_disjoint_future
+  loss_type: smooth_l1
+  smooth_l1_beta: 1.0
+  prediction_horizon: 8
+  position_sampling: all
+  use_ema_target: true
+  ema_momentum: 0.990
+  all_position_target_chunk_size: 65536
+  all_position_stats_chunk_size: 64
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 2000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+
+runtime:
+  num_workers: 0
+  seed: 42

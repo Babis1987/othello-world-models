@@ -1,0 +1,66 @@
+experiment:
+  name: jepa_v3_mlp_k8_b8_run_001
+  variant: v3
+  description: EMA-target JEPA with weak MLP predictor (2-layer 512) and K=8 horizon on 8x8 Othello.
+  notes: |
+    v3 reduces predictor capacity 5x vs v2 (~12M -> ~2.4M params) to test the
+    hypothesis that the v2 transformer predictor was too powerful and let the
+    context encoder skip board-state learning. K=8 increases prediction horizon
+    to make the task harder. EMA momentum lowered from 0.996 to 0.990 so the
+    target encoder tracks context updates faster. Warmup doubled (1000 -> 2000
+    steps) for stability with the weaker predictor at the start of training.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v3_mlp_k8_b8_run_001
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp
+  predictor_hidden_dim: 512
+  predictor_n_layers: 2
+  predictor_dropout: 0.1
+  predictor_activation: gelu
+
+objective:
+  view_mode: nested
+  loss_type: smooth_l1
+  prediction_horizon: 8
+  use_ema_target: true
+  ema_momentum: 0.990
+  smooth_l1_beta: 1.0
+  window_sample_attempts: 8
+
+optim:
+  batch_size: 512
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 2000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+
+runtime:
+  num_workers: 0
+  seed: 42

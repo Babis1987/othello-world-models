@@ -1,0 +1,86 @@
+# JEPA v5 - contrastive predictive variant.
+#
+# Replaces the SmoothL1 pointwise distance loss with in-batch InfoNCE.
+# Positives are determined by prefix equality, so identical early-game
+# prefixes are not treated as negatives. Architecture and view design are
+# kept close to v4, except K=1 and the predictor is a single-position MLP.
+
+experiment:
+  name: jepa_v5_contrastive_prefix_mask
+  variant: v5
+  description: Contrastive JEPA with disjoint future views and prefix-positive InfoNCE.
+  notes: |
+    v5 tests whether replacing distance regression with in-batch contrastive
+    discrimination prevents the mean-future shortcut observed in v1-v4.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v5_contrastive_prefix_mask
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_contrastive_prefix_mask
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+objective:
+  objective_class: jepa_contrastive
+  loss_type: infonce
+  view_mode: disjoint_future
+  prediction_horizon: 1
+  use_ema_target: true
+  ema_momentum: 0.996
+  contrastive_temperature: 0.1
+  # Prefix-mask mode is intentional:
+  # all samples with identical context prefixes are treated as positives,
+  # because identical prefixes correspond to identical Othello board states.
+  contrastive_use_prefix_mask: true
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+  collapse_warning_contrastive_accuracy: 0.05
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp
+  predictor_hidden_mult: 4
+  predictor_n_layers: 2
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+optim:
+  batch_size: 512
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  games_per_chunk: 100000
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

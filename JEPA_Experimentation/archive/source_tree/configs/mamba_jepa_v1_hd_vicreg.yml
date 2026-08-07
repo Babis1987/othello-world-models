@@ -1,0 +1,70 @@
+# Mamba-JEPA v1 hard-disjoint VICReg.
+#
+# Same JEPA objective as jepa_v1_vicreg_b8_hard_disjoint.yml, but the context
+# encoder is OthelloMambaAR instead of OthelloGPT.
+
+experiment:
+  name: mamba_jepa_v1_hd_vicreg
+  variant: v1
+  description: Mamba encoder with v1 hard-disjoint VICReg JEPA.
+  notes: |
+    Main Mamba-JEPA candidate corresponding to Transformer-JEPA v1 HD. The
+    objective stays pure JEPA: no AR head or cross-entropy injection.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/Mamba-JEPA/mamba_jepa_v1_hd_vicreg
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/Mamba-JEPA/mamba_jepa_v1_hd_vicreg
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+model:
+  encoder_architecture: mamba
+  n_layers: 15
+  n_heads: 8
+  d_model: 512
+  d_state: 16
+  d_conv: 4
+  expand: 2
+  mamba_backend: mamba_ssm
+  dropout: 0.1
+
+predictor:
+  predictor_type: linear
+
+objective:
+  view_mode: hard_disjoint_future
+  loss_type: vicreg
+  prediction_horizon: 1
+  vicreg_lambda: 25.0
+  vicreg_mu: 25.0
+  vicreg_nu: 1.0
+  variance_threshold: 1.0
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42

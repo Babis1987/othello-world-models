@@ -1,0 +1,105 @@
+# Mamba-JEPA v6 hard-disjoint action-margin, ALL-POSITION supervision.
+#
+# Same objective as mamba_jepa_v6_hd_action.yml, but the distance-margin loss is
+# evaluated at EVERY prefix boundary t' in [1, t] of each prefix-grouped batch
+# via OthelloJEPAHardDisjointAction.forward_all_positions (see
+# jepa_v6_hd_action_all_positions.yml for the full mechanics). The Mamba context
+# encoder is causal, so the single amortized pass supplies every boundary's
+# context summary exactly as the Transformer variant does.
+#
+# batch_size MUST equal branch_groups_per_batch * branch_samples_per_group for
+# Mamba-JEPA hard-disjoint runs (train_mamba_jepa.validate_train_config).
+
+experiment:
+  name: mamba_jepa_v6_hd_action_allpos
+  variant: v6
+  description: Mamba encoder v6 hard-disjoint action JEPA with all-position (every-boundary) distance-margin supervision.
+  notes: |
+    All-position variant of the Mamba v6 run. Prefix-grouped batch semantics and
+    the distance-margin / multi-mode / phantom-dedup loss are unchanged; only the
+    supervision is broadened from the constructed depth t to all boundaries 1..t
+    with equal per-boundary weight. Shallow boundaries produce large positive
+    groups, so mean cos_sim_offdiag / z_std can look collapse-like without being
+    so; the LR may need lowering versus the single-depth v6 run.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/Mamba-JEPA/mamba_jepa_v6_hd_action_allpos
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/Mamba-JEPA/mamba_jepa_v6_hd_action_allpos
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+objective:
+  objective_class: jepa_hard_disjoint_action
+  loss_type: distance_margin
+  view_mode: hard_disjoint_action
+  position_sampling: all
+  use_ema_target: true
+  ema_momentum: 0.996
+  hard_disjoint_num_modes: 10
+  hard_disjoint_margin: 1.0
+  hard_disjoint_lambda_push: 1.0
+  hard_disjoint_normalize: true
+  hard_disjoint_dedup_negative_actions: true
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+
+model:
+  encoder_architecture: mamba
+  n_layers: 15
+  n_heads: 8
+  d_model: 512
+  d_state: 16
+  d_conv: 4
+  expand: 2
+  mamba_backend: mamba_ssm
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp_modes
+  predictor_hidden_mult: 4
+  predictor_n_layers: 2
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+branching:
+  branch_t_min: 4
+  branch_t_max: 10
+  branch_groups_per_batch: 64
+  branch_samples_per_group: 4
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  games_per_chunk: 100000
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

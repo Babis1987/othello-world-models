@@ -1,0 +1,120 @@
+# JEPA v8 improvement: denser order-aware pure JEPA.
+#
+# Goal:
+# - keep the objective pure JEPA / InfoNCE, with no CE grounding term
+# - increase the chance of real order-aware positives and same-occupancy hard
+#   negatives compared with the original sparse v8 run
+# - keep this run isolated from existing v8/v9 artifacts
+#
+# Important:
+# - this config intentionally uses its own pair_index_path, run dir, and Drive
+#   sync dir, so it will not reuse or overwrite the previous v8 index/run
+# - the training notebook's v8 pair-index cell will rebuild this index if it is
+#   missing or if the metadata does not match these pair_index settings
+
+experiment:
+  name: jepa_v8_improvement
+  variant: v8
+  description: Corrected pure order-aware JEPA with constructive pairs and denser indexed prefixes.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  pair_index_path: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/v8_improvement_pair_index.sqlite
+  out_dir: /content/runs/jepa_v8_improvement
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v8_improvement
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 50
+
+pair_index:
+  # Constructive local reorders create many more useful cross-order positives
+  # and same-occupancy hard negatives than waiting for natural collisions.
+  order_index_use_constructive_pairs: true
+  # Denser than the original sparse setting. Use 1 if the index build is too
+  # slow; use 0 only for a small smoke run because it means exhaustive indexing.
+  order_index_positions_per_game: 2
+  order_index_sampling_seed: 42
+  order_t_min: 4
+  order_t_max: 40
+  order_pair_chunk_cache_size: 4
+  pair_index_build_workers: 8
+
+objective:
+  objective_class: jepa_order_aware
+  loss_type: order_aware_infonce
+  view_mode: order_aware
+  prediction_horizon: 1
+  use_ema_target: true
+  ema_momentum: 0.996
+  # Keep this pure JEPA. The hybrid v8 config is separate.
+  lambda_ce: 0.0
+  log_collapse_stats_every_steps: 100
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: action_conditioned_mlp
+  action_dim: 512
+  predictor_hidden_mult: 4
+  predictor_n_layers: 4
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+infonce:
+  order_temperature: 0.1
+  order_groups_per_batch: 16
+  order_samples_per_group: 16
+  # Use more than one hard negative when available. Missing hard negatives are
+  # masked, so this increases pressure without making every anchor impossible.
+  order_hard_negatives_per_anchor: 2
+  order_chunk_sample_multiplier: 1.0
+  # Force every group to include non-trivial indexed anchors. This prevents the
+  # run from silently degrading into ordinary self-positive action JEPA.
+  order_min_pair_anchors_per_group: 4
+
+controls:
+  order_utility_early_stop_threshold: 0.005
+  order_utility_early_stop_window: 500
+  order_utility_early_stop_min_steps: 5000
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 0
+  eval_every_chunks: 5
+  probe_interval_steps: 5000
+  probe_train_games: 512
+  probe_val_games: 512
+  probe_epochs: 1
+  probe_batch_size: 64
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

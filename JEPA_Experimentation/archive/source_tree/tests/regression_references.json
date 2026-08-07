@@ -1,0 +1,7 @@
+{
+  "jepa_v1_vicreg_b8.yml::loss_at_step_5": 21.904464721679688,
+  "jepa_v2_ema_b8.yml::loss_at_step_5": 0.2731788754463196,
+  "jepa_v3_mlp_k8_b8.yml::loss_at_step_5": 0.3844113051891327,
+  "jepa_v4_multi_pos_mlp_k4_b8.yml::loss_at_step_5": 0.3752642273902893,
+  "jepa_v5_contrastive.yml::loss_at_step_5": 0.5190280079841614
+}

@@ -1,0 +1,90 @@
+# JEPA v9A: multi-action latent rollout with Smooth L1 regression.
+#
+# Pure JEPA training signal:
+#   context encoder sees x[:t]
+#   predictor recursively consumes actions x[t], x[t+1], ... x[t+N-1]
+#   EMA target encoder supplies latent targets for nested prefixes x[:t+k]
+# No AR cross-entropy, legal-move labels, board labels, or reconstruction loss.
+
+experiment:
+  name: jepa_v9a_multiaction_smooth_l1
+  variant: v9
+  description: Multi-action latent rollout JEPA with weighted Smooth L1 targets.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v9a_multiaction_smooth_l1
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v9a_multiaction_smooth_l1
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 200
+
+objective:
+  objective_class: jepa_multiaction
+  loss_type: smooth_l1
+  rollout_loss_mode: smooth_l1
+  view_mode: nested
+  prediction_horizon: 4
+  action_horizon: 4
+  use_ema_target: true
+  ema_momentum: 0.996
+  smooth_l1_beta: 1.0
+  horizon_weight_gamma: 0.8
+  normalize_latents_for_loss: false
+  lambda_var: 0.5
+  lambda_cov: 0.05
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: action_conditioned_mlp
+  action_dim: 512
+  predictor_hidden_mult: 4
+  predictor_n_layers: 3
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+  probe_interval_steps: 0
+  probe_train_games: 512
+  probe_val_games: 512
+  probe_epochs: 1
+  probe_batch_size: 64
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

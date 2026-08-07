@@ -1,0 +1,106 @@
+# JEPA v6 - hard-disjoint action-anchored JEPA.
+#
+# Context branch: full causal Transformer over the move history m_1..m_t.
+# Target branch:  SAME Transformer architecture, EMA-updated from context,
+#                 but fed ONLY the single next-action token m_{t+1}. This is
+#                 the "hard-disjoint" property: target sees zero history.
+# Predictor:      small MLP head that maps the context summary c_t to M
+#                 predicted modes in d_model space. Distance-margin loss
+#                 with pull toward same-prefix targets, push from different-
+#                 prefix targets, and per-pair phantom-token replacement for
+#                 collisions (negative action == one of the anchor's positive
+#                 actions).
+#
+# Batching: prefix-grouped sampler (BranchPrefixBatchedDataset) builds each
+# batch from G groups × S samples, where each group shares the exact same
+# prefix of length t. Self is treated as a positive of itself.
+#
+# Compared with v5 (InfoNCE EMA target): v6 changes three things at once
+# (target view is a single action token, loss is distance-margin not InfoNCE,
+# predictor emits M modes not one). v6 is an exploratory variant; clean
+# ablations against v5 would isolate each axis.
+
+experiment:
+  name: jepa_v6_hard_disjoint_action_run_001
+  variant: v6
+  description: Hard-disjoint action-anchored JEPA with multi-mode predictor and distance-margin loss.
+  notes: |
+    Pretrain budget is 50 chunks by default so multiple architectural
+    variants can be screened quickly before committing to a full 200-chunk
+    run on the best two or three.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v6_hard_disjoint_action_run_001
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v6_hard_disjoint_action_run_001
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 10
+
+objective:
+  objective_class: jepa_hard_disjoint_action
+  loss_type: distance_margin
+  view_mode: hard_disjoint_action
+  use_ema_target: true
+  ema_momentum: 0.996
+  hard_disjoint_num_modes: 10
+  hard_disjoint_margin: 1.0
+  hard_disjoint_lambda_push: 1.0
+  hard_disjoint_normalize: true
+  hard_disjoint_dedup_negative_actions: true
+  log_collapse_stats_every_steps: 100
+  collapse_warning_z_std: 0.1
+  collapse_warning_cos_sim: 0.95
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: mlp_modes
+  predictor_hidden_mult: 4
+  predictor_n_layers: 2
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+branching:
+  branch_t_min: 4
+  branch_t_max: 10
+  branch_groups_per_batch: 64
+  branch_samples_per_group: 4
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  games_per_chunk: 100000
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online

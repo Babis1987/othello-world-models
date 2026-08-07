@@ -1,0 +1,82 @@
+experiment:
+  name: jepa_v7_action_infonce
+  variant: v7
+  description: Action-conditioned JEPA with same-(t, action) grouped InfoNCE.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8
+  out_dir: /content/runs/jepa_v7_action_infonce
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v7_action_infonce
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 8
+  li_split_train_chunks: 50
+
+objective:
+  objective_class: jepa_action_conditioned
+  loss_mode: grouped_infonce
+  view_mode: nested
+  prediction_horizon: 1
+  use_ema_target: true
+  ema_momentum: 0.996
+  normalize_embeddings: true
+  action_temperature: 0.1
+  log_collapse_stats_every_steps: 100
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: action_conditioned_mlp
+  action_dim: 512
+  predictor_hidden_mult: 4
+  predictor_n_layers: 2
+  predictor_activation: gelu
+  predictor_dropout: 0.0
+
+grouping:
+  action_t_min: 4
+  action_t_max: 10
+  action_groups_per_batch: 16
+  action_samples_per_group: 16
+  action_chunk_sample_multiplier: 1.0
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+  probe_interval_steps: 5000
+  probe_train_games: 512
+  probe_val_games: 512
+  probe_epochs: 1
+  probe_batch_size: 64
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42
+
+wandb:
+  wandb_project: ""
+  wandb_entity: ""
+  wandb_run_name: ""
+  wandb_mode: online
