@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "othello-thesis"
+version = "0.1.0"
+description = "Final reproducible code for the Othello architecture-objective thesis"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0",
+    "torch>=2.5",
+    "numba>=0.61",
+    "tqdm",
+    "pyyaml",
+    "einops",
+    "transformer-lens",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+mamba = [
+    "mamba-ssm==2.3.2.post1",
+    "causal-conv1d==1.6.2.post1",
+]
+notebooks = [
+    "jupyter",
+    "matplotlib>=3.10",
+    "seaborn",
+]
+dev = [
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["othello_thesis*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:langsmith_plugin -p no:cacheprovider"
+
