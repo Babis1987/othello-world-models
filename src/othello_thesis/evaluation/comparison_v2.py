@@ -40,14 +40,31 @@ about architecture or objective effects.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from datetime import datetime, timezone
 import csv
 import json
-import math
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
+from othello_thesis.evaluation._comparison_formatting import (
+    _count,
+    _escape_cell,
+    _finite_float,
+    _latex_escape,
+    _latex_table,
+    _md_table,
+    _megabytes,
+    _millions,
+    _number,
+    _pct,
+    _pp,
+    _short_hash,
+)
+from othello_thesis.evaluation._comparison_models import (
+    ComparisonReport,
+    ComparisonRun,
+    ComparisonSelection,
+)
 from othello_thesis.evaluation.thesis import (
     ARCHITECTURES,
     BOARD_SIZES,
@@ -55,9 +72,6 @@ from othello_thesis.evaluation.thesis import (
     OBJECTIVES,
     EvaluationCase,
     ModelNotReadyError,
-    normalize_architecture,
-    normalize_board_size,
-    normalize_objective,
     resolve_case,
     resolve_run_dir,
 )
@@ -111,148 +125,8 @@ NEGLIGIBLE_PP = 0.5
 NOTABLE_PP = 2.0
 
 
-@dataclass(frozen=True)
-class ComparisonSelection:
-    """Normalized selectors exposed by the comparison notebook."""
-
-    architectures: tuple[str, ...]
-    objectives: tuple[str, ...]
-    board_sizes: tuple[int, ...]
-
-    @classmethod
-    def from_values(
-        cls,
-        architecture: str = "both",
-        objective: str = "both",
-        board_size: int | str = 12,
-    ) -> "ComparisonSelection":
-        architecture_text = str(architecture).strip().lower()
-        objective_text = str(objective).strip().lower()
-        board_text = str(board_size).strip().lower().replace("x", "")
-
-        if architecture_text in {"both", "all"}:
-            architectures = tuple(ARCHITECTURES)
-        else:
-            architectures = (normalize_architecture(architecture_text),)
-
-        if objective_text in {"both", "all"}:
-            objectives = tuple(OBJECTIVES)
-        else:
-            objectives = (normalize_objective(objective_text),)
-
-        if board_text == "all":
-            board_sizes = tuple(BOARD_SIZES)
-        else:
-            board_sizes = (normalize_board_size(int(board_text)),)
-
-        return cls(
-            architectures=architectures,
-            objectives=objectives,
-            board_sizes=board_sizes,
-        )
-
-    @property
-    def expected_count(self) -> int:
-        return (
-            len(self.architectures)
-            * len(self.objectives)
-            * len(self.board_sizes)
-        )
-
-    @property
-    def is_single_case(self) -> bool:
-        return self.expected_count == 1
-
-    @property
-    def slug(self) -> str:
-        architecture = (
-            self.architectures[0]
-            if len(self.architectures) == 1
-            else "both_architectures"
-        )
-        objective = (
-            self.objectives[0]
-            if len(self.objectives) == 1
-            else "both_objectives"
-        )
-        boards = (
-            f"b{self.board_sizes[0]}"
-            if len(self.board_sizes) == 1
-            else "all_boards"
-        )
-        return f"{architecture}__{objective}__{boards}"
-
-    @property
-    def display(self) -> str:
-        architecture = (
-            self.architectures[0].title()
-            if len(self.architectures) == 1
-            else "Transformer + Mamba"
-        )
-        objective = (
-            self.objectives[0].upper()
-            if len(self.objectives) == 1
-            else "AR + JEPA"
-        )
-        boards = (
-            f"{self.board_sizes[0]}x{self.board_sizes[0]}"
-            if len(self.board_sizes) == 1
-            else "8x8 + 12x12 + 16x16"
-        )
-        return f"{architecture} | {objective} | {boards}"
-
-
-@dataclass(frozen=True)
-class ComparisonRun:
-    """One validated common-evaluation cell and its normalized metrics."""
-
-    case: EvaluationCase
-    results_path: Path
-    payload: Mapping[str, Any]
-    metrics: Mapping[str, Any]
-
-    @property
-    def label(self) -> str:
-        return self.case.label
-
-    @property
-    def short_label(self) -> str:
-        architecture = "T" if self.case.architecture == "transformer" else "M"
-        return f"{architecture}-{self.case.objective.upper()} {self.case.board_size}x{self.case.board_size}"
-
-    @property
-    def system_key(self) -> tuple[str, str]:
-        return self.case.architecture, self.case.objective
-
-    @property
-    def head_kind(self) -> str:
-        """``native`` for AR, ``frozen`` for JEPA readouts."""
-        return str(self.metrics.get("legal_head_kind") or "unknown")
-
-
-@dataclass(frozen=True)
-class ComparisonReport:
-    """Artifacts returned to the notebook frontend."""
-
-    report_path: Path
-    figure_paths: Mapping[str, Path]
-    runs: tuple[ComparisonRun, ...]
-    missing: Mapping[str, str]
-    selection: ComparisonSelection
-    export_paths: Mapping[str, Path]
-    warnings: tuple[str, ...] = ()
-
-
 def _mapping(value: Any) -> Mapping[str, Any]:
     return value if isinstance(value, Mapping) else {}
-
-
-def _finite_float(value: Any) -> float | None:
-    try:
-        number = float(value)
-    except (TypeError, ValueError):
-        return None
-    return number if math.isfinite(number) else None
 
 
 def _mean(values: Iterable[Any]) -> float | None:
@@ -755,88 +629,6 @@ def collect_comparison_runs(
         )
     )
     return tuple(runs), missing
-
-
-def _pct(value: Any, digits: int = 2, *, signed: bool = False) -> str:
-    """Format a level (a proportion) as a percentage."""
-    number = _finite_float(value)
-    if number is None:
-        return "n/a"
-    sign = "+" if signed else ""
-    return f"{number * 100:{sign}.{digits}f}%"
-
-
-def _pp(value: Any, digits: int = 2, *, signed: bool = True) -> str:
-    """Format a difference of proportions in percentage points.
-
-    Differences between two percentages are percentage points, not percent.  v1
-    printed factorial effects with a ``%`` suffix while the surrounding prose
-    called them percentage-point contrasts; this keeps the two consistent.
-    """
-    number = _finite_float(value)
-    if number is None:
-        return "n/a"
-    sign = "+" if signed else ""
-    return f"{number * 100:{sign}.{digits}f} pp"
-
-
-def _number(value: Any, digits: int = 2) -> str:
-    number = _finite_float(value)
-    if number is None:
-        return "n/a"
-    return f"{number:,.{digits}f}"
-
-
-def _count(value: Any) -> str:
-    number = _finite_float(value)
-    if number is None:
-        return "n/a"
-    return f"{int(number):,}"
-
-
-def _millions(value: Any) -> str:
-    number = _finite_float(value)
-    if number is None:
-        return "n/a"
-    return f"{number / 1_000_000:.2f}M"
-
-
-def _megabytes(value: Any) -> str:
-    number = _finite_float(value)
-    if number is None:
-        return "n/a"
-    return f"{number / (1024**2):.1f} MiB"
-
-
-def _short_hash(value: Any) -> str:
-    text = str(value or "")
-    return f"`{text[:12]}…`" if len(text) > 12 else f"`{text or 'n/a'}`"
-
-
-def _escape_cell(value: Any) -> str:
-    return str(value).replace("|", "\\|").replace("\n", "<br>")
-
-
-def _md_table(
-    headers: Sequence[str],
-    rows: Sequence[Sequence[Any]],
-    *,
-    numeric_columns: Iterable[int] = (),
-) -> list[str]:
-    numeric = set(numeric_columns)
-    align = [
-        "---:" if index in numeric else "---"
-        for index in range(len(headers))
-    ]
-    lines = [
-        "| " + " | ".join(_escape_cell(item) for item in headers) + " |",
-        "| " + " | ".join(align) + " |",
-    ]
-    lines.extend(
-        "| " + " | ".join(_escape_cell(item) for item in row) + " |"
-        for row in rows
-    )
-    return lines
 
 
 def _layer_and_depth(run: ComparisonRun, prefix: str) -> str:
@@ -2739,52 +2531,6 @@ def _write_csv(runs: Sequence[ComparisonRun], path: Path) -> Path:
                     row[f"{key}_depth"] = run.metrics.get(f"{key}_depth")
                 writer.writerow(row)
     return path
-
-
-def _latex_escape(value: Any) -> str:
-    text = str(value)
-    for source, target in (
-        ("\\", r"\textbackslash{}"),
-        ("&", r"\&"),
-        ("%", r"\%"),
-        ("_", r"\_"),
-        ("#", r"\#"),
-        ("★", r"$\star$"),
-        ("−", "-"),
-        ("–", "--"),
-    ):
-        text = text.replace(source, target)
-    return text
-
-
-def _latex_table(
-    caption: str,
-    label: str,
-    headers: Sequence[str],
-    rows: Sequence[Sequence[Any]],
-) -> list[str]:
-    lines = [
-        r"\begin{table}[t]",
-        r"\centering",
-        r"\small",
-        rf"\begin{{tabular}}{{{'l' * len(headers)}}}",
-        r"\toprule",
-        " & ".join(_latex_escape(item).replace("<br>", " ") for item in headers)
-        + r" \\",
-        r"\midrule",
-    ]
-    lines += [
-        " & ".join(_latex_escape(item) for item in row) + r" \\" for row in rows
-    ]
-    lines += [
-        r"\bottomrule",
-        r"\end{tabular}",
-        rf"\caption{{{_latex_escape(caption)}}}",
-        rf"\label{{{label}}}",
-        r"\end{table}",
-        "",
-    ]
-    return lines
 
 
 def _write_latex(runs: Sequence[ComparisonRun], path: Path) -> Path:
