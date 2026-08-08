@@ -64,6 +64,12 @@ synchronized repository:
 python -m pytest tests/equivalence -q --basetemp <OS_TEMP_PATH>
 ```
 
+The local suite also locks repeated EMA updates, the source's chunk-boundary
+and fraction-checkpoint resume semantics, and the exact notebook-facing and
+config-driven CLI artifact trees mirrored to a temporary Drive stand-in. That
+mirror verifies synchronization behaviour only; the final sibling's real
+Google Drive backup location remains an external Phase 7 check.
+
 Local Mamba equivalence uses the explicit pure-PyTorch test backend. The
 official `mamba-ssm==2.3.2.post1` path remains locked for a final Colab smoke
 test on the thesis runtime.
