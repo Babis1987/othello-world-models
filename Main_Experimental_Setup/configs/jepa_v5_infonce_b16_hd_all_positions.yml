@@ -1,0 +1,67 @@
+experiment:
+  name: transformer_jepa_v5_hd_infonce_allpos_b16
+  # Horizon-1 all-position InfoNCE uses the generic v1 JEPA execution path.
+  variant: v1
+  description: Transformer JEPA v5 hard-disjoint InfoNCE with all-position supervision on 16x16 Othello.
+  notes: |
+    Board-size-scaled counterpart of jepa_v5_infonce_b8_hd_all_positions.yml.
+    Every valid prefix boundary predicts a length-one hard-disjoint target.
+    InfoNCE is position-stratified, the target encoder is updated by EMA, and
+    the predictor is linear.
+
+paths:
+  data_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_16x16/corpus_v1
+  out_dir: /content/runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16
+  drive_sync_dir: /content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16
+  drive_sync_every_chunks: 5
+
+data:
+  board_size: 16
+  li_split_train_chunks: 200
+
+model:
+  n_layers: 8
+  n_heads: 8
+  d_model: 512
+  dropout: 0.1
+
+predictor:
+  predictor_type: linear
+
+objective:
+  objective_class: jepa
+  view_mode: hard_disjoint_future
+  loss_type: infonce
+  contrastive_temperature: 0.1
+  prediction_horizon: 1
+  position_sampling: all
+  use_ema_target: true
+  ema_momentum: 0.996
+  # Conservative chunks limit peak memory at the 251-token block size.
+  all_position_target_chunk_size: 4096
+  all_position_stats_chunk_size: 8
+
+optim:
+  batch_size: 256
+  learning_rate: 3e-4
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 1000
+  passes_over_data: 1
+  precision: bf16
+
+eval:
+  eval_chunks: 1
+  eval_every_chunks: 5
+
+checkpointing:
+  checkpoint_every_chunks: 0
+  milestone_games: 1000000,5000000,10000000,15000000,20000000
+  intermediate_checkpoint_fractions: [0.1, 0.25, 0.5]
+
+runtime:
+  num_workers: 0
+  seed: 42

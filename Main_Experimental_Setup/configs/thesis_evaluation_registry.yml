@@ -1,0 +1,59 @@
+schema_version: thesis_eval_registry_v1
+
+# The final JEPA condition used in the 2x2 thesis comparison.  Historical
+# VICReg, random-boundary and action-conditioned runs remain diagnostics and
+# are deliberately excluded from automatic discovery.
+canonical_jepa:
+  objective_class: jepa
+  loss_type: infonce
+  view_mode: hard_disjoint_future
+  prediction_horizon: 1
+  position_sampling: all
+  use_ema_target: true
+  ema_momentum: 0.996
+  contrastive_temperature: 0.1
+  predictor_type: linear
+
+data:
+  8: data/othello_8x8
+  12: data/othello_12x12/corpus_v1
+  16: data/othello_16x16/corpus_v1
+
+# Paths are relative to Master_Thesis_Artifacts.  The first entry is the
+# canonical destination for future training.  Additional entries preserve
+# compatibility with already-completed runs.  If none exists, the resolver
+# inspects lightweight run metadata and refuses ambiguous matches.
+cases:
+  transformer:
+    ar:
+      8:
+        - runs/Transformer-AR/transformer_ar_b8_bf16
+        - runs/run_001
+      12:
+        - runs/Transformer-AR/transformer_ar_b12
+      16:
+        - runs/Transformer-AR/transformer_ar_b16
+    jepa:
+      8:
+        - runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16
+        - runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b8
+      12:
+        - runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b12
+      16:
+        - runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16
+  mamba:
+    ar:
+      8:
+        - runs/Mamba-AR/mamba_ar_8x8_bf16
+        - runs/Mamba-AR/mamba_ar_8x8
+      12:
+        - runs/Mamba-AR/mamba_ar_b12
+      16:
+        - runs/Mamba-AR/mamba_ar_b16
+    jepa:
+      8:
+        - runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8
+      12:
+        - runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b12
+      16:
+        - runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b16

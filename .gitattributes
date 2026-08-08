@@ -6,3 +6,9 @@
 *.toml text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
+
+# These source-oracle relocations intentionally retain their exact bytes,
+# including legacy or mixed line endings recorded by the provenance contract.
+src/othello_thesis/data/move_vocabulary.py -text !eol
+src/othello_thesis/models/transformer.py -text !eol
+src/othello_thesis/models/mamba.py -text !eol

@@ -1,4 +1,4 @@
-"""Command-line parsing and validation for canonical JEPA training."""
+"""CLI and validation for final-v5 all-position contrastive JEPA."""
 
 from __future__ import annotations
 
@@ -14,12 +14,7 @@ from othello_thesis.objectives.jepa import (
 from othello_thesis.training._jepa_config import (
     TrainConfig,
     config_to_cli_args,
-    jepa_loss_type,
-    jepa_view_mode,
     load_yaml_config,
-    normalize_contrastive_loss_type,
-    normalize_experiment_variant,
-    normalize_multiaction_loss_mode,
     objective_class,
 )
 
@@ -435,12 +430,17 @@ def build_parser() -> argparse.ArgumentParser:
                         choices=["online", "offline", "disabled"])
     return parser
 
-def parse_configured_args(argv: list[str]) -> tuple[argparse.Namespace, Path | None, dict[str, Any]]:
-    """Resolve YAML config plus CLI overrides into one argparse namespace."""
+def parse_configured_args(
+    argv: list[str],
+) -> tuple[argparse.Namespace, Path | None, dict[str, Any]]:
+    """Resolve canonical YAML values followed by explicit CLI overrides."""
     launcher = argparse.ArgumentParser(add_help=False)
     launcher.add_argument("--config", type=str, default=None)
-    launcher.add_argument("--print_resolved_config", "--print-resolved-config",
-                          action="store_true")
+    launcher.add_argument(
+        "--print_resolved_config",
+        "--print-resolved-config",
+        action="store_true",
+    )
     launcher_args, remaining = launcher.parse_known_args(argv)
 
     parser = build_parser()
@@ -457,185 +457,60 @@ def parse_configured_args(argv: list[str]) -> tuple[argparse.Namespace, Path | N
     args.print_resolved_config = launcher_args.print_resolved_config
     return args, config_path, config_data
 
-def namespace_to_train_config(args: argparse.Namespace) -> tuple[TrainConfig, bool]:
-    """Convert parsed argparse namespace into a normalized TrainConfig."""
-    arg_dict = vars(args).copy()
-    print_resolved_config = bool(arg_dict.pop("print_resolved_config", False))
-    arg_dict.pop("config", None)
-    temp_cfg = TrainConfig(
-        out_dir=arg_dict.get("out_dir", "."),
-        **{k: v for k, v in arg_dict.items() if k != "out_dir"},
+
+def namespace_to_train_config(
+    args: argparse.Namespace,
+) -> tuple[TrainConfig, bool]:
+    """Build the schema-compatible TrainConfig and lock objective identity."""
+    values = vars(args).copy()
+    print_resolved_config = bool(values.pop("print_resolved_config", False))
+    values.pop("config", None)
+    candidate = TrainConfig(**values)
+    objective_class(candidate)
+    normalize_jepa_variant(candidate.variant)
+    candidate.loss_type = normalize_jepa_loss_type(
+        candidate.loss_type,
+        candidate.variant,
     )
-    arg_dict["objective_class"] = objective_class(temp_cfg)
-    arg_dict["variant"] = normalize_experiment_variant(
-        arg_dict["variant"],
-        arg_dict["objective_class"],
-    )
-    if arg_dict["objective_class"] == "jepa":
-        arg_dict["loss_type"] = normalize_jepa_loss_type(
-            arg_dict["loss_type"],
-            arg_dict["variant"],
-        )
-        arg_dict["view_mode"] = normalize_jepa_view_mode(arg_dict["view_mode"])
-    elif arg_dict["objective_class"] == "jepa_hard_disjoint_action":
-        # v6 has its own normalization rules; do not route through the
-        # predictive or contrastive normalizers.
-        loss = arg_dict["loss_type"].lower().replace("-", "_")
-        arg_dict["loss_type"] = "distance_margin" if loss in {"auto", "distance_margin"} else loss
-        view = arg_dict["view_mode"].lower().replace("-", "_")
-        arg_dict["view_mode"] = "hard_disjoint_action" if view in {"hard_disjoint_action", "auto"} else view
-    elif arg_dict["objective_class"] == "jepa_hard_disjoint_infonce":
-        arg_dict["loss_type"] = normalize_contrastive_loss_type(arg_dict["loss_type"])
-        arg_dict["contrastive_loss"] = arg_dict["loss_type"]
-        view = arg_dict["view_mode"].lower().replace("-", "_")
-        arg_dict["view_mode"] = (
-            "hard_disjoint_action"
-            if view in {"auto", "hard_disjoint", "hard_disjoint_future", "hard_disjoint_action"}
-            else view
-        )
-    elif arg_dict["objective_class"] == "jepa_action_conditioned":
-        if arg_dict["loss_mode"] is not None:
-            arg_dict["action_loss_mode"] = arg_dict["loss_mode"]
-        arg_dict["loss_mode"] = arg_dict["action_loss_mode"]
-        arg_dict["loss_type"] = arg_dict["action_loss_mode"]
-        arg_dict["view_mode"] = "nested"
-        arg_dict["prediction_horizon"] = 1
-        arg_dict["use_ema_target"] = True
-    elif arg_dict["objective_class"] == "jepa_order_aware":
-        arg_dict["loss_type"] = "order_aware_infonce"
-        arg_dict["view_mode"] = "order_aware"
-        arg_dict["prediction_horizon"] = 1
-        arg_dict["use_ema_target"] = True
-    elif arg_dict["objective_class"] == "jepa_multiaction":
-        mode_source = arg_dict["rollout_loss_mode"]
-        if str(mode_source).lower().replace("-", "_") == "smooth_l1" and arg_dict["loss_type"] != "auto":
-            mode_source = arg_dict["loss_type"]
-        mode = normalize_multiaction_loss_mode(mode_source)
-        arg_dict["rollout_loss_mode"] = mode
-        arg_dict["loss_type"] = mode
-        arg_dict["view_mode"] = "nested"
-        arg_dict["prediction_horizon"] = int(arg_dict["action_horizon"])
-        arg_dict["use_ema_target"] = True
-    else:
-        arg_dict["loss_type"] = normalize_contrastive_loss_type(arg_dict["loss_type"])
-        arg_dict["contrastive_loss"] = arg_dict["loss_type"]
-        arg_dict["view_mode"] = normalize_jepa_view_mode(arg_dict["view_mode"])
-    return TrainConfig(**arg_dict), print_resolved_config
+    candidate.view_mode = normalize_jepa_view_mode(candidate.view_mode)
+    return candidate, print_resolved_config
+
 
 def validate_train_config(cfg: TrainConfig) -> None:
-    """Validate invariants required by the actual training data path."""
+    """Reject any departure from the final-v5 objective topology."""
+    objective_class(cfg)
+    if normalize_jepa_variant(cfg.variant) != "jepa_v1":
+        raise ValueError("The final JEPA protocol requires variant='v1'.")
+    if normalize_jepa_loss_type(cfg.loss_type, cfg.variant) != "infonce":
+        raise ValueError("The final JEPA protocol requires loss_type='infonce'.")
+    if normalize_jepa_view_mode(cfg.view_mode) != "hard_disjoint_future":
+        raise ValueError(
+            "The final JEPA protocol requires "
+            "view_mode='hard_disjoint_future'."
+        )
+    if cfg.predictor_type != "linear":
+        raise ValueError("The final JEPA protocol requires predictor_type='linear'.")
+    if cfg.prediction_horizon != 1:
+        raise ValueError("The final JEPA protocol requires prediction_horizon=1.")
+    if cfg.position_sampling != "all":
+        raise ValueError("The final JEPA protocol requires position_sampling='all'.")
+    if cfg.use_ema_target is not True:
+        raise ValueError("The final JEPA protocol requires use_ema_target=True.")
+    if cfg.contrastive_loss != "infonce":
+        raise ValueError("The final JEPA protocol requires contrastive_loss='infonce'.")
+    if not cfg.contrastive_use_prefix_mask:
+        raise ValueError("The canonical contrastive prefix mask must remain enabled.")
+    if not (0.0 <= cfg.ema_momentum < 1.0):
+        raise ValueError("ema_momentum must be in [0, 1).")
+    if cfg.contrastive_temperature <= 0:
+        raise ValueError("contrastive_temperature must be positive.")
+    if cfg.board_size not in {8, 12, 16}:
+        raise ValueError("board_size must be one of 8, 12, or 16.")
     if cfg.max_batches_per_chunk < 0:
         raise ValueError("max_batches_per_chunk must be non-negative")
     if cfg.all_position_target_chunk_size < 1:
         raise ValueError("all_position_target_chunk_size must be positive")
     if cfg.all_position_stats_chunk_size < 1:
         raise ValueError("all_position_stats_chunk_size must be positive")
-    if cfg.position_sampling == "all":
-        allpos_objective = objective_class(cfg)
-        if allpos_objective == "jepa_hard_disjoint_action":
-            # v6 all-position path: the distance-margin objective is evaluated at
-            # every prefix boundary via OthelloJEPAHardDisjointAction.forward_all_positions.
-            # The jepa-only loss/view/EMA checks below do not apply — v6 always
-            # uses an EMA target and a fixed length-one target horizon — so the
-            # prefix-grouped sampler and branching invariants remain in force.
-            pass
-        elif allpos_objective != "jepa":
-            raise ValueError(
-                "position_sampling=all supports objective_class=jepa or "
-                f"jepa_hard_disjoint_action; got {allpos_objective!r}"
-            )
-        else:
-            allpos_variant = normalize_jepa_variant(cfg.variant)
-            allpos_loss = jepa_loss_type(cfg)
-            allpos_view = jepa_view_mode(cfg)
-            if allpos_loss not in {"vicreg", "smooth_l1", "infonce"}:
-                raise ValueError(
-                    "position_sampling=all supports loss_type vicreg, smooth_l1, or "
-                    f"infonce; got {allpos_loss!r}"
-                )
-            if allpos_view not in {"hard_disjoint_future", "nested"}:
-                raise ValueError(
-                    "position_sampling=all supports view_mode hard_disjoint_future "
-                    f"or nested; got {allpos_view!r}"
-                )
-            if cfg.prediction_horizon != 1:
-                # K-step all-position supervision (v3/v4) is implemented only for
-                # hard-disjoint futures under smooth_l1; every other combination
-                # is horizon-1 (predict the next token at each boundary).
-                if not (allpos_view == "hard_disjoint_future" and allpos_loss == "smooth_l1"):
-                    raise ValueError(
-                        "position_sampling=all requires prediction_horizon=1 except for "
-                        "view_mode=hard_disjoint_future with loss_type=smooth_l1 (K-step "
-                        f"future supervision); got horizon={cfg.prediction_horizon}, "
-                        f"view={allpos_view!r}, loss={allpos_loss!r}"
-                    )
-            allpos_uses_ema = (
-                bool(cfg.use_ema_target)
-                if cfg.use_ema_target is not None
-                else allpos_variant == "jepa_v2"
-            )
-            if allpos_loss in {"smooth_l1", "infonce"} and not allpos_uses_ema:
-                raise ValueError(
-                    f"position_sampling=all with loss_type={allpos_loss} requires an "
-                    "EMA target encoder (use_ema_target=true or variant v2); a shared "
-                    "encoder has no anti-collapse term for this loss"
-                )
-    if objective_class(cfg) == "jepa_multiaction":
-        if cfg.action_horizon < 1:
-            raise ValueError("v9 requires action_horizon >= 1")
-        if cfg.prediction_horizon != cfg.action_horizon:
-            raise ValueError("v9 requires prediction_horizon == action_horizon")
-        if cfg.view_mode != "nested":
-            raise ValueError("v9 requires view_mode='nested'")
-        if cfg.use_ema_target is not True:
-            raise ValueError("v9 requires use_ema_target=True")
-        if cfg.horizon_weight_gamma <= 0:
-            raise ValueError("horizon_weight_gamma must be positive")
-        if cfg.rollout_loss_mode == "infonce" and cfg.temperature <= 0:
-            raise ValueError("temperature must be positive for v9 InfoNCE")
-        if cfg.lambda_var < 0 or cfg.lambda_cov < 0:
-            raise ValueError("lambda_var and lambda_cov must be non-negative")
-        return
-    if objective_class(cfg) == "jepa_order_aware":
-        grouped_batch_size = cfg.order_groups_per_batch * cfg.order_samples_per_group
-        if cfg.batch_size != grouped_batch_size:
-            raise ValueError(
-                "For v8, batch_size must equal "
-                "order_groups_per_batch * order_samples_per_group "
-                f"({grouped_batch_size}), got {cfg.batch_size}"
-            )
-        if not cfg.pair_index_path:
-            raise ValueError("v8 requires pair_index_path")
-        if cfg.order_t_min < 1 or cfg.order_t_max < cfg.order_t_min:
-            raise ValueError("v8 requires 1 <= order_t_min <= order_t_max")
-        if cfg.order_hard_negatives_per_anchor < 0:
-            raise ValueError("order_hard_negatives_per_anchor must be non-negative")
-        if not 0 <= cfg.order_min_pair_anchors_per_group <= cfg.order_samples_per_group:
-            raise ValueError(
-                "order_min_pair_anchors_per_group must be in "
-                "[0, order_samples_per_group]"
-            )
-        if cfg.order_index_positions_per_game < 0:
-            raise ValueError("order_index_positions_per_game must be non-negative")
-        if not 0.0 < cfg.order_surface_jaccard_threshold <= 1.0:
-            raise ValueError("order_surface_jaccard_threshold must be in (0, 1]")
-        if cfg.order_surface_max_pairs_per_anchor < 1:
-            raise ValueError("order_surface_max_pairs_per_anchor must be positive")
-        if cfg.order_temperature <= 0:
-            raise ValueError("order_temperature must be positive")
-        if cfg.order_utility_early_stop_window < 1:
-            raise ValueError("order_utility_early_stop_window must be positive")
-        if cfg.order_utility_early_stop_min_steps < 0:
-            raise ValueError("order_utility_early_stop_min_steps must be non-negative")
-        return
-    if objective_class(cfg) != "jepa_action_conditioned":
-        return
-    if cfg.action_loss_mode not in {"grouped_infonce", "hybrid"}:
-        return
-    grouped_batch_size = cfg.action_groups_per_batch * cfg.action_samples_per_group
-    if cfg.batch_size != grouped_batch_size:
-        raise ValueError(
-            "For v7 grouped losses, batch_size must equal "
-            "action_groups_per_batch * action_samples_per_group "
-            f"({grouped_batch_size}), got {cfg.batch_size}"
-        )
+    if cfg.variance_eps <= 0:
+        raise ValueError("variance_eps must be positive")

@@ -1,4 +1,4 @@
-"""Internal implementation module extracted from the canonical JEPA trainer."""
+"""Configuration and YAML records for the final canonical JEPA trainer."""
 
 from __future__ import annotations
 
@@ -309,13 +309,16 @@ def write_config_records(
     with open(out_dir / "resolved_train_config.yml", "w", encoding="utf-8") as f:
         yaml.safe_dump(record, f, sort_keys=False)
 
+
 def jepa_variant(cfg: TrainConfig) -> str:
-    """Return the internal predictive JEPA target topology."""
+    """Return the only topology tag accepted by the main experiment."""
     return normalize_jepa_variant(cfg.variant)
 
+
 def jepa_loss_type(cfg: TrainConfig) -> str:
-    """Return the normalized configured JEPA loss."""
+    """Return the canonical InfoNCE loss after strict validation."""
     return normalize_jepa_loss_type(cfg.loss_type, cfg.variant)
+
 
 def normalize_contrastive_variant(value: str) -> str:
     """Normalize contrastive experiment aliases without predictive JEPA rules."""
@@ -334,14 +337,9 @@ def normalize_contrastive_variant(value: str) -> str:
         raise ValueError(f"Unknown contrastive variant {value!r}. Valid values: {valid}")
     return aliases[normalized]
 
-def normalize_experiment_variant(value: str, objective_class_name: str) -> str:
-    """Normalize public experiment labels to the canonical ``v1``..``v6`` set.
 
-    ``variant`` is the thesis experiment family shown in configs and logs.
-    ``objective_class`` selects the implementation module, while objective
-    config builders translate the public label to legacy internal topology
-    names where checkpoint reconstruction requires them.
-    """
+def normalize_experiment_variant(value: str, objective_class_name: str) -> str:
+    """Normalize legacy public experiment labels for copied dead branches."""
     normalized = value.lower().replace("-", "_")
     aliases = {
         "v1": "v1",
@@ -421,6 +419,7 @@ def normalize_experiment_variant(value: str, objective_class_name: str) -> str:
         )
     return canonical
 
+
 def normalize_contrastive_loss_type(value: str) -> str:
     """Normalize contrastive loss aliases."""
     normalized = value.lower().replace("-", "_")
@@ -434,6 +433,7 @@ def normalize_contrastive_loss_type(value: str) -> str:
         valid = ", ".join(sorted(aliases))
         raise ValueError(f"Unknown contrastive loss_type {value!r}. Valid values: {valid}")
     return aliases[normalized]
+
 
 def normalize_multiaction_loss_mode(value: str) -> str:
     """Normalize v9 rollout loss aliases."""
@@ -452,52 +452,22 @@ def normalize_multiaction_loss_mode(value: str) -> str:
         raise ValueError(f"Unknown v9 rollout_loss_mode {value!r}. Valid values: {valid}")
     return aliases[normalized]
 
+
 def jepa_view_mode(cfg: TrainConfig) -> str:
-    """Return the normalized configured JEPA view mode."""
+    """Return the canonical hard-disjoint view after strict validation."""
     return normalize_jepa_view_mode(cfg.view_mode)
 
+
 def objective_class(cfg: TrainConfig) -> str:
-    """Return the normalized objective implementation name."""
-    normalized = cfg.objective_class.lower().replace("-", "_")
-    aliases = {
-        "jepa": "jepa",
-        "predictive": "jepa",
-        "jepa_predictive": "jepa",
-        "jepa_contrastive": "jepa_contrastive",
-        "contrastive": "jepa_contrastive",
-        "v5": "jepa_contrastive",
-        "jepa_hard_disjoint_infonce": "jepa_hard_disjoint_infonce",
-        "hard_disjoint_infonce": "jepa_hard_disjoint_infonce",
-        "v5_hard_disjoint": "jepa_hard_disjoint_infonce",
-        "v5_hard_disjoint_infonce": "jepa_hard_disjoint_infonce",
-        "jepa_hard_disjoint_action": "jepa_hard_disjoint_action",
-        "hard_disjoint_action": "jepa_hard_disjoint_action",
-        "v6": "jepa_hard_disjoint_action",
-        "jepa_action_conditioned": "jepa_action_conditioned",
-        "action_conditioned": "jepa_action_conditioned",
-        "v7": "jepa_action_conditioned",
-        "jepa_order_aware": "jepa_order_aware",
-        "order_aware": "jepa_order_aware",
-        "v8": "jepa_order_aware",
-        "jepa_multiaction": "jepa_multiaction",
-        "jepa_multi_action": "jepa_multiaction",
-        "multiaction": "jepa_multiaction",
-        "multi_action": "jepa_multiaction",
-        "jepa_v9_multiaction": "jepa_multiaction",
-        "v9": "jepa_multiaction",
-        "v9a": "jepa_multiaction",
-        "v9b": "jepa_multiaction",
-        "family_infonce": "family_infonce",
-        "family": "family_infonce",
-        "transposition_family": "family_infonce",
-    }
-    if normalized not in aliases:
-        valid = ", ".join(sorted(aliases))
-        raise ValueError(f"Unknown objective_class {cfg.objective_class!r}. Valid values: {valid}")
-    return aliases[normalized]
+    """Reject every objective outside the final generic JEPA path."""
+    if cfg.objective_class != "jepa":
+        raise ValueError(
+            "The main experiment supports only objective_class='jepa'; "
+            "historical objectives are available under JEPA_Experimentation."
+        )
+    return "jepa"
+
 
 def objective_horizon(cfg: TrainConfig) -> int:
-    """Return how many future tokens must be valid for this objective."""
-    if objective_class(cfg) == "jepa_multiaction":
-        return cfg.action_horizon
+    """Return the configured horizon; validation locks it to one."""
     return cfg.prediction_horizon

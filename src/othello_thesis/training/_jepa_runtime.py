@@ -237,6 +237,7 @@ def unwrap_model(model: torch.nn.Module) -> torch.nn.Module:
     """Unwrap torch.compile modules when calling custom JEPA methods."""
     return model._orig_mod if hasattr(model, "_orig_mod") else model
 
+@torch.no_grad()
 def update_target_encoder(model: torch.nn.Module) -> None:
     """Apply target update on the underlying objective module, if present."""
     raw_model = unwrap_model(model)

@@ -341,6 +341,7 @@ def train_one_chunk(
         skipped_samples,
     )
 
+@torch.no_grad()
 def eval_chunks(
     model: torch.nn.Module,
     chunks: list[Path],
