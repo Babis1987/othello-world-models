@@ -67,9 +67,26 @@ python -m pytest tests/equivalence -q --basetemp <OS_TEMP_PATH>
 The local suite also locks repeated EMA updates, the source's chunk-boundary
 and fraction-checkpoint resume semantics, and the exact notebook-facing and
 config-driven CLI artifact trees mirrored to a temporary Drive stand-in. That
-mirror verifies synchronization behaviour only; the final sibling's real
-Google Drive backup location remains an external Phase 7 check.
+mirror verifies synchronization behaviour. The separate Phase 7 location
+check confirmed that this repository is backed up at
+`Computers/MyLaptop/Master_Thesis_Code_Final`
+([Drive folder](https://drive.google.com/drive/folders/1KiEFyzXhupI_xFpAtjphbicw6AlBlIUd)).
 
 Local Mamba equivalence uses the explicit pure-PyTorch test backend. The
-official `mamba-ssm==2.3.2.post1` path remains locked for a final Colab smoke
-test on the thesis runtime.
+official `mamba-ssm==2.3.2.post1` gate passed in an isolated no-write Colab
+runtime with the successor source environment lock's Torch `2.11.0+cu128` /
+CUDA `12.8` software stack. The synchronized script SHA-256 was
+`5dcb249f3153851fd96dd723ed3177200d2bb5f1fd95abddd1a62546259d64e2`.
+It constructed the production model and completed the required BF16
+forward/backward, gradient clip, and AdamW parameter update with the official
+mixers. To reproduce it after mounting this repository and installing the
+locked packages, run:
+
+```bash
+python tools/smoke_official_mamba.py
+```
+
+The script writes no training artifacts and succeeds only after printing
+`OFFICIAL_MAMBA_SMOKE_PASS`. It also exercises all 15 official length-one
+layers, forces a diagnostic parity drift, and verifies that the fast path stays
+enabled through a finite backward pass.

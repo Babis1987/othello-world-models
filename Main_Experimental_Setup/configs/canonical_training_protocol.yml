@@ -1,4 +1,11 @@
 schema_version: thesis_seeded_replication_v1
+
+# Completed runs under this predecessor protocol remain authoritative.  The
+# successor changes only resume control flow: it prevents the algebraic Mamba
+# length-one path from switching to selective-scan after a reconnect and makes
+# orchestrator copies atomic.  It does not rewrite their provenance manifests.
+compatible_completed_protocol_sha256:
+  - d2180dc9a4115b40558804131b36a4bf10864d50b6fde5e8432193486e9c2562
 protocol_name: canonical_bf16_seed_replication
 
 # The completed headline runs used seed 42.  Four additional, conventional
@@ -16,7 +23,9 @@ runtime:
 # The orchestrator lives under scripts/, outside the locked mathematical
 # package source and outside the Common Evaluator's othello_research digest.
 source_lock:
-  expected_training_source_sha256: 73a3bc58e5388a9973d7bf57116563df16e5f054c899fdfb1e006ca23155d29f
+  expected_training_source_sha256: fca01c08e77a4f99e05158d608067017ccafe9132a8fb87b00867a5ed66b0583
+  compatible_completed_training_source_sha256:
+    - 73a3bc58e5388a9973d7bf57116563df16e5f054c899fdfb1e006ca23155d29f
   include:
     - othello_research/training
     - othello_research/models

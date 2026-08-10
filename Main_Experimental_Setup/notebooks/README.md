@@ -15,7 +15,7 @@ only `BOARD_SIZE` at the top to select 8, 12, or 16.
 
 - `BOARD_SIZE` defaults to 12.
 - `RUN_PROFILE` defaults to `"smoke"`; change it to `"full"` only after the
-  one-batch gate succeeds.
+  smoke gate succeeds: one input shard for AR and one batch for JEPA.
 - A model factory is defined visibly in each notebook and is invoked exactly
   once by the trainer after the seed is set. There is no preview-model
   construction that can move the global Torch RNG.
@@ -24,6 +24,15 @@ only `BOARD_SIZE` at the top to select 8, 12, or 16.
   progress output, or Drive synchronization.
 - The official Mamba notebooks pin `mamba-ssm==2.3.2.post1` and
   `causal-conv1d==1.6.2.post1`.
+
+The final production-backend gate is stricter than the notebooks' package
+metadata check. It passed in an isolated Colab runtime using the successor
+source environment lock's Torch `2.11.0+cu128` / CUDA `12.8` software stack.
+To repeat it, run `python tools/smoke_official_mamba.py` from the repository
+root and require `OFFICIAL_MAMBA_SMOKE_PASS`. The script constructs the exact
+board-12 geometry and executes one no-write BF16 optimizer step. It also checks
+all 15 length-one layers and proves that a forced parity warning cannot disable
+the resume-stable fast path.
 
 ## Colab path
 
