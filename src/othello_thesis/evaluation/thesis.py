@@ -261,6 +261,7 @@ def prepare_evaluation(
     overwrite_incompatible: bool = False,
     allow_source_drift: bool = False,
     config_overrides: Mapping[str, Any] | None = None,
+    output_subdir: str | Path = Path("thesis_eval") / "final",
 ) -> PreparedEvaluation:
     case = resolve_case(
         architecture,
@@ -373,7 +374,10 @@ def prepare_evaluation(
         "training_python": checkpoint.get("python_version"),
         "training_metrics": training_metrics,
     }
-    output_dir = run_dir / "thesis_eval" / "final"
+    output_subdir = Path(output_subdir)
+    if output_subdir.is_absolute() or ".." in output_subdir.parts:
+        raise ValueError("output_subdir must stay inside the selected run directory")
+    output_dir = run_dir / output_subdir
     evaluator = UnifiedEvaluator(
         encoder=encoder,
         native_ar_model=primary_model if case.objective == "ar" else None,
@@ -1369,7 +1373,6 @@ def run_complete_evaluation(
     prepared: PreparedEvaluation,
     *,
     include_random_board_control: bool = False,
-    include_causal_intervention: bool = False,
     overwrite_incompatible: bool = False,
     allow_source_drift: bool = False,
     registry_path: str | Path = DEFAULT_REGISTRY,
@@ -1381,7 +1384,6 @@ def run_complete_evaluation(
     total_stages = (
         (5 if prepared.case.objective == "ar" else 6)
         + int(include_random_board_control)
-        + int(include_causal_intervention)
     )
 
     def run_stage(label: str, action):
@@ -1433,11 +1435,6 @@ def run_complete_evaluation(
         "MLP board-state probe",
         lambda: evaluator.run_board_probe("mlp", force=mlp_force),
     )
-    if include_causal_intervention:
-        run_stage(
-            "Nanda-style causal intervention",
-            evaluator.run_causal_intervention,
-        )
     run_stage("primary summary", evaluator.write_summary)
     random_path = None
     if include_random_board_control:
@@ -1477,8 +1474,5 @@ def run_complete_evaluation(
         "summary": prepared.output_dir / f"summary__{PROTOCOL_ID}.md",
         "proposal_report": proposal_report,
         "random_control": random_path,
-        "causal_intervention": (
-            evaluator.results_path if include_causal_intervention else None
-        ),
         "factorial_report": factorial_report,
     }

@@ -34,8 +34,14 @@ historical material, not the final main objective.
 
 - four training notebooks, one per architecture-objective cell;
 - `common_evaluation.ipynb` for one selected canonical run;
+- `causal_intervention.ipynb` for the independent Li, Nanda, and historical
+  adapted causal-intervention comparison;
 - `comparative_analysis_v3.ipynb` for within-board comparisons and
   cross-board trajectories of controlled effects.
+
+The common evaluator no longer runs causal interventions. Existing common
+evaluation artifacts are left unchanged, while new causal outputs are written
+to a separate resumable directory under the selected external run.
 
 Training notebooks default to `BOARD_SIZE = 12` and `RUN_PROFILE = "smoke"`.
 Each exposes the actual model factory and constructs the model only once after

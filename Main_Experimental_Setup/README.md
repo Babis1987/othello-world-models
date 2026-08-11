@@ -18,6 +18,19 @@ selectors. Each notebook fixes its architecture/objective and exposes
 the trainer invokes exactly once after seeding, so inspecting the model does
 not perturb the RNG sequence used by initialization or DataLoader shuffling.
 
+## Evaluation frontends
+
+- `notebooks/common_evaluation.ipynb` runs the shared legal-move, frozen-head,
+  board-probe, summary, and comparison protocol. It does not run causal
+  interventions.
+- `notebooks/causal_intervention.ipynb` independently selects Architecture,
+  Objective, and board size and compares the Li et al., Nanda et al., and
+  historical adapted interventions. It writes below the selected run's
+  separate `causal_intervention/` tree and never rewrites existing common
+  evaluation results.
+- `notebooks/comparative_analysis_v3.ipynb` builds the controlled comparison
+  reports from completed common evaluations.
+
 ## Final JEPA method
 
 The main experiment uses the generic `OthelloJEPA` topology with:

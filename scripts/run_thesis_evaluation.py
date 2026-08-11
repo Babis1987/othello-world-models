@@ -82,14 +82,6 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
-        "--include-causal-intervention",
-        action="store_true",
-        help=(
-            "On 8x8, run the Nanda-style relative-board residual intervention "
-            "with null and magnitude-matched random controls."
-        ),
-    )
-    parser.add_argument(
         "--skip-head-tuning",
         action="store_true",
         help=(
@@ -193,7 +185,6 @@ def main() -> None:
     outputs = run_complete_evaluation(
         prepared,
         include_random_board_control=args.include_random_control,
-        include_causal_intervention=args.include_causal_intervention,
         overwrite_incompatible=args.overwrite_incompatible,
         allow_source_drift=args.allow_source_drift,
         registry_path=args.registry,
