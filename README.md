@@ -1,4 +1,4 @@
-# Master Thesis Code — Final
+# Othello-world-models
 
 Clean, reproducible presentation of the Othello world-model thesis while the
 original sibling `Master_Thesis_Code` remains the read-only behavioural oracle.
