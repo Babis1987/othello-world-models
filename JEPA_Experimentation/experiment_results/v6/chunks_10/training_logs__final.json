@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "config_name": "jepa_v6_hard_disjoint_action.yml",
+    "config_path": "/content/drive/Othercomputers/MyLaptop/Master_Thesis_Code/configs/jepa_v6_hard_disjoint_action.yml",
+    "run_name": "jepa_v6_hard_disjoint_action_run_001",
+    "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v6_hard_disjoint_action_run_001/chunks_10",
+    "checkpoint_name": "final.pt",
+    "checkpoint_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v6_hard_disjoint_action_run_001/final.pt",
+    "checkpoint_stem": "final",
+    "eval_head_train_chunks": 10,
+    "step": 13657,
+    "games_seen": 4999952,
+    "tokens_seen": 3496192,
+    "experiment_config": {
+      "experiment": {
+        "name": "jepa_v6_hard_disjoint_action_run_001",
+        "variant": "jepa_v6_hard_disjoint_action",
+        "description": "Hard-disjoint action-anchored JEPA with multi-mode predictor and distance-margin loss.",
+        "notes": "Pretrain budget is 50 chunks by default so multiple architectural\nvariants can be screened quickly before committing to a full 200-chunk\nrun on the best two or three.\n"
+      },
+      "paths": {
+        "data_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8",
+        "out_dir": "/content/runs/jepa_v6_hard_disjoint_action_run_001",
+        "drive_sync_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v6_hard_disjoint_action_run_001",
+        "drive_sync_every_chunks": 5
+      },
+      "data": {
+        "board_size": 8,
+        "li_split_train_chunks": 10
+      },
+      "objective": {
+        "objective_class": "jepa_hard_disjoint_action",
+        "loss_type": "distance_margin",
+        "view_mode": "hard_disjoint_action",
+        "use_ema_target": true,
+        "ema_momentum": 0.996,
+        "hard_disjoint_num_modes": 10,
+        "hard_disjoint_margin": 1.0,
+        "hard_disjoint_lambda_push": 1.0,
+        "hard_disjoint_normalize": true,
+        "hard_disjoint_dedup_negative_actions": true,
+        "log_collapse_stats_every_steps": 100,
+        "collapse_warning_z_std": 0.1,
+        "collapse_warning_cos_sim": 0.95
+      },
+      "model": {
+        "n_layers": 8,
+        "n_heads": 8,
+        "d_model": 512,
+        "dropout": 0.1
+      },
+      "predictor": {
+        "predictor_type": "mlp_modes",
+        "predictor_hidden_mult": 4,
+        "predictor_n_layers": 2,
+        "predictor_activation": "gelu",
+        "predictor_dropout": 0.0
+      },
+      "branching": {
+        "branch_t_min": 4,
+        "branch_t_max": 10,
+        "branch_groups_per_batch": 64,
+        "branch_samples_per_group": 4
+      },
+      "optim": {
+        "batch_size": 256,
+        "learning_rate": "3e-4",
+        "min_lr_ratio": 0.1,
+        "weight_decay": 0.01,
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "grad_clip": 1.0,
+        "warmup_steps": 1000,
+        "passes_over_data": 1,
+        "games_per_chunk": 100000,
+        "precision": "bf16"
+      },
+      "eval": {
+        "eval_chunks": 1,
+        "eval_every_chunks": 5
+      },
+      "checkpointing": {
+        "checkpoint_every_chunks": 0,
+        "milestone_games": "1000000,5000000,10000000",
+        "intermediate_checkpoint_fractions": [
+          0.1,
+          0.25,
+          0.5
+        ]
+      },
+      "runtime": {
+        "num_workers": 0,
+        "seed": 42
+      },
+      "wandb": {
+        "wandb_project": "",
+        "wandb_entity": "",
+        "wandb_run_name": "",
+        "wandb_mode": "online"
+      }
+    },
+    "generated_at": "2026-06-04T11:38:01.730134Z"
+  },
+  "sections": [
+    {
+      "title": "Linear Head Training (frozen JEPA context encoder, all valid next-move positions)",
+      "description": "Per-chunk training of a linear next-move head on top of the frozen JEPA context encoder.",
+      "config": {
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0,
+        "precision": "bf16",
+        "n_chunks": 10
+      },
+      "logs": [
+        {
+          "time": "2026-06-04 10:26:12",
+          "chunk": "1",
+          "step": "196",
+          "games_seen": "99997",
+          "tokens_seen": "5896508",
+          "chunk_games": "99997",
+          "chunk_tokens": "5896508",
+          "train_loss": "3.799670108762686",
+          "train_acc": "0.06337106640065612",
+          "lr": "0.001",
+          "dt_seconds": "9.58756947517395",
+          "chunk_file": "gen10e5__20220324_153929.pickle"
+        },
+        {
+          "time": "2026-06-04 10:26:22",
+          "chunk": "2",
+          "step": "392",
+          "games_seen": "199996",
+          "tokens_seen": "11793119",
+          "chunk_games": "99999",
+          "chunk_tokens": "5896611",
+          "train_loss": "3.697956519296306",
+          "train_acc": "0.07235902113943077",
+          "lr": "0.001",
+          "dt_seconds": "9.305729389190674",
+          "chunk_file": "gen10e5__20220324_153933.pickle"
+        },
+        {
+          "time": "2026-06-04 10:26:39",
+          "chunk": "3",
+          "step": "588",
+          "games_seen": "299995",
+          "tokens_seen": "17689549",
+          "chunk_games": "99999",
+          "chunk_tokens": "5896430",
+          "train_loss": "3.6772213246392647",
+          "train_acc": "0.07433107829652857",
+          "lr": "0.001",
+          "dt_seconds": "17.53860378265381",
+          "chunk_file": "gen10e5__20220324_154002.pickle"
+        },
+        {
+          "time": "2026-06-04 10:26:49",
+          "chunk": "4",
+          "step": "784",
+          "games_seen": "399995",
+          "tokens_seen": "23586529",
+          "chunk_games": "100000",
+          "chunk_tokens": "5896980",
+          "train_loss": "3.665043363395528",
+          "train_acc": "0.07563362941709147",
+          "lr": "0.001",
+          "dt_seconds": "9.411123037338257",
+          "chunk_file": "gen10e5__20220324_154021.pickle"
+        },
+        {
+          "time": "2026-06-04 10:26:57",
+          "chunk": "5",
+          "step": "980",
+          "games_seen": "499994",
+          "tokens_seen": "29483738",
+          "chunk_games": "99999",
+          "chunk_tokens": "5897209",
+          "train_loss": "3.655734712283819",
+          "train_acc": "0.07640376998678527",
+          "lr": "0.001",
+          "dt_seconds": "8.80051302909851",
+          "chunk_file": "gen10e5__20220324_154028.pickle"
+        },
+        {
+          "time": "2026-06-04 10:27:07",
+          "chunk": "6",
+          "step": "1176",
+          "games_seen": "599993",
+          "tokens_seen": "35380737",
+          "chunk_games": "99999",
+          "chunk_tokens": "5896999",
+          "train_loss": "3.648771367342744",
+          "train_acc": "0.0770067961686953",
+          "lr": "0.001",
+          "dt_seconds": "9.188985586166382",
+          "chunk_file": "gen10e5__20220324_154032.pickle"
+        },
+        {
+          "time": "2026-06-04 10:27:15",
+          "chunk": "7",
+          "step": "1372",
+          "games_seen": "699992",
+          "tokens_seen": "41277283",
+          "chunk_games": "99999",
+          "chunk_tokens": "5896546",
+          "train_loss": "3.6430685208192934",
+          "train_acc": "0.07757015717336896",
+          "lr": "0.001",
+          "dt_seconds": "8.583935499191284",
+          "chunk_file": "gen10e5__20220324_154036.pickle"
+        },
+        {
+          "time": "2026-06-04 10:27:24",
+          "chunk": "8",
+          "step": "1568",
+          "games_seen": "799992",
+          "tokens_seen": "47173862",
+          "chunk_games": "100000",
+          "chunk_tokens": "5896579",
+          "train_loss": "3.6389055324716986",
+          "train_acc": "0.07776475139229035",
+          "lr": "0.001",
+          "dt_seconds": "8.628648519515991",
+          "chunk_file": "gen10e5__20220324_154038.pickle"
+        },
+        {
+          "time": "2026-06-04 10:27:32",
+          "chunk": "9",
+          "step": "1764",
+          "games_seen": "899991",
+          "tokens_seen": "53070125",
+          "chunk_games": "99999",
+          "chunk_tokens": "5896263",
+          "train_loss": "3.634792973093143",
+          "train_acc": "0.07819970038649904",
+          "lr": "0.001",
+          "dt_seconds": "8.558093786239624",
+          "chunk_file": "gen10e5__20220324_154043.pickle"
+        },
+        {
+          "time": "2026-06-04 10:27:41",
+          "chunk": "10",
+          "step": "1960",
+          "games_seen": "999991",
+          "tokens_seen": "58966873",
+          "chunk_games": "100000",
+          "chunk_tokens": "5896748",
+          "train_loss": "3.631438463422631",
+          "train_acc": "0.07841254196380784",
+          "lr": "0.001",
+          "dt_seconds": "8.592257261276245",
+          "chunk_file": "gen10e5__20220324_154048.pickle"
+        }
+      ]
+    }
+  ]
+}

@@ -35,8 +35,10 @@ cases:
         - runs/Transformer-AR/transformer_ar_b16
     jepa:
       8:
-        - runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16
-        - runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b8
+        # The historical root path was overwritten by a 256-game seeded smoke
+        # on 2026-08-05.  The preserved 19,999,840-game headline checkpoint
+        # used by common thesis evaluation lives in the organized tree below.
+        - runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16
       12:
         - runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b12
       16:

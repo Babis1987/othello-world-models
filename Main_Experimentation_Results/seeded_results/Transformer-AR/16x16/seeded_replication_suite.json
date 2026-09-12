@@ -1,0 +1,38 @@
+{
+  "schema_version": "thesis_seeded_replication_suite_v1",
+  "architecture": "transformer",
+  "objective": "ar",
+  "board_size": 16,
+  "seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "records": [
+    {
+      "seed": 0,
+      "status": "trained",
+      "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Transformer-AR/transformer_ar_b16/seed_000",
+      "checkpoint_sha256": "1fab25e92011b84d29d64657b993ed04653436011cfa8a6870a31c8eec1aa4f9"
+    },
+    {
+      "seed": 1,
+      "status": "trained",
+      "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Transformer-AR/transformer_ar_b16/seed_001",
+      "checkpoint_sha256": "e945a9010c1efb9ab251f997c9502a223fac094630418b005dab44368747c302"
+    },
+    {
+      "seed": 2,
+      "status": "trained",
+      "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Transformer-AR/transformer_ar_b16/seed_002",
+      "checkpoint_sha256": "2839b9b76efea48101943b3f7a8984b550ecdab9ed2097abde38421f6b46bd88"
+    },
+    {
+      "seed": 3,
+      "status": "trained",
+      "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Transformer-AR/transformer_ar_b16/seed_003",
+      "checkpoint_sha256": "8d632f09d64539ce21780222f8d84a7bb3dab0d94d406c31baae492765766d99"
+    }
+  ]
+}

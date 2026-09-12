@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "config_name": "jepa_v2_ema_b8_hard_disjoint.yml",
+    "config_path": "/content/drive/Othercomputers/MyLaptop/Master_Thesis_Code/configs/jepa_v2_ema_b8_hard_disjoint.yml",
+    "run_name": "jepa_transformer_b8_run_001_hard_disjoint",
+    "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_transformer_b8_run_001_hard_disjoint",
+    "checkpoint_name": "final.pt",
+    "checkpoint_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_transformer_b8_run_001_hard_disjoint/final.pt",
+    "checkpoint_stem": "final",
+    "eval_head_train_chunks": 50,
+    "step": null,
+    "games_seen": null,
+    "tokens_seen": null,
+    "experiment_config": {
+      "experiment": {
+        "name": "jepa_transformer_b8_run_001_hard_disjoint",
+        "variant": "v2",
+        "description": "EMA-target JEPA with transformer predictor and hard-disjoint future targets on 8x8 Othello.",
+        "notes": "Hard-disjoint variant of v2. The context encoder sees x[:t], while the\nEMA target encoder sees only x[t:t+K] and never the prefix. Loss,\npredictor, EMA, and optimization settings match the original v2 config.\n"
+      },
+      "paths": {
+        "data_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8",
+        "out_dir": "/content/runs/jepa_transformer_b8_run_001_hard_disjoint",
+        "drive_sync_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_transformer_b8_run_001_hard_disjoint",
+        "drive_sync_every_chunks": 5
+      },
+      "data": {
+        "board_size": 8,
+        "li_split_train_chunks": 50
+      },
+      "model": {
+        "n_layers": 8,
+        "n_heads": 8,
+        "d_model": 512,
+        "dropout": 0.1
+      },
+      "predictor": {
+        "predictor_type": "transformer",
+        "predictor_n_layers": 4,
+        "predictor_n_heads": 8
+      },
+      "objective": {
+        "view_mode": "hard_disjoint_future",
+        "loss_type": "smooth_l1",
+        "prediction_horizon": 4,
+        "use_ema_target": true,
+        "ema_momentum": 0.996,
+        "smooth_l1_beta": 1.0,
+        "window_sample_attempts": 8
+      },
+      "optim": {
+        "batch_size": 512,
+        "learning_rate": "3e-4",
+        "min_lr_ratio": 0.1,
+        "weight_decay": 0.01,
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "grad_clip": 1.0,
+        "warmup_steps": 1000,
+        "passes_over_data": 1,
+        "precision": "bf16"
+      },
+      "eval": {
+        "eval_chunks": 1,
+        "eval_every_chunks": 5
+      },
+      "checkpointing": {
+        "milestone_games": "1000000,5000000,10000000,15000000,20000000"
+      },
+      "runtime": {
+        "num_workers": 0,
+        "seed": 42
+      }
+    },
+    "generated_at": "2026-06-08T18:24:21.260509Z"
+  },
+  "sections": []
+}

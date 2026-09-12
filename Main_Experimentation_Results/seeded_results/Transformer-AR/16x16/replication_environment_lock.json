@@ -1,0 +1,19 @@
+{
+  "schema_version": "thesis_seeded_replication_environment_v1",
+  "created_utc": "2026-08-13T07:03:01.770635+00:00",
+  "fingerprint": {
+    "python": "3.12.13",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "torch": "2.11.0+cu128",
+    "torch_cuda": "12.8",
+    "cudnn": 91900,
+    "cuda_available": true,
+    "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "gpu_capability": [
+      12,
+      0
+    ],
+    "mamba_ssm": null,
+    "causal_conv1d": null
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "thesis_seeded_replication_run_v1",
+  "completed_utc": "2026-08-05T13:53:37.811429+00:00",
+  "identity": {
+    "architecture": "transformer",
+    "objective": "jepa",
+    "board_size": 8,
+    "seed": 0,
+    "original_seed": 42,
+    "base_run_name": "jepa_v5_infonce_b8_run_001_hd_allpos_bf16",
+    "seed42_reference_status": "completed"
+  },
+  "equivalence": {
+    "allowed_mutations": [
+      "drive_sync_dir",
+      "experiment_name",
+      "out_dir",
+      "resume",
+      "seed",
+      "wandb_run_name"
+    ],
+    "resolved_differences_from_seed42": {
+      "drive_sync_dir": [
+        "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16",
+        "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_000"
+      ],
+      "out_dir": [
+        "/content/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16",
+        "/content/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_000"
+      ],
+      "seed": [
+        42,
+        0
+      ]
+    }
+  },
+  "locks": {
+    "protocol_sha256": "d2180dc9a4115b40558804131b36a4bf10864d50b6fde5e8432193486e9c2562",
+    "training_source_sha256": "73a3bc58e5388a9973d7bf57116563df16e5f054c899fdfb1e006ca23155d29f",
+    "config:jepa_v5_infonce_b8_hd_all_positions.yml": "73221f6c83fb5c743bcdcd5dd1e469ce4bab63eef457c04a0741cdba3170afaf",
+    "config:jepa_v5_infonce_b12_hd_all_positions.yml": "688d952cde6e88dd539fe3f3789564ee8f1cc4921435a51e13851e6829aa839c",
+    "config:jepa_v5_infonce_b16_hd_all_positions.yml": "c6e1eee3d195013be75473ca13f713e1ea909907a4edcf37f57cd97c7e72ae0e",
+    "config:mamba_jepa_v5_hd_infonce_b8_all_positions.yml": "81a3a330279becb5f5c65a3e9f4a4d4ac56e39bcb6431a5492abc2222ed7ea2c",
+    "config:mamba_jepa_v5_hd_infonce_b12_all_positions.yml": "f7c42e6dce5f6a171a89df5796e0072ba8ea5f7028d29569567a36c8770cc4d5",
+    "config:mamba_jepa_v5_hd_infonce_b16_all_positions.yml": "7d0844c6816953062bb3ede4598ca5ddd325ec4a589da1e0930535f73c1e474c",
+    "data_manifest_sha256": "a0994e3e27b032e593894e0fc9f2626094b4b75e91179f4803fd0f23939b1325",
+    "environment_lock": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/replication_environment_lock.json"
+  },
+  "artifacts": {
+    "final_checkpoint": "/content/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_000/final.pt",
+    "final_checkpoint_bytes": 408305335,
+    "final_checkpoint_sha256": "37d4dd61621ee4b0c1e8eace9422e22c26776978fc8279e8872e2f06f1a71351",
+    "train_config": "/content/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_000/train_config.json"
+  }
+}

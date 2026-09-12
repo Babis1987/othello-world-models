@@ -1,0 +1,1643 @@
+{
+  "features": [
+    "ply_index",
+    "parity",
+    "n_occupied",
+    "n_legal_moves",
+    "last_move_position",
+    "corner_occupancy",
+    "edge_occupancy"
+  ],
+  "layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "metrics": {
+    "ply_index": {
+      "0": {
+        "metric": "r2",
+        "r2": 0.9711486490950252,
+        "train": {
+          "r2": 0.9708231590474886,
+          "mae": 2.118443012237549,
+          "rmse": 2.9030611515045166,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9711486490950252,
+          "mae": 2.111063003540039,
+          "rmse": 2.8734538555145264,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "1": {
+        "metric": "r2",
+        "r2": 0.918989612051946,
+        "train": {
+          "r2": 0.9173052669168879,
+          "mae": 3.60606050491333,
+          "rmse": 4.887378692626953,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.918989612051946,
+          "mae": 3.5698065757751465,
+          "rmse": 4.814947128295898,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "2": {
+        "metric": "r2",
+        "r2": 0.9122640446573335,
+        "train": {
+          "r2": 0.9101698335803752,
+          "mae": 3.923846483230591,
+          "rmse": 5.093873500823975,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9122640446573335,
+          "mae": 3.8800063133239746,
+          "rmse": 5.010833263397217,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "3": {
+        "metric": "r2",
+        "r2": 0.9367019870113249,
+        "train": {
+          "r2": 0.9368200974792726,
+          "mae": 3.289900302886963,
+          "rmse": 4.271953582763672,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9367019870113249,
+          "mae": 3.2746872901916504,
+          "rmse": 4.256142616271973,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "4": {
+        "metric": "r2",
+        "r2": 0.9126836517059074,
+        "train": {
+          "r2": 0.9187553595943794,
+          "mae": 3.8002030849456787,
+          "rmse": 4.844337463378906,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9126836517059074,
+          "mae": 3.9252116680145264,
+          "rmse": 4.998836517333984,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "5": {
+        "metric": "r2",
+        "r2": 0.9242556487763905,
+        "train": {
+          "r2": 0.9323499967024539,
+          "mae": 3.283130168914795,
+          "rmse": 4.420495510101318,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9242556487763905,
+          "mae": 3.3938496112823486,
+          "rmse": 4.655821323394775,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "6": {
+        "metric": "r2",
+        "r2": 0.9397864670144349,
+        "train": {
+          "r2": 0.9422583169133999,
+          "mae": 3.175057888031006,
+          "rmse": 4.083962440490723,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9397864670144349,
+          "mae": 3.252828598022461,
+          "rmse": 4.151147842407227,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "7": {
+        "metric": "r2",
+        "r2": 0.9314213998871348,
+        "train": {
+          "r2": 0.9319932926526344,
+          "mae": 3.4594335556030273,
+          "rmse": 4.432134628295898,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9314213998871348,
+          "mae": 3.4657042026519775,
+          "rmse": 4.43011999130249,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "8": {
+        "metric": "r2",
+        "r2": 0.9330429436621626,
+        "train": {
+          "r2": 0.935486408830292,
+          "mae": 3.347677230834961,
+          "rmse": 4.316807270050049,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9330429436621626,
+          "mae": 3.3867719173431396,
+          "rmse": 4.3774309158325195,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      }
+    },
+    "parity": {
+      "0": {
+        "metric": "accuracy",
+        "accuracy": 0.9655,
+        "train": {
+          "loss": 0.24528697793483734,
+          "accuracy": 0.95725,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.23706167936325073,
+          "accuracy": 0.9655,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      },
+      "1": {
+        "metric": "accuracy",
+        "accuracy": 0.655,
+        "train": {
+          "loss": 0.5789915278434753,
+          "accuracy": 0.67235,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.5877478122711182,
+          "accuracy": 0.655,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      },
+      "2": {
+        "metric": "accuracy",
+        "accuracy": 0.6535,
+        "train": {
+          "loss": 0.5855293266296386,
+          "accuracy": 0.66695,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.5881521701812744,
+          "accuracy": 0.6535,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      },
+      "3": {
+        "metric": "accuracy",
+        "accuracy": 0.6385,
+        "train": {
+          "loss": 0.5955823751449585,
+          "accuracy": 0.6682,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.6031419038772583,
+          "accuracy": 0.6385,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      },
+      "4": {
+        "metric": "accuracy",
+        "accuracy": 0.647,
+        "train": {
+          "loss": 0.6169224288940429,
+          "accuracy": 0.64845,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.6215792298316956,
+          "accuracy": 0.647,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      },
+      "5": {
+        "metric": "accuracy",
+        "accuracy": 0.6425,
+        "train": {
+          "loss": 0.5994511086463928,
+          "accuracy": 0.6566,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.610935628414154,
+          "accuracy": 0.6425,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      },
+      "6": {
+        "metric": "accuracy",
+        "accuracy": 0.6225,
+        "train": {
+          "loss": 0.6023507377624512,
+          "accuracy": 0.64925,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.6259490251541138,
+          "accuracy": 0.6225,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      },
+      "7": {
+        "metric": "accuracy",
+        "accuracy": 0.6485,
+        "train": {
+          "loss": 0.6051803730010986,
+          "accuracy": 0.6626,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.6149876713752747,
+          "accuracy": 0.6485,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      },
+      "8": {
+        "metric": "accuracy",
+        "accuracy": 0.629,
+        "train": {
+          "loss": 0.6594449436187744,
+          "accuracy": 0.63415,
+          "n_labels": 20000,
+          "chance": 0.5
+        },
+        "val": {
+          "loss": 0.6562381982803345,
+          "accuracy": 0.629,
+          "n_labels": 2000,
+          "chance": 0.5
+        },
+        "spec": {
+          "type": "binary",
+          "out_dim": 2
+        }
+      }
+    },
+    "n_occupied": {
+      "0": {
+        "metric": "r2",
+        "r2": 0.9704716871575264,
+        "train": {
+          "r2": 0.9702803216076862,
+          "mae": 2.144582986831665,
+          "rmse": 2.9299426078796387,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9704716871575264,
+          "mae": 2.1443612575531006,
+          "rmse": 2.9069693088531494,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "1": {
+        "metric": "r2",
+        "r2": 0.9159090880550979,
+        "train": {
+          "r2": 0.9134876432030823,
+          "mae": 3.6696133613586426,
+          "rmse": 4.9989190101623535,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9159090880550979,
+          "mae": 3.6618497371673584,
+          "rmse": 4.9056396484375,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "2": {
+        "metric": "r2",
+        "r2": 0.9026957061738363,
+        "train": {
+          "r2": 0.9052356854040567,
+          "mae": 4.073288440704346,
+          "rmse": 5.231900215148926,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9026957061738363,
+          "mae": 4.123902320861816,
+          "rmse": 5.277000427246094,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "3": {
+        "metric": "r2",
+        "r2": 0.9314977478817836,
+        "train": {
+          "r2": 0.9340548486218594,
+          "mae": 3.334803581237793,
+          "rmse": 4.364439487457275,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9314977478817836,
+          "mae": 3.4202795028686523,
+          "rmse": 4.427652835845947,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "4": {
+        "metric": "r2",
+        "r2": 0.9357126551801668,
+        "train": {
+          "r2": 0.9386152694908779,
+          "mae": 3.2517895698547363,
+          "rmse": 4.210825443267822,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9357126551801668,
+          "mae": 3.3149619102478027,
+          "rmse": 4.2892746925354,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "5": {
+        "metric": "r2",
+        "r2": 0.9331193054834102,
+        "train": {
+          "r2": 0.9307374014263056,
+          "mae": 3.448216438293457,
+          "rmse": 4.472871780395508,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9331193054834102,
+          "mae": 3.3849239349365234,
+          "rmse": 4.374934196472168,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "6": {
+        "metric": "r2",
+        "r2": 0.9387973266135412,
+        "train": {
+          "r2": 0.9395767129973345,
+          "mae": 3.2822422981262207,
+          "rmse": 4.1777191162109375,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9387973266135412,
+          "mae": 3.3174021244049072,
+          "rmse": 4.185104846954346,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "7": {
+        "metric": "r2",
+        "r2": 0.9371914250253581,
+        "train": {
+          "r2": 0.9407162272419549,
+          "mae": 3.2412407398223877,
+          "rmse": 4.1381378173828125,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9371914250253581,
+          "mae": 3.354684591293335,
+          "rmse": 4.2396559715271,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "8": {
+        "metric": "r2",
+        "r2": 0.9398685487260455,
+        "train": {
+          "r2": 0.9414697890245547,
+          "mae": 3.2122714519500732,
+          "rmse": 4.111753940582275,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.9398685487260455,
+          "mae": 3.281656503677368,
+          "rmse": 4.148317337036133,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      }
+    },
+    "n_legal_moves": {
+      "0": {
+        "metric": "r2",
+        "r2": 0.5872208891892239,
+        "train": {
+          "r2": 0.6087516048291941,
+          "mae": 1.887323021888733,
+          "rmse": 2.4325404167175293,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.5872208891892239,
+          "mae": 1.886088252067566,
+          "rmse": 2.428180694580078,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "1": {
+        "metric": "r2",
+        "r2": 0.44445578981020095,
+        "train": {
+          "r2": 0.4964628929190602,
+          "mae": 2.176790714263916,
+          "rmse": 2.7596213817596436,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.44445578981020095,
+          "mae": 2.220388650894165,
+          "rmse": 2.816964864730835,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "2": {
+        "metric": "r2",
+        "r2": 0.42311584050677986,
+        "train": {
+          "r2": 0.4847999029689818,
+          "mae": 2.207019805908203,
+          "rmse": 2.7913978099823,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.42311584050677986,
+          "mae": 2.27355694770813,
+          "rmse": 2.870558738708496,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "3": {
+        "metric": "r2",
+        "r2": 0.4162271714300795,
+        "train": {
+          "r2": 0.4529554530306128,
+          "mae": 2.2706758975982666,
+          "rmse": 2.8763723373413086,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.4162271714300795,
+          "mae": 2.2715048789978027,
+          "rmse": 2.8876466751098633,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "4": {
+        "metric": "r2",
+        "r2": 0.45683909510790865,
+        "train": {
+          "r2": 0.5131399958613048,
+          "mae": 2.1540327072143555,
+          "rmse": 2.7135374546051025,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.45683909510790865,
+          "mae": 2.21272873878479,
+          "rmse": 2.7853922843933105,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "5": {
+        "metric": "r2",
+        "r2": 0.4444547642833331,
+        "train": {
+          "r2": 0.5044500272176552,
+          "mae": 2.1657204627990723,
+          "rmse": 2.737647294998169,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.4444547642833331,
+          "mae": 2.2178993225097656,
+          "rmse": 2.816967487335205,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "6": {
+        "metric": "r2",
+        "r2": 0.3797621707477622,
+        "train": {
+          "r2": 0.46207762915368844,
+          "mae": 2.2305877208709717,
+          "rmse": 2.8522891998291016,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.3797621707477622,
+          "mae": 2.302750587463379,
+          "rmse": 2.976468324661255,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "7": {
+        "metric": "r2",
+        "r2": 0.41490348971752067,
+        "train": {
+          "r2": 0.46141126409039257,
+          "mae": 2.279020309448242,
+          "rmse": 2.854055404663086,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.41490348971752067,
+          "mae": 2.309391736984253,
+          "rmse": 2.890918731689453,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      },
+      "8": {
+        "metric": "r2",
+        "r2": 0.3316709770700397,
+        "train": {
+          "r2": 0.3810187616374976,
+          "mae": 2.3618576526641846,
+          "rmse": 3.05965518951416,
+          "n_labels": 20000,
+          "chance": 0.0
+        },
+        "val": {
+          "r2": 0.3316709770700397,
+          "mae": 2.39473819732666,
+          "rmse": 3.0897068977355957,
+          "n_labels": 2000,
+          "chance": 0.0
+        },
+        "spec": {
+          "type": "regression",
+          "out_dim": 1
+        }
+      }
+    },
+    "last_move_position": {
+      "0": {
+        "metric": "accuracy",
+        "accuracy": 1.0,
+        "train": {
+          "loss": 0.09745044201612472,
+          "accuracy": 1.0,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 0.10065927356481552,
+          "accuracy": 1.0,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      },
+      "1": {
+        "metric": "accuracy",
+        "accuracy": 0.4875,
+        "train": {
+          "loss": 1.8402409683227539,
+          "accuracy": 0.53395,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 2.0864830017089844,
+          "accuracy": 0.4875,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      },
+      "2": {
+        "metric": "accuracy",
+        "accuracy": 0.442,
+        "train": {
+          "loss": 1.9281144388198852,
+          "accuracy": 0.51075,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 2.252713918685913,
+          "accuracy": 0.442,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      },
+      "3": {
+        "metric": "accuracy",
+        "accuracy": 0.4325,
+        "train": {
+          "loss": 1.9293760845184327,
+          "accuracy": 0.51115,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 2.341400146484375,
+          "accuracy": 0.4325,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      },
+      "4": {
+        "metric": "accuracy",
+        "accuracy": 0.424,
+        "train": {
+          "loss": 1.9489883310317992,
+          "accuracy": 0.5029,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 2.3597185611724854,
+          "accuracy": 0.424,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      },
+      "5": {
+        "metric": "accuracy",
+        "accuracy": 0.4175,
+        "train": {
+          "loss": 1.946076752281189,
+          "accuracy": 0.50125,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 2.3930184841156006,
+          "accuracy": 0.4175,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      },
+      "6": {
+        "metric": "accuracy",
+        "accuracy": 0.404,
+        "train": {
+          "loss": 2.0120310535430908,
+          "accuracy": 0.4883,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 2.5018398761749268,
+          "accuracy": 0.404,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      },
+      "7": {
+        "metric": "accuracy",
+        "accuracy": 0.397,
+        "train": {
+          "loss": 1.9891826025009156,
+          "accuracy": 0.49485,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 2.5476126670837402,
+          "accuracy": 0.397,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      },
+      "8": {
+        "metric": "accuracy",
+        "accuracy": 0.398,
+        "train": {
+          "loss": 1.9385191745758057,
+          "accuracy": 0.506,
+          "n_labels": 20000,
+          "chance": 0.015625
+        },
+        "val": {
+          "loss": 2.568789482116699,
+          "accuracy": 0.398,
+          "n_labels": 2000,
+          "chance": 0.015625
+        },
+        "spec": {
+          "type": "classification",
+          "out_dim": 64
+        }
+      }
+    },
+    "corner_occupancy": {
+      "0": {
+        "metric": "accuracy",
+        "accuracy": 0.766,
+        "train": {
+          "loss": 0.5586782465934753,
+          "accuracy": 0.7658,
+          "exact_match": 0.4948,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.5593032240867615,
+          "accuracy": 0.766,
+          "exact_match": 0.5,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      },
+      "1": {
+        "metric": "accuracy",
+        "accuracy": 0.758625,
+        "train": {
+          "loss": 0.5685791569709778,
+          "accuracy": 0.7614875,
+          "exact_match": 0.48615,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.5758663415908813,
+          "accuracy": 0.758625,
+          "exact_match": 0.492,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      },
+      "2": {
+        "metric": "accuracy",
+        "accuracy": 0.759375,
+        "train": {
+          "loss": 0.5646297597885132,
+          "accuracy": 0.763475,
+          "exact_match": 0.48435,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.5795718431472778,
+          "accuracy": 0.759375,
+          "exact_match": 0.487,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      },
+      "3": {
+        "metric": "accuracy",
+        "accuracy": 0.751375,
+        "train": {
+          "loss": 0.5684045402526855,
+          "accuracy": 0.7592625,
+          "exact_match": 0.48325,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.5868955254554749,
+          "accuracy": 0.751375,
+          "exact_match": 0.4845,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      },
+      "4": {
+        "metric": "accuracy",
+        "accuracy": 0.756125,
+        "train": {
+          "loss": 0.5664411922454834,
+          "accuracy": 0.762275,
+          "exact_match": 0.483,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.5818756222724915,
+          "accuracy": 0.756125,
+          "exact_match": 0.4875,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      },
+      "5": {
+        "metric": "accuracy",
+        "accuracy": 0.7525,
+        "train": {
+          "loss": 0.5621319999694824,
+          "accuracy": 0.7655875,
+          "exact_match": 0.4863,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.58866286277771,
+          "accuracy": 0.7525,
+          "exact_match": 0.483,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      },
+      "6": {
+        "metric": "accuracy",
+        "accuracy": 0.743375,
+        "train": {
+          "loss": 0.6052802625656128,
+          "accuracy": 0.75065,
+          "exact_match": 0.4684,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.6279908418655396,
+          "accuracy": 0.743375,
+          "exact_match": 0.4705,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      },
+      "7": {
+        "metric": "accuracy",
+        "accuracy": 0.762625,
+        "train": {
+          "loss": 0.5626048739433288,
+          "accuracy": 0.7698625,
+          "exact_match": 0.4885,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.5899368524551392,
+          "accuracy": 0.762625,
+          "exact_match": 0.4955,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      },
+      "8": {
+        "metric": "accuracy",
+        "accuracy": 0.7575,
+        "train": {
+          "loss": 0.551182414150238,
+          "accuracy": 0.7708125,
+          "exact_match": 0.49095,
+          "n_labels": 80000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.5821082592010498,
+          "accuracy": 0.7575,
+          "exact_match": 0.4885,
+          "n_labels": 8000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 4,
+          "classes_per_group": 3
+        }
+      }
+    },
+    "edge_occupancy": {
+      "0": {
+        "metric": "accuracy",
+        "accuracy": 0.695625,
+        "train": {
+          "loss": 0.6729801744461059,
+          "accuracy": 0.6991645833333333,
+          "exact_match": 0.18715,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.6737200021743774,
+          "accuracy": 0.695625,
+          "exact_match": 0.185,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      },
+      "1": {
+        "metric": "accuracy",
+        "accuracy": 0.6840625,
+        "train": {
+          "loss": 0.6880320861816406,
+          "accuracy": 0.6888625,
+          "exact_match": 0.1837,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.6993296146392822,
+          "accuracy": 0.6840625,
+          "exact_match": 0.18,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      },
+      "2": {
+        "metric": "accuracy",
+        "accuracy": 0.6849583333333333,
+        "train": {
+          "loss": 0.6803227163314819,
+          "accuracy": 0.6944770833333334,
+          "exact_match": 0.18395,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.700167715549469,
+          "accuracy": 0.6849583333333333,
+          "exact_match": 0.1785,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      },
+      "3": {
+        "metric": "accuracy",
+        "accuracy": 0.6866666666666666,
+        "train": {
+          "loss": 0.6757802100181579,
+          "accuracy": 0.6954583333333333,
+          "exact_match": 0.18325,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.6991917490959167,
+          "accuracy": 0.6866666666666666,
+          "exact_match": 0.18,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      },
+      "4": {
+        "metric": "accuracy",
+        "accuracy": 0.6894375,
+        "train": {
+          "loss": 0.6762513883590698,
+          "accuracy": 0.69698125,
+          "exact_match": 0.18315,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.7009553909301758,
+          "accuracy": 0.6894375,
+          "exact_match": 0.1795,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      },
+      "5": {
+        "metric": "accuracy",
+        "accuracy": 0.68925,
+        "train": {
+          "loss": 0.6774722137451172,
+          "accuracy": 0.6972645833333333,
+          "exact_match": 0.183,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.7007188200950623,
+          "accuracy": 0.68925,
+          "exact_match": 0.1805,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      },
+      "6": {
+        "metric": "accuracy",
+        "accuracy": 0.6887916666666667,
+        "train": {
+          "loss": 0.6727867124557495,
+          "accuracy": 0.698575,
+          "exact_match": 0.1831,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.7005132436752319,
+          "accuracy": 0.6887916666666667,
+          "exact_match": 0.1795,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      },
+      "7": {
+        "metric": "accuracy",
+        "accuracy": 0.6878333333333333,
+        "train": {
+          "loss": 0.6786899687767028,
+          "accuracy": 0.6974166666666667,
+          "exact_match": 0.18325,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.7085078954696655,
+          "accuracy": 0.6878333333333333,
+          "exact_match": 0.181,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      },
+      "8": {
+        "metric": "accuracy",
+        "accuracy": 0.6886041666666667,
+        "train": {
+          "loss": 0.6717065558433533,
+          "accuracy": 0.6997208333333333,
+          "exact_match": 0.1832,
+          "n_labels": 480000,
+          "n_examples": 20000,
+          "chance": 0.3333333333333333
+        },
+        "val": {
+          "loss": 0.7029586434364319,
+          "accuracy": 0.6886041666666667,
+          "exact_match": 0.1775,
+          "n_labels": 48000,
+          "n_examples": 2000,
+          "chance": 0.3333333333333333
+        },
+        "spec": {
+          "type": "multi_classification",
+          "groups": 24,
+          "classes_per_group": 3
+        }
+      }
+    }
+  },
+  "config": {
+    "board_size": 8,
+    "n_squares": 64,
+    "n_playable": 60,
+    "block_size": 59,
+    "n_train_games_requested": 20000,
+    "n_val_games_requested": 2000,
+    "n_train_games_loaded": 20000,
+    "n_val_games_loaded": 2000,
+    "n_train_samples": 20000,
+    "n_val_samples": 2000,
+    "sample_positions": "one_per_game",
+    "probe_cfg": {
+      "epochs": 20,
+      "batch_size": 256,
+      "lr": 0.001,
+      "weight_decay": 0.0,
+      "device": "cuda"
+    },
+    "train_chunks": [
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_153929.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_153933.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154002.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154021.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154028.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154032.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154036.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154038.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154043.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154048.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154058.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154100.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154104.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154120.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154121.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154128.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154144.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154148.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154150.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154154.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154210.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154217.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154223.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154235.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154239.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154248.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154317.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154321.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154325.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154331.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154344.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154351.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154356.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154403.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154404.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154407.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154422.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154425.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154428.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154434.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154447.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154505.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154523.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154533.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154545.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154557.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154649.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154650.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154720.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154722.pickle"
+    ],
+    "val_chunks": [
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164644.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164648.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164805.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165341.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165435.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165507.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165533.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165548.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165701.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165704.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165707.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165736.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165748.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165841.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165907.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165952.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165957.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170016.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170032.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170043.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170049.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170059.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170123.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170146.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170148.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170157.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170214.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170238.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170300.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170335.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170403.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170426.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170457.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_171001.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_171520.pickle"
+    ]
+  },
+  "baselines": {
+    "ply_index": {
+      "metric": "r2",
+      "r2": -0.00031655991641676984,
+      "prediction": 28.89604949951172,
+      "n_labels": 2000,
+      "baseline_type": "train_mean"
+    },
+    "parity": {
+      "metric": "accuracy",
+      "accuracy": 0.5040000081062317,
+      "prediction": 1,
+      "train_majority_fraction": 0.50665,
+      "n_labels": 2000,
+      "baseline_type": "train_majority_class"
+    },
+    "n_occupied": {
+      "metric": "r2",
+      "r2": -0.00031666914724159945,
+      "prediction": 33.89604949951172,
+      "n_labels": 2000,
+      "baseline_type": "train_mean"
+    },
+    "n_legal_moves": {
+      "metric": "r2",
+      "r2": -9.093004894822343e-06,
+      "prediction": 8.649900436401367,
+      "n_labels": 2000,
+      "baseline_type": "train_mean"
+    },
+    "last_move_position": {
+      "metric": "accuracy",
+      "accuracy": 0.01549999974668026,
+      "prediction": 10,
+      "train_majority_fraction": 0.0187,
+      "n_labels": 2000,
+      "baseline_type": "train_majority_class"
+    },
+    "corner_occupancy": {
+      "metric": "accuracy",
+      "accuracy": 0.7536249756813049,
+      "exact_match": 0.49050000309944153,
+      "predictions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_train_majority_fraction": 0.7498,
+      "n_labels": 8000,
+      "n_examples": 2000,
+      "baseline_type": "train_majority_class_per_group"
+    },
+    "edge_occupancy": {
+      "metric": "accuracy",
+      "accuracy": 0.643541693687439,
+      "exact_match": 0.17949999868869781,
+      "predictions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_train_majority_fraction": 0.6384416666666667,
+      "n_labels": 48000,
+      "n_examples": 2000,
+      "baseline_type": "train_majority_class_per_group"
+    }
+  }
+}

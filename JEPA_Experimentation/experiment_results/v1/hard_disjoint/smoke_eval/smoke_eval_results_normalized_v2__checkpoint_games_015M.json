@@ -1,0 +1,1194 @@
+{
+  "metadata": {
+    "config_name": "jepa_v1_vicreg_b8_hard_disjoint.yml",
+    "config_path": "/content/drive/Othercomputers/MyLaptop/Master_Thesis_Code/configs/jepa_v1_vicreg_b8_hard_disjoint.yml",
+    "run_name": "jepa_vicreg_b8_run_001_hard_disjoint_bf16",
+    "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_vicreg_b8_run_001_hard_disjoint_bf16",
+    "checkpoint_name": "checkpoint_games_015M.pt",
+    "checkpoint_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_vicreg_b8_run_001_hard_disjoint_bf16/checkpoint_games_015M.pt",
+    "checkpoint_stem": "checkpoint_games_015M",
+    "step": 59041,
+    "games_seen": 15099866,
+    "objective_class": "jepa",
+    "eval_train_chunks": 20,
+    "train_chunks": [
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_153929.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_153933.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154002.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154021.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154028.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154032.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154036.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154038.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154043.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154048.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154058.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154100.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154104.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154120.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154121.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154128.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154144.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154148.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154150.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154154.pickle"
+    ],
+    "val_chunks": [
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164644.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164648.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164805.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165341.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165435.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165507.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165533.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165548.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165701.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165704.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165707.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165736.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165748.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165841.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165907.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165952.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_165957.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170016.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170032.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170043.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170049.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170059.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170123.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170146.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170148.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170157.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170214.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170238.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170300.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170335.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170403.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170426.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170457.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_171001.pickle",
+      "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_171520.pickle"
+    ],
+    "layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "board_probe_protocol": {
+      "tag": "normalized_v2",
+      "input_layernorm": true,
+      "precision": "bf16",
+      "seed": 42,
+      "lr_by_type": {
+        "linear": 0.001,
+        "mlp": 0.0003
+      },
+      "epochs_by_type": {
+        "linear": 5,
+        "mlp": 5
+      },
+      "gradient_clip": 1.0
+    }
+  },
+  "next_move_legal": {
+    "linear": {
+      "artifact_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_vicreg_b8_run_001_hard_disjoint_bf16/smoke_eval/linear_next_move_head__checkpoint_games_015M.pt",
+      "head_type": "linear",
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 3.2782939218355955,
+          "train_tokens": 117931840
+        }
+      ],
+      "metrics": {
+        "n_games": 5000,
+        "n_tokens": 292518,
+        "top1_legal_per_token": 0.7167934964685934,
+        "top1_legal_per_game": 0.7169159228301021,
+        "top1_legal_per_position": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9244,
+          0.9128,
+          0.8512,
+          0.8445067040224135,
+          0.7943177270908364,
+          0.7954363490792634,
+          0.751500600240096,
+          0.7689075630252101,
+          0.7434973989595839,
+          0.7452471482889734,
+          0.732986389111289,
+          0.7225780624499599,
+          0.7260356213728237,
+          0.7204322593556134,
+          0.723634180508305,
+          0.7128276966179707,
+          0.7093674939951962,
+          0.7101101101101102,
+          0.7166299779867921,
+          0.7100260156093656,
+          0.719231538923354,
+          0.7096257754652792,
+          0.7248349009405644,
+          0.7035628502802241,
+          0.7201761409127302,
+          0.7097678142514011,
+          0.7193755004003203,
+          0.7123698959167334,
+          0.7165732586068855,
+          0.7049639711769415,
+          0.7089089089089089,
+          0.7001001001001002,
+          0.7111689351481185,
+          0.7049639711769415,
+          0.6937550040032026,
+          0.6895516413130505,
+          0.6826191429715659,
+          0.674074074074074,
+          0.6732732732732732,
+          0.6616586538461539,
+          0.6701361088871097,
+          0.6596596596596597,
+          0.6454326923076923,
+          0.631758109731678,
+          0.6241489787745295,
+          0.6191144059306752,
+          0.6050942639390293,
+          0.5898515844364219,
+          0.5898932957519629,
+          0.5703345425231762,
+          0.5591157980125735,
+          0.5454732087866968,
+          0.5191623036649214,
+          0.5058485985433679,
+          0.5044751830756713
+        ],
+        "topk_legal": {
+          "1": 0.7170772396912327,
+          "3": 0.6381692750531591,
+          "5": 0.5736617917529861
+        },
+        "legal_prob_mass_per_token": 0.41457204690373184,
+        "legal_prob_mass_per_game": 0.41469936511247996,
+        "legal_prob_mass_per_position": [
+          0.9409066227793693,
+          0.8879030049920082,
+          0.8443731222987175,
+          0.7362443902254104,
+          0.6216119650870562,
+          0.5863850353911519,
+          0.5123763717681169,
+          0.505938316177825,
+          0.4621275410237981,
+          0.457582614606051,
+          0.43521650591190636,
+          0.43336317627713095,
+          0.421906108373911,
+          0.4200523656462866,
+          0.41024644004540434,
+          0.40890150836067163,
+          0.402314322759998,
+          0.4032578160358216,
+          0.4012478113387653,
+          0.39896385551090896,
+          0.39506787180175795,
+          0.3952285231371691,
+          0.39434262275642123,
+          0.3918167400433465,
+          0.3941326078690241,
+          0.38979879227404074,
+          0.3913091880105151,
+          0.38567745570970285,
+          0.38819235373099,
+          0.38302201986554457,
+          0.38654800884207907,
+          0.3782293026468264,
+          0.38252605858584754,
+          0.37306818270979764,
+          0.3746519324008946,
+          0.36653356468538056,
+          0.36981375715147263,
+          0.36343104180375085,
+          0.3631060044057488,
+          0.3555528602471129,
+          0.35375545036516154,
+          0.3480482049428068,
+          0.35038432633360705,
+          0.3443135829680287,
+          0.344936063194206,
+          0.33827456175978926,
+          0.33550354396571397,
+          0.3288811329291767,
+          0.32589884295620986,
+          0.32484689746631423,
+          0.3217533304239483,
+          0.31536229407172717,
+          0.31715127007618776,
+          0.3058467053763977,
+          0.3010662333409734,
+          0.3026396201249662,
+          0.2940543816888861,
+          0.29588689440252164,
+          0.2236324402210405
+        ],
+        "n_legal_per_position_mean": [
+          3.0,
+          4.6584,
+          4.3698,
+          5.849,
+          5.844,
+          6.7442,
+          6.9038,
+          7.613167900740445,
+          7.860344137655062,
+          8.3628903122498,
+          8.773509403761505,
+          9.091036414565826,
+          9.541816726690676,
+          9.752851711026617,
+          10.14751801441153,
+          10.299639711769416,
+          10.67120272163298,
+          10.758254952971782,
+          11.14328597158295,
+          11.192515509305583,
+          11.44195356285028,
+          11.506106106106106,
+          11.78907344406644,
+          11.735241144686812,
+          11.993996397838703,
+          11.852111266760057,
+          12.053031819091455,
+          11.904723779023218,
+          12.030024019215372,
+          11.83947157726181,
+          11.965972778222579,
+          11.684347477982385,
+          11.764811849479583,
+          11.467974379503604,
+          11.4994994994995,
+          11.178378378378378,
+          11.128302642113692,
+          10.792233787029623,
+          10.654123298638911,
+          10.29103282626101,
+          10.078293952743293,
+          9.686686686686686,
+          9.443843843843844,
+          9.01943108974359,
+          8.715972778222579,
+          8.24024024024024,
+          7.855168269230769,
+          7.37184621545855,
+          6.910893071686023,
+          6.408936084952916,
+          5.90734055354994,
+          5.336943441636582,
+          4.81296557278035,
+          4.190850463522773,
+          3.5877104035692557,
+          2.9492917265448573,
+          2.299476439790576,
+          1.6484219819024497,
+          1.0
+        ]
+      }
+    },
+    "mlp": {
+      "artifact_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_vicreg_b8_run_001_hard_disjoint_bf16/smoke_eval/mlp_next_move_head__checkpoint_games_015M.pt",
+      "head_type": "mlp",
+      "hidden_dim": 512,
+      "n_layers": 1,
+      "dropout": 0.1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 3.1242375470742334,
+          "train_tokens": 117931840
+        }
+      ],
+      "metrics": {
+        "n_games": 5000,
+        "n_tokens": 292518,
+        "top1_legal_per_token": 0.778622170259608,
+        "top1_legal_per_game": 0.7787243500481925,
+        "top1_legal_per_position": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9818,
+          0.9618,
+          0.9024,
+          0.8883329997998799,
+          0.8369347739095638,
+          0.8452762209767815,
+          0.803921568627451,
+          0.7979191676670668,
+          0.7879151660664265,
+          0.779467680608365,
+          0.7706164931945556,
+          0.7712169735788631,
+          0.7598559135481289,
+          0.7596557934760857,
+          0.7530518310986591,
+          0.7574544726836102,
+          0.7590072057646117,
+          0.7603603603603604,
+          0.7598559135481289,
+          0.7650590354212528,
+          0.7622573544126476,
+          0.7584550730438263,
+          0.7680608365019012,
+          0.755004003202562,
+          0.7662129703763011,
+          0.7706164931945556,
+          0.7632105684547638,
+          0.7606084867894315,
+          0.7736188951160928,
+          0.7672137710168134,
+          0.7639639639639639,
+          0.7563563563563563,
+          0.7660128102481986,
+          0.7652121697357886,
+          0.7582065652522018,
+          0.7644115292233787,
+          0.762114537444934,
+          0.7573573573573573,
+          0.7589589589589589,
+          0.7451923076923077,
+          0.7497998398718975,
+          0.7541541541541541,
+          0.7477964743589743,
+          0.7278734481377653,
+          0.7348818582298758,
+          0.7255059106391505,
+          0.7137986361813077,
+          0.7009626955475331,
+          0.6945842560901953,
+          0.6684804514308746,
+          0.6651794767795579,
+          0.6444261958530076,
+          0.6173821989528796,
+          0.6345177664974619,
+          0.6533767290480065
+        ],
+        "topk_legal": {
+          "1": 0.7785674727709064,
+          "3": 0.696626076571926,
+          "5": 0.6258561866278315
+        },
+        "legal_prob_mass_per_token": 0.46279529835675304,
+        "legal_prob_mass_per_game": 0.4629263556172039,
+        "legal_prob_mass_per_position": [
+          0.9954374979615211,
+          0.9889765918016433,
+          0.9721214260816574,
+          0.8885132180809975,
+          0.7492000273913145,
+          0.6938559629738331,
+          0.5885700338497758,
+          0.5794092266954003,
+          0.5189240742646226,
+          0.5143941560764987,
+          0.47981544066311455,
+          0.47898313971295975,
+          0.46013129085284465,
+          0.4597750091643835,
+          0.44227765506734434,
+          0.4429552956693787,
+          0.4313889935147483,
+          0.43357938686629904,
+          0.42719246865836696,
+          0.4263828665350577,
+          0.42026735563502254,
+          0.42056880898557386,
+          0.419254109524347,
+          0.41797482676443243,
+          0.4185227816352277,
+          0.41451296212078215,
+          0.41470152978655433,
+          0.41064826197444265,
+          0.41321918258038587,
+          0.4083866027144311,
+          0.4110028621918851,
+          0.4035180868454922,
+          0.40746551136552595,
+          0.3988338326841438,
+          0.4014626765267567,
+          0.3941982388459109,
+          0.39770295573107667,
+          0.39176255752003675,
+          0.3915615712230603,
+          0.3851435577613954,
+          0.3840448063782211,
+          0.37892205155528225,
+          0.3832045086999764,
+          0.3771139439770009,
+          0.3771904752771702,
+          0.37173662275575603,
+          0.3683563805989718,
+          0.36182626518070277,
+          0.3606144522917619,
+          0.3610716802925717,
+          0.35909694774529116,
+          0.35495981205713545,
+          0.3593152404869868,
+          0.35463795056870656,
+          0.35508868066056476,
+          0.37676121357756104,
+          0.39238854292114583,
+          0.4650596839124156,
+          0.4321547825122789
+        ],
+        "n_legal_per_position_mean": [
+          3.0,
+          4.6584,
+          4.3698,
+          5.849,
+          5.844,
+          6.7442,
+          6.9038,
+          7.613167900740445,
+          7.860344137655062,
+          8.3628903122498,
+          8.773509403761505,
+          9.091036414565826,
+          9.541816726690676,
+          9.752851711026617,
+          10.14751801441153,
+          10.299639711769416,
+          10.67120272163298,
+          10.758254952971782,
+          11.14328597158295,
+          11.192515509305583,
+          11.44195356285028,
+          11.506106106106106,
+          11.78907344406644,
+          11.735241144686812,
+          11.993996397838703,
+          11.852111266760057,
+          12.053031819091455,
+          11.904723779023218,
+          12.030024019215372,
+          11.83947157726181,
+          11.965972778222579,
+          11.684347477982385,
+          11.764811849479583,
+          11.467974379503604,
+          11.4994994994995,
+          11.178378378378378,
+          11.128302642113692,
+          10.792233787029623,
+          10.654123298638911,
+          10.29103282626101,
+          10.078293952743293,
+          9.686686686686686,
+          9.443843843843844,
+          9.01943108974359,
+          8.715972778222579,
+          8.24024024024024,
+          7.855168269230769,
+          7.37184621545855,
+          6.910893071686023,
+          6.408936084952916,
+          5.90734055354994,
+          5.336943441636582,
+          4.81296557278035,
+          4.190850463522773,
+          3.5877104035692557,
+          2.9492917265448573,
+          2.299476439790576,
+          1.6484219819024497,
+          1.0
+        ]
+      }
+    }
+  },
+  "board_state": {
+    "linear": {
+      "artifact_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_vicreg_b8_run_001_hard_disjoint_bf16/smoke_eval/linear_board_probes_normalized_v2__checkpoint_games_015M.pt",
+      "results": {
+        "probe_type": "linear",
+        "protocol_tag": "normalized_v2",
+        "input_layernorm": true,
+        "precision": "bf16",
+        "seed": 42,
+        "layers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "train_chunks": [
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_153929.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_153933.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154002.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154021.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154028.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154032.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154036.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154038.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154043.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154048.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154058.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154100.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154104.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154120.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154121.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154128.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154144.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154148.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154150.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154154.pickle"
+        ],
+        "n_train_chunks": 20,
+        "probe_train_games_per_chunk": 250,
+        "train_games_per_chunk": {
+          "gen10e5__20220324_153929.pickle": 250,
+          "gen10e5__20220324_153933.pickle": 250,
+          "gen10e5__20220324_154002.pickle": 250,
+          "gen10e5__20220324_154021.pickle": 250,
+          "gen10e5__20220324_154028.pickle": 250,
+          "gen10e5__20220324_154032.pickle": 250,
+          "gen10e5__20220324_154036.pickle": 250,
+          "gen10e5__20220324_154038.pickle": 250,
+          "gen10e5__20220324_154043.pickle": 250,
+          "gen10e5__20220324_154048.pickle": 250,
+          "gen10e5__20220324_154058.pickle": 250,
+          "gen10e5__20220324_154100.pickle": 250,
+          "gen10e5__20220324_154104.pickle": 250,
+          "gen10e5__20220324_154120.pickle": 250,
+          "gen10e5__20220324_154121.pickle": 250,
+          "gen10e5__20220324_154128.pickle": 250,
+          "gen10e5__20220324_154144.pickle": 250,
+          "gen10e5__20220324_154148.pickle": 250,
+          "gen10e5__20220324_154150.pickle": 250,
+          "gen10e5__20220324_154154.pickle": 250
+        },
+        "n_train_games": 5000,
+        "n_train_monitor_games": 512,
+        "n_val_games": 512,
+        "epochs": 5,
+        "batch_size": 64,
+        "lr": 0.001,
+        "weight_decay": 0.0,
+        "gradient_clip": 1.0,
+        "hidden_dim": null,
+        "n_layers": null,
+        "dropout": null,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.7790567135509057,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6569664346487453,
+            "train_monitor_best_relative_accuracy": 0.6760329073693968,
+            "val_mean_accuracy": 0.656113351514048,
+            "val_best_relative_accuracy": 0.6758999660663444
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.6782418165025832,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6650761415134594,
+            "train_monitor_best_relative_accuracy": 0.6861566203734357,
+            "val_mean_accuracy": 0.6641152339583011,
+            "val_best_relative_accuracy": 0.6856548574786466
+          },
+          {
+            "epoch": 3,
+            "train_loss": 0.6579739541947087,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6684874107517271,
+            "train_monitor_best_relative_accuracy": 0.6904076383831027,
+            "val_mean_accuracy": 0.6674623315731973,
+            "val_best_relative_accuracy": 0.6899565690591273
+          },
+          {
+            "epoch": 4,
+            "train_loss": 0.64791511433034,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.670513314361753,
+            "train_monitor_best_relative_accuracy": 0.6928911060716414,
+            "val_mean_accuracy": 0.6694433466585006,
+            "val_best_relative_accuracy": 0.6923360631993644
+          },
+          {
+            "epoch": 5,
+            "train_loss": 0.6417240507995026,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6719518450160747,
+            "train_monitor_best_relative_accuracy": 0.6945862370058928,
+            "val_mean_accuracy": 0.6707658913424117,
+            "val_best_relative_accuracy": 0.6939805005628021
+          }
+        ],
+        "metrics": {
+          "0": {
+            "absolute": {
+              "accuracy": 0.6271555113222539,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6500069315698868,
+              "n_labels": 1933184
+            }
+          },
+          "1": {
+            "absolute": {
+              "accuracy": 0.6441388921075283,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6756283933655565,
+              "n_labels": 1933184
+            }
+          },
+          "2": {
+            "absolute": {
+              "accuracy": 0.6551047391246773,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6870685873667484,
+              "n_labels": 1933184
+            }
+          },
+          "3": {
+            "absolute": {
+              "accuracy": 0.6580630710785936,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6891102967953386,
+              "n_labels": 1933184
+            }
+          },
+          "4": {
+            "absolute": {
+              "accuracy": 0.6629167218433424,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6934135602198239,
+              "n_labels": 1933184
+            }
+          },
+          "5": {
+            "absolute": {
+              "accuracy": 0.6644271833410581,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6939805005628021,
+              "n_labels": 1933184
+            }
+          },
+          "6": {
+            "absolute": {
+              "accuracy": 0.6645932306495398,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6932578585380388,
+              "n_labels": 1933184
+            }
+          },
+          "7": {
+            "absolute": {
+              "accuracy": 0.665525371614911,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.693138883831027,
+              "n_labels": 1933184
+            }
+          },
+          "8": {
+            "absolute": {
+              "accuracy": 0.6650132630934251,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6912430477388598,
+              "n_labels": 1933184
+            }
+          }
+        }
+      }
+    },
+    "mlp": {
+      "artifact_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_vicreg_b8_run_001_hard_disjoint_bf16/smoke_eval/mlp_board_probes_normalized_v2__checkpoint_games_015M.pt",
+      "results": {
+        "probe_type": "mlp",
+        "protocol_tag": "normalized_v2",
+        "input_layernorm": true,
+        "precision": "bf16",
+        "seed": 42,
+        "layers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "train_chunks": [
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_153929.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_153933.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154002.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154021.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154028.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154032.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154036.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154038.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154043.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154048.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154058.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154100.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154104.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154120.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154121.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154128.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154144.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154148.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154150.pickle",
+          "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_154154.pickle"
+        ],
+        "n_train_chunks": 20,
+        "probe_train_games_per_chunk": 250,
+        "train_games_per_chunk": {
+          "gen10e5__20220324_153929.pickle": 250,
+          "gen10e5__20220324_153933.pickle": 250,
+          "gen10e5__20220324_154002.pickle": 250,
+          "gen10e5__20220324_154021.pickle": 250,
+          "gen10e5__20220324_154028.pickle": 250,
+          "gen10e5__20220324_154032.pickle": 250,
+          "gen10e5__20220324_154036.pickle": 250,
+          "gen10e5__20220324_154038.pickle": 250,
+          "gen10e5__20220324_154043.pickle": 250,
+          "gen10e5__20220324_154048.pickle": 250,
+          "gen10e5__20220324_154058.pickle": 250,
+          "gen10e5__20220324_154100.pickle": 250,
+          "gen10e5__20220324_154104.pickle": 250,
+          "gen10e5__20220324_154120.pickle": 250,
+          "gen10e5__20220324_154121.pickle": 250,
+          "gen10e5__20220324_154128.pickle": 250,
+          "gen10e5__20220324_154144.pickle": 250,
+          "gen10e5__20220324_154148.pickle": 250,
+          "gen10e5__20220324_154150.pickle": 250,
+          "gen10e5__20220324_154154.pickle": 250
+        },
+        "n_train_games": 5000,
+        "n_train_monitor_games": 512,
+        "n_val_games": 512,
+        "epochs": 5,
+        "batch_size": 64,
+        "lr": 0.0003,
+        "weight_decay": 0.0,
+        "gradient_clip": 1.0,
+        "hidden_dim": 512,
+        "n_layers": 1,
+        "dropout": 0.1,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.8161740363398685,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6451121282011668,
+            "train_monitor_best_relative_accuracy": 0.6632177795802159,
+            "val_mean_accuracy": 0.6442882139861837,
+            "val_best_relative_accuracy": 0.6628215420777329
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.6890067548691472,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6609397587951622,
+            "train_monitor_best_relative_accuracy": 0.6778589104813613,
+            "val_mean_accuracy": 0.6598153616003443,
+            "val_best_relative_accuracy": 0.6773835289346487
+          },
+          {
+            "epoch": 3,
+            "train_loss": 0.662149913703339,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6667077330570821,
+            "train_monitor_best_relative_accuracy": 0.6847997914321658,
+            "val_mean_accuracy": 0.6654336691293856,
+            "val_best_relative_accuracy": 0.6842240573064954
+          },
+          {
+            "epoch": 4,
+            "train_loss": 0.6494946072373209,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6700928221122368,
+            "train_monitor_best_relative_accuracy": 0.6882841985036086,
+            "val_mean_accuracy": 0.6686902999863897,
+            "val_best_relative_accuracy": 0.6876117327683242
+          },
+          {
+            "epoch": 5,
+            "train_loss": 0.6416160667998881,
+            "train_batches": 79,
+            "train_monitor_mean_accuracy": 0.6724443255846888,
+            "train_monitor_best_relative_accuracy": 0.6908612941137522,
+            "val_mean_accuracy": 0.6709731487305687,
+            "val_best_relative_accuracy": 0.6901965875984903
+          }
+        ],
+        "metrics": {
+          "0": {
+            "absolute": {
+              "accuracy": 0.6458981659272992,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6513896245778984,
+              "n_labels": 1933184
+            }
+          },
+          "1": {
+            "absolute": {
+              "accuracy": 0.6502671240813084,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6772728307289942,
+              "n_labels": 1933184
+            }
+          },
+          "2": {
+            "absolute": {
+              "accuracy": 0.6576435559160432,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6852467225054625,
+              "n_labels": 1933184
+            }
+          },
+          "3": {
+            "absolute": {
+              "accuracy": 0.6586822568363901,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6864581953916441,
+              "n_labels": 1933184
+            }
+          },
+          "4": {
+            "absolute": {
+              "accuracy": 0.6625070350261537,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6898644929815269,
+              "n_labels": 1933184
+            }
+          },
+          "5": {
+            "absolute": {
+              "accuracy": 0.6634991806263656,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6901965875984903,
+              "n_labels": 1933184
+            }
+          },
+          "6": {
+            "absolute": {
+              "accuracy": 0.6634371068661855,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6895034306098127,
+              "n_labels": 1933184
+            }
+          },
+          "7": {
+            "absolute": {
+              "accuracy": 0.6637060931602993,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6895479168046084,
+              "n_labels": 1933184
+            }
+          },
+          "8": {
+            "absolute": {
+              "accuracy": 0.6643935600542938,
+              "n_labels": 1933184
+            },
+            "relative": {
+              "accuracy": 0.6880027974574587,
+              "n_labels": 1933184
+            }
+          }
+        }
+      }
+    },
+    "matched": {
+      "linear": {
+        "probe_type": "linear",
+        "layers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "metrics": {
+          "0": {
+            "absolute": {
+              "accuracy": 0.6486053466796875,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.6706314086914062,
+              "n_labels": 131072
+            }
+          },
+          "1": {
+            "absolute": {
+              "accuracy": 0.6820831298828125,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.709747314453125,
+              "n_labels": 131072
+            }
+          },
+          "2": {
+            "absolute": {
+              "accuracy": 0.6942977905273438,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7256317138671875,
+              "n_labels": 131072
+            }
+          },
+          "3": {
+            "absolute": {
+              "accuracy": 0.69976806640625,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7289581298828125,
+              "n_labels": 131072
+            }
+          },
+          "4": {
+            "absolute": {
+              "accuracy": 0.7089309692382812,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7354354858398438,
+              "n_labels": 131072
+            }
+          },
+          "5": {
+            "absolute": {
+              "accuracy": 0.7099151611328125,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7371826171875,
+              "n_labels": 131072
+            }
+          },
+          "6": {
+            "absolute": {
+              "accuracy": 0.7115859985351562,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7375717163085938,
+              "n_labels": 131072
+            }
+          },
+          "7": {
+            "absolute": {
+              "accuracy": 0.7127609252929688,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7374267578125,
+              "n_labels": 131072
+            }
+          },
+          "8": {
+            "absolute": {
+              "accuracy": 0.7118682861328125,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.736663818359375,
+              "n_labels": 131072
+            }
+          }
+        },
+        "n_train_samples": 20000,
+        "n_val_samples": 2048,
+        "t_min": 4,
+        "t_max": 44,
+        "prefixes_per_game": 4,
+        "val_t_mean": 24.23779296875,
+        "seed": 42,
+        "precision": "bf16",
+        "input_layernorm": true,
+        "gradient_clip": 1.0,
+        "protocol": "pass-free prefixes, hidden state at position t-1 only"
+      },
+      "mlp": {
+        "probe_type": "mlp",
+        "layers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "metrics": {
+          "0": {
+            "absolute": {
+              "accuracy": 0.6737060546875,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.6763229370117188,
+              "n_labels": 131072
+            }
+          },
+          "1": {
+            "absolute": {
+              "accuracy": 0.6934661865234375,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.715362548828125,
+              "n_labels": 131072
+            }
+          },
+          "2": {
+            "absolute": {
+              "accuracy": 0.7037811279296875,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7283172607421875,
+              "n_labels": 131072
+            }
+          },
+          "3": {
+            "absolute": {
+              "accuracy": 0.7032318115234375,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7297744750976562,
+              "n_labels": 131072
+            }
+          },
+          "4": {
+            "absolute": {
+              "accuracy": 0.7110748291015625,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7341690063476562,
+              "n_labels": 131072
+            }
+          },
+          "5": {
+            "absolute": {
+              "accuracy": 0.71044921875,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.735687255859375,
+              "n_labels": 131072
+            }
+          },
+          "6": {
+            "absolute": {
+              "accuracy": 0.7111358642578125,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7356033325195312,
+              "n_labels": 131072
+            }
+          },
+          "7": {
+            "absolute": {
+              "accuracy": 0.7113800048828125,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.734588623046875,
+              "n_labels": 131072
+            }
+          },
+          "8": {
+            "absolute": {
+              "accuracy": 0.7104110717773438,
+              "n_labels": 131072
+            },
+            "relative": {
+              "accuracy": 0.7345657348632812,
+              "n_labels": 131072
+            }
+          }
+        },
+        "n_train_samples": 20000,
+        "n_val_samples": 2048,
+        "t_min": 4,
+        "t_max": 44,
+        "prefixes_per_game": 4,
+        "val_t_mean": 24.23779296875,
+        "seed": 42,
+        "precision": "bf16",
+        "input_layernorm": true,
+        "gradient_clip": 1.0,
+        "protocol": "pass-free prefixes, hidden state at position t-1 only"
+      }
+    }
+  }
+}

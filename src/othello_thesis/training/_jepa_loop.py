@@ -1,4 +1,31 @@
-"""Internal implementation module extracted from the canonical JEPA trainer."""
+"""Internal implementation module extracted from the canonical JEPA trainer.
+
+The JEPA counterpart of ``training/ar_steps.py``: one shard in, one pass over
+it, shard freed. The surrounding runner, checkpointing and config handling live
+in the sibling ``_jepa_*`` modules; this file holds only the per-batch train and
+eval loops.
+
+Two supervision regimes live side by side, selected by
+``cfg.position_sampling``:
+
+*all-position* (``"all"``, the thesis setting). Every valid prefix boundary in
+every game of the batch becomes a training pair, so one batch of 256 games
+yields tens of thousands of (context, target) pairs. This is what makes the
+JEPA arm sample-efficient enough to be trained on comparable compute to the AR
+arm, where every position already produces a gradient signal for free.
+
+*window sampling* (anything else, retained from the development runs). One
+random context length is drawn per batch and only rows long enough for it are
+kept, giving one pair per game. Cheaper per step but far weaker supervision.
+
+Both regimes have to cope with the fact that games end at different lengths.
+A prefix boundary is only usable if the context *and* the target are real
+moves rather than padding, so batches and individual rows get skipped. The
+skip counters threaded through both loops are not bookkeeping for its own sake:
+a high skip ratio silently biases training toward long games, which are
+systematically different positions (endgames, few legal moves). Hence the
+warnings printed at the end of every shard.
+"""
 
 from __future__ import annotations
 
@@ -60,6 +87,15 @@ def train_one_chunk(
         skipped_batches, seen_samples, skipped_samples)``. The sample count
         reuses the AR trainer's ``tokens_seen`` plumbing but represents
         batched JEPA windows.
+
+    Losses and metrics are accumulated weighted by the number of pairs actually
+    contributed, not per batch, because the effective batch size varies with how
+    many rows survived the validity filter.
+
+    ``step`` counts optimiser steps and is threaded in and out so the learning
+    rate schedule is continuous across shard boundaries; the second element of
+    the target-encoder update (``update_target_encoder``) is likewise tied to
+    optimiser steps, not to shards.
     """
     loader, games, dataset = make_loader(chunk_path, cfg, model_cfg, shuffle=True)
     n_games = len(games)
@@ -95,7 +131,11 @@ def train_one_chunk(
                 f"Sequence length {seq_len} must exceed prediction_horizon={horizon}."
             )
 
+        # ---- all-position supervision (the thesis path) --------------------
+        # Every usable prefix boundary in the batch becomes one training pair.
         if cfg.position_sampling == "all":
+            # Profile only the first batch of a capped (smoke-test) run; the
+            # timing calls below force GPU syncs and would distort a real run.
             profile_step = bool(cfg.max_batches_per_chunk and seen_batches == 1)
             lr = get_lr(step, cfg, total_steps)
             for group in optimizer.param_groups:
@@ -112,6 +152,9 @@ def train_one_chunk(
                     stats_chunk_size=cfg.all_position_stats_chunk_size,
                     profile=profile_step,
                 )
+                # No usable prefix boundary anywhere in the batch: every game
+                # was too short. Nothing to learn from, so skip without an
+                # optimiser step (which would otherwise apply a stale gradient).
                 if effective_batch_size == 0:
                     skipped_samples += batch_size
                     skipped_batches += 1
@@ -135,6 +178,9 @@ def train_one_chunk(
             optimizer_started_at = time.perf_counter()
             scaler.step(optimizer)
             scaler.update()
+            # EMA update immediately after the optimiser step, so the target
+            # encoder always trails the weights that were just written. Doing
+            # it before the step would mix in the previous iteration's state.
             update_target_encoder(model)
             if profile_step:
                 if device.type == "cuda":
@@ -147,6 +193,12 @@ def train_one_chunk(
                     flush=True,
                 )
 
+            # This float() is the first host read of the step, so the
+            # finiteness check rides on a sync that has to happen anyway.
+            # Mamba-JEPA is the configuration that actually produced NaNs
+            # during development (the selective scan can overflow in bf16),
+            # hence the architecture-specific guard: failing loudly beats
+            # discovering hours later that the checkpoint is poisoned.
             loss_value = float(loss.detach())
             if (
                 getattr(cfg, "encoder_architecture", "transformer") == "mamba"
@@ -175,9 +227,14 @@ def train_one_chunk(
                 )
             continue
 
+        # ---- window sampling (development path) ----------------------------
         # Use one random context length for the batch, then keep only rows
         # whose context plus K target tokens are real moves. This avoids
         # dropping an entire batch because one short game has padding.
+        #
+        # A single shared context length per batch is what lets the whole batch
+        # go through the encoder as one rectangular tensor; per-row lengths
+        # would require padding or a loop, both far slower.
         t, valid_mask = sample_valid_window(
             x,
             horizon=horizon,
@@ -185,6 +242,9 @@ def train_one_chunk(
             attempts=cfg.window_sample_attempts,
         )
         valid_count = int(valid_mask.sum().item())
+        # Contrastive objectives need at least one negative, so a batch of one
+        # surviving row is useless to them even though a distance loss could
+        # still use it.
         needs_pair_batch = (
             view_mode in {"disjoint_future", "hard_disjoint_future"}
             or objective_class(cfg) == "jepa_contrastive"
@@ -197,6 +257,8 @@ def train_one_chunk(
             skipped_samples += batch_size
             skipped_batches += 1
             continue
+        # Rows dropped by the validity filter still count as skipped, so the
+        # ratio reported at the end reflects games lost, not just whole batches.
         skipped_samples += batch_size - valid_count
 
         x_valid = x[valid_mask]
@@ -315,6 +377,10 @@ def train_one_chunk(
             f"({sample_skip_ratio:.2%})",
             flush=True,
         )
+    # Skipped samples are not random: short games are dropped preferentially,
+    # so a high ratio means the model is being trained on a biased slice of the
+    # position distribution. These thresholds were chosen as the point beyond
+    # which that bias becomes large enough to affect the reported metrics.
     if sample_skip_ratio > 0.10:
         print(
             "  warning: train_sample_skip_ratio is above 10%; inspect game lengths "
@@ -349,7 +415,13 @@ def eval_chunks(
     model_cfg: GPTConfig,
     device: torch.device,
 ) -> tuple[float, dict[str, float], int, int, int, int, int, int]:
-    """Run JEPA evaluation on the first cfg.eval_chunks val chunks."""
+    """Run JEPA evaluation on the first cfg.eval_chunks val chunks.
+
+    Mirrors ``train_one_chunk`` without the optimiser, and with every source of
+    randomness removed so the figure is comparable across checkpoints: always
+    the same leading shards, shuffling off, and a deterministic context length
+    per batch instead of a sampled one.
+    """
     if not chunks or cfg.eval_chunks <= 0:
         nan = float("nan")
         return nan, {}, 0, 0, 0, 0, 0, 0
@@ -411,6 +483,8 @@ def eval_chunks(
 
             # Deterministic sweep over possible context lengths keeps eval
             # comparable across runs without introducing variable-length batches.
+            # Cycling t with the batch index means the evaluation still covers
+            # the full range of game phases, but always in the same order.
             t = 1 + (batch_idx % max(1, seq_len - horizon))
             valid_mask = valid_window_mask(
                 x,
@@ -468,6 +542,12 @@ def eval_chunks(
         skipped_samples,
     )
 
+
+# The two dispatchers below are the same guardrail as the normalisers in
+# objectives/jepa.py, applied at the trainer level: the development tree
+# supported several objective classes, and a config that selected one of them
+# would silently produce numbers that are not comparable with the reported
+# cells. Only the final 'jepa' path is allowed to run.
 
 def dispatch_train_one_chunk(*args, **kwargs):
     """Dispatch the canonical final JEPA training path."""

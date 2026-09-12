@@ -1,0 +1,117 @@
+{
+  "board_size": 8,
+  "metrics": {
+    "linear_board_absolute": {
+      "architecture_main_effect_mamba_minus_transformer": -0.0013676847337491527,
+      "interaction_difference_in_differences": 0.0006684506274842184,
+      "mamba_ar": 0.6872542491816521,
+      "mamba_jepa": 0.689191469049239,
+      "objective_main_effect_jepa_minus_ar": 0.0016029945538448276,
+      "transformer_ar": 0.6889561592291434,
+      "transformer_jepa": 0.6902249284692461
+    },
+    "linear_board_relative": {
+      "architecture_main_effect_mamba_minus_transformer": 0.012137598497643287,
+      "interaction_difference_in_differences": 0.00204868073420561,
+      "mamba_ar": 0.9794086156282996,
+      "mamba_jepa": 0.9804064036152611,
+      "objective_main_effect_jepa_minus_ar": -2.6552380141375842e-05,
+      "transformer_ar": 0.9682953574977592,
+      "transformer_jepa": 0.9672444647505151
+    },
+    "linear_legal_lift": {
+      "architecture_main_effect_mamba_minus_transformer": 0.0024527580863560328,
+      "interaction_difference_in_differences": 0.002170750151789358,
+      "mamba_ar": 0.9981369307740191,
+      "mamba_jepa": 0.9967320256994348,
+      "objective_main_effect_jepa_minus_ar": -0.0024902801504791405,
+      "transformer_ar": 0.9967695477635578,
+      "transformer_jepa": 0.993193892537184
+    },
+    "linear_legal_mass": {
+      "architecture_main_effect_mamba_minus_transformer": 0.008845643069407272,
+      "interaction_difference_in_differences": -0.0006695545851334028,
+      "mamba_ar": 0.9934467280578727,
+      "mamba_jepa": 0.9861368729849315,
+      "objective_main_effect_jepa_minus_ar": -0.006975077780374539,
+      "transformer_ar": 0.9842663076958988,
+      "transformer_jepa": 0.977626007208091
+    },
+    "linear_legal_top1": {
+      "architecture_main_effect_mamba_minus_transformer": 0.002106291400836513,
+      "interaction_difference_in_differences": 0.0018641187663441805,
+      "mamba_ar": 0.9984001003964983,
+      "mamba_jepa": 0.9971936465297069,
+      "objective_main_effect_jepa_minus_ar": -0.002138513249963614,
+      "transformer_ar": 0.997225868378834,
+      "transformer_jepa": 0.9941552957456984
+    },
+    "mlp_board_absolute": {
+      "architecture_main_effect_mamba_minus_transformer": -0.03823612698660894,
+      "interaction_difference_in_differences": -0.034029769114643504,
+      "mamba_ar": 0.9181578029374838,
+      "mamba_jepa": 0.8930618225170287,
+      "objective_main_effect_jepa_minus_ar": -0.008081095863133436,
+      "transformer_ar": 0.939379045366771,
+      "transformer_jepa": 0.9483128340609593
+    },
+    "mlp_board_relative": {
+      "architecture_main_effect_mamba_minus_transformer": 0.013137423415490956,
+      "interaction_difference_in_differences": 0.0017686083945804842,
+      "mamba_ar": 0.9774364298933508,
+      "mamba_jepa": 0.9781606679998195,
+      "objective_main_effect_jepa_minus_ar": -0.00016006609082153123,
+      "transformer_ar": 0.9651833106751501,
+      "transformer_jepa": 0.9641389403870383
+    },
+    "mlp_legal_lift": {
+      "architecture_main_effect_mamba_minus_transformer": 0.0024387366834469626,
+      "interaction_difference_in_differences": 0.0021427073459713286,
+      "mamba_ar": 0.9981369307740191,
+      "mamba_jepa": 0.9967296558848586,
+      "objective_main_effect_jepa_minus_ar": -0.002478628562146201,
+      "transformer_ar": 0.9967695477635578,
+      "transformer_jepa": 0.9932195655284259
+    },
+    "mlp_legal_mass": {
+      "architecture_main_effect_mamba_minus_transformer": 0.01118523089604162,
+      "interaction_difference_in_differences": 0.004009621068135294,
+      "mamba_ar": 0.9934467280578727,
+      "mamba_jepa": 0.9890389693560654,
+      "objective_main_effect_jepa_minus_ar": -0.006412569235874965,
+      "transformer_ar": 0.9842663076958988,
+      "transformer_jepa": 0.9758489279259562
+    },
+    "mlp_legal_top1": {
+      "architecture_main_effect_mamba_minus_transformer": 0.0020942506045836806,
+      "interaction_difference_in_differences": 0.0018400371738386267,
+      "mamba_ar": 0.9984001003964983,
+      "mamba_jepa": 0.9971916114655515,
+      "objective_main_effect_jepa_minus_ar": -0.002128507517866196,
+      "transformer_ar": 0.997225868378834,
+      "transformer_jepa": 0.9941773422740485
+    }
+  },
+  "protocol": "unified_eval_v4",
+  "sources": {
+    "mamba_ar": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Mamba-AR/mamba_ar_8x8/thesis_eval/final/results__unified_eval_v4.json",
+    "mamba_jepa": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/thesis_eval/final/results__unified_eval_v4.json",
+    "transformer_ar": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/run_001/thesis_eval/final/results__unified_eval_v4.json",
+    "transformer_jepa": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/results__unified_eval_v4.json"
+  },
+  "split_manifest_hash": "9b203eaa68ee72bda13dbeae13566df1869b618995743b21c52397aaf9b5146f",
+  "suite": "thesis_eval_suite_v1",
+  "training_precision_comparable": false,
+  "training_precisions": {
+    "mamba_ar": "fp16",
+    "mamba_jepa": "bf16",
+    "transformer_ar": null,
+    "transformer_jepa": "bf16"
+  },
+  "training_time_hours": {
+    "mamba_ar": 1.9977655874358282,
+    "mamba_jepa": 3.024312006102668,
+    "transformer_ar": 5.618768195311229,
+    "transformer_jepa": 1.3794845077726576
+  }
+}

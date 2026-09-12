@@ -9,6 +9,7 @@ original sibling `Master_Thesis_Code` remains the read-only behavioural oracle.
 Master_Thesis_Code_Final/
 ├── JEPA_Experimentation/          # complete historical JEPA path
 ├── Main_Experimental_Setup/       # final 2 × 2 × 3 experiment
+├── Main_Experimentation_Results/  # results of that experiment, from Drive
 ├── src/othello_thesis/
 │   ├── game_engine/               # shared Othello rules and generator
 │   ├── data/
@@ -18,6 +19,8 @@ Master_Thesis_Code_Final/
 │   ├── evaluation/
 │   └── probes/
 ├── tests/equivalence/             # old-vs-final behavioural proofs
+├── tests/unit/                    # small source-independent runtime smoke suite
+├── docs/codebase_atlas/           # standalone interactive code/theory guide
 └── provenance/                    # source/config/archive hashes
 ```
 
@@ -41,7 +44,14 @@ historical material, not the final main objective.
 
 The common evaluator no longer runs causal interventions. Existing common
 evaluation artifacts are left unchanged, while new causal outputs are written
-to a separate resumable directory under the selected external run.
+to a separate resumable directory under the selected external run. The causal
+notebook's last cell presents the saved three-method comparison without
+reloading the model or repeating an intervention.
+
+The common evaluator fails closed on source-digest drift by default. Set its
+visible `ALLOW_SOURCE_DRIFT` control only when deliberately reusing a known
+completed stage created before the package rename; this does not rewrite that
+stage or any other existing artifact.
 
 Training notebooks default to `BOARD_SIZE = 12` and `RUN_PROFILE = "smoke"`.
 Each exposes the actual model factory and constructs the model only once after
@@ -61,7 +71,29 @@ Large corpora, checkpoints, and evaluation artifacts remain in
 The exact continuation point for any future session is
 [REFACTOR_STATUS.md](REFACTOR_STATUS.md).
 
+## Interactive codebase atlas
+
+Open [docs/codebase_atlas/index.html](docs/codebase_atlas/index.html) for one
+offline, mobile-friendly guide to the complete repository structure, active
+module-import map, execution paths, theory, JEPA experimentation history, and
+the actual current source of every active class/function. It supports global
+Beginner, MSc, and Code explanation levels, symbol hover previews, full source
+views with real line numbers, search, and direct theory-to-code navigation.
+
+After active code changes, regenerate and validate it with:
+
+```powershell
+python docs/codebase_atlas/build_atlas.py
+python docs/codebase_atlas/validate_atlas.py
+```
+
 ## Validation
+
+Run the small source-independent runtime suite without the legacy repository:
+
+```powershell
+python -m pytest tests/unit -q
+```
 
 Run the complete local compatibility suite with disposable runtime outside the
 synchronized repository:

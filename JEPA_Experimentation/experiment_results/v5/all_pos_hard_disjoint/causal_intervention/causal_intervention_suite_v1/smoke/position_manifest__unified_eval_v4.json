@@ -1,0 +1,3212 @@
+{
+  "board_size": 8,
+  "n_phase_bins": 4,
+  "protocol_tag": "position_probe_v1",
+  "seed": 42,
+  "test": [
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "c8bd5f33038cb6abc1a218956b3c66ef48599a458edb1ab15ebdb6ef1e06b694",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.05084745762711865,
+      "phase_bin": 0,
+      "position": 3
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "c8bd5f33038cb6abc1a218956b3c66ef48599a458edb1ab15ebdb6ef1e06b694",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3728813559322034,
+      "phase_bin": 1,
+      "position": 22
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "c8bd5f33038cb6abc1a218956b3c66ef48599a458edb1ab15ebdb6ef1e06b694",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "c8bd5f33038cb6abc1a218956b3c66ef48599a458edb1ab15ebdb6ef1e06b694",
+      "max_eligible_position": 59,
+      "normalized_phase": 1.0,
+      "phase_bin": 3,
+      "position": 59
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "47b3c8057395ac93773707a1520d71f332d516cc49c1ed4cc6dc55f01f371894",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.01694915254237288,
+      "phase_bin": 0,
+      "position": 1
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "47b3c8057395ac93773707a1520d71f332d516cc49c1ed4cc6dc55f01f371894",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "47b3c8057395ac93773707a1520d71f332d516cc49c1ed4cc6dc55f01f371894",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6949152542372882,
+      "phase_bin": 2,
+      "position": 41
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "47b3c8057395ac93773707a1520d71f332d516cc49c1ed4cc6dc55f01f371894",
+      "max_eligible_position": 59,
+      "normalized_phase": 1.0,
+      "phase_bin": 3,
+      "position": 59
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "39b538e4e2270c8840a6fb98bd2aa468336f218cdf57aa1333508ad5e2f8e210",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "39b538e4e2270c8840a6fb98bd2aa468336f218cdf57aa1333508ad5e2f8e210",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3050847457627119,
+      "phase_bin": 1,
+      "position": 18
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "39b538e4e2270c8840a6fb98bd2aa468336f218cdf57aa1333508ad5e2f8e210",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7457627118644068,
+      "phase_bin": 2,
+      "position": 44
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "39b538e4e2270c8840a6fb98bd2aa468336f218cdf57aa1333508ad5e2f8e210",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.847457627118644,
+      "phase_bin": 3,
+      "position": 50
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "988c08396fc666f632e5f44e3c011876d4130116ea84feb79d477f960d34d788",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2033898305084746,
+      "phase_bin": 0,
+      "position": 12
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "988c08396fc666f632e5f44e3c011876d4130116ea84feb79d477f960d34d788",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "988c08396fc666f632e5f44e3c011876d4130116ea84feb79d477f960d34d788",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "988c08396fc666f632e5f44e3c011876d4130116ea84feb79d477f960d34d788",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9830508474576272,
+      "phase_bin": 3,
+      "position": 58
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "ef3d58bb043d0eaf3e2ec9a475bb6eba7fcb1d40366e57caa6b33a61a4897cd9",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.03389830508474576,
+      "phase_bin": 0,
+      "position": 2
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "ef3d58bb043d0eaf3e2ec9a475bb6eba7fcb1d40366e57caa6b33a61a4897cd9",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3220338983050847,
+      "phase_bin": 1,
+      "position": 19
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "ef3d58bb043d0eaf3e2ec9a475bb6eba7fcb1d40366e57caa6b33a61a4897cd9",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "ef3d58bb043d0eaf3e2ec9a475bb6eba7fcb1d40366e57caa6b33a61a4897cd9",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7796610169491526,
+      "phase_bin": 3,
+      "position": 46
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "cafc98f36b94d0bdc8e011e1ce0adf11775a7f185b086eea4ac3fa11b003efb6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "cafc98f36b94d0bdc8e011e1ce0adf11775a7f185b086eea4ac3fa11b003efb6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3728813559322034,
+      "phase_bin": 1,
+      "position": 22
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "cafc98f36b94d0bdc8e011e1ce0adf11775a7f185b086eea4ac3fa11b003efb6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5932203389830508,
+      "phase_bin": 2,
+      "position": 35
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "cafc98f36b94d0bdc8e011e1ce0adf11775a7f185b086eea4ac3fa11b003efb6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8135593220338984,
+      "phase_bin": 3,
+      "position": 48
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "cedc0fb246158067dd3362b59ac3f9530a7e57c9cbd7d4a240a96fb6b7759876",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.05084745762711865,
+      "phase_bin": 0,
+      "position": 3
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "cedc0fb246158067dd3362b59ac3f9530a7e57c9cbd7d4a240a96fb6b7759876",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "cedc0fb246158067dd3362b59ac3f9530a7e57c9cbd7d4a240a96fb6b7759876",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6610169491525424,
+      "phase_bin": 2,
+      "position": 39
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "cedc0fb246158067dd3362b59ac3f9530a7e57c9cbd7d4a240a96fb6b7759876",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.864406779661017,
+      "phase_bin": 3,
+      "position": 51
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "4176937d523827efcef9a35fe4020c562a52a65a62dd0695de9f2e2364cd56d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1864406779661017,
+      "phase_bin": 0,
+      "position": 11
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "4176937d523827efcef9a35fe4020c562a52a65a62dd0695de9f2e2364cd56d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3389830508474576,
+      "phase_bin": 1,
+      "position": 20
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "4176937d523827efcef9a35fe4020c562a52a65a62dd0695de9f2e2364cd56d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5423728813559322,
+      "phase_bin": 2,
+      "position": 32
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "4176937d523827efcef9a35fe4020c562a52a65a62dd0695de9f2e2364cd56d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7966101694915254,
+      "phase_bin": 3,
+      "position": 47
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "410767c2c012be750ca21caa3fda62636c7df1e614d6c9b8e2aa0b9d650bc3b6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.01694915254237288,
+      "phase_bin": 0,
+      "position": 1
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "410767c2c012be750ca21caa3fda62636c7df1e614d6c9b8e2aa0b9d650bc3b6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2711864406779661,
+      "phase_bin": 1,
+      "position": 16
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "410767c2c012be750ca21caa3fda62636c7df1e614d6c9b8e2aa0b9d650bc3b6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "410767c2c012be750ca21caa3fda62636c7df1e614d6c9b8e2aa0b9d650bc3b6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8305084745762712,
+      "phase_bin": 3,
+      "position": 49
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "073cebc7e79b5521c58860edb975fc24da0f9cf93f124f2fe88a901baa37dcfb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.23728813559322035,
+      "phase_bin": 0,
+      "position": 14
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "073cebc7e79b5521c58860edb975fc24da0f9cf93f124f2fe88a901baa37dcfb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4915254237288136,
+      "phase_bin": 1,
+      "position": 29
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "073cebc7e79b5521c58860edb975fc24da0f9cf93f124f2fe88a901baa37dcfb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "073cebc7e79b5521c58860edb975fc24da0f9cf93f124f2fe88a901baa37dcfb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9661016949152542,
+      "phase_bin": 3,
+      "position": 57
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "48c57de1441b16f3b989a9036cf38f003ab6e2a1378f40b17658dc08e3085666",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.23728813559322035,
+      "phase_bin": 0,
+      "position": 14
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "48c57de1441b16f3b989a9036cf38f003ab6e2a1378f40b17658dc08e3085666",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3050847457627119,
+      "phase_bin": 1,
+      "position": 18
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "48c57de1441b16f3b989a9036cf38f003ab6e2a1378f40b17658dc08e3085666",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "48c57de1441b16f3b989a9036cf38f003ab6e2a1378f40b17658dc08e3085666",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8135593220338984,
+      "phase_bin": 3,
+      "position": 48
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "3a2031a96d78ea66494771a6921cfdefb6fa0cad0378051698f63e2327ed28d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1016949152542373,
+      "phase_bin": 0,
+      "position": 6
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "3a2031a96d78ea66494771a6921cfdefb6fa0cad0378051698f63e2327ed28d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3389830508474576,
+      "phase_bin": 1,
+      "position": 20
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "3a2031a96d78ea66494771a6921cfdefb6fa0cad0378051698f63e2327ed28d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5423728813559322,
+      "phase_bin": 2,
+      "position": 32
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "3a2031a96d78ea66494771a6921cfdefb6fa0cad0378051698f63e2327ed28d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8983050847457628,
+      "phase_bin": 3,
+      "position": 53
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "231f1c826eb9d7cb09a8da984e0dd51db0748c2fd6411991c3a945fc7b5b1fdb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "231f1c826eb9d7cb09a8da984e0dd51db0748c2fd6411991c3a945fc7b5b1fdb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3389830508474576,
+      "phase_bin": 1,
+      "position": 20
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "231f1c826eb9d7cb09a8da984e0dd51db0748c2fd6411991c3a945fc7b5b1fdb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.711864406779661,
+      "phase_bin": 2,
+      "position": 42
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "231f1c826eb9d7cb09a8da984e0dd51db0748c2fd6411991c3a945fc7b5b1fdb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7627118644067796,
+      "phase_bin": 3,
+      "position": 45
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "a55b6cd105853ab978f1a8dbfd06c2ef0e0c4eba05ad42c52c5d0191f8cf7648",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1016949152542373,
+      "phase_bin": 0,
+      "position": 6
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "a55b6cd105853ab978f1a8dbfd06c2ef0e0c4eba05ad42c52c5d0191f8cf7648",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3050847457627119,
+      "phase_bin": 1,
+      "position": 18
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "a55b6cd105853ab978f1a8dbfd06c2ef0e0c4eba05ad42c52c5d0191f8cf7648",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.576271186440678,
+      "phase_bin": 2,
+      "position": 34
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "a55b6cd105853ab978f1a8dbfd06c2ef0e0c4eba05ad42c52c5d0191f8cf7648",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9830508474576272,
+      "phase_bin": 3,
+      "position": 58
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "e98d7682cc38c3bbf4159c98241c0b1b54e623e59f0a2d73c6438a0358b80914",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.23728813559322035,
+      "phase_bin": 0,
+      "position": 14
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "e98d7682cc38c3bbf4159c98241c0b1b54e623e59f0a2d73c6438a0358b80914",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "e98d7682cc38c3bbf4159c98241c0b1b54e623e59f0a2d73c6438a0358b80914",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "e98d7682cc38c3bbf4159c98241c0b1b54e623e59f0a2d73c6438a0358b80914",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7966101694915254,
+      "phase_bin": 3,
+      "position": 47
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "9dcde8afc395a01f3f21cfc4c110be832a94c3534c9e0e53d1efa634e5b22343",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.0847457627118644,
+      "phase_bin": 0,
+      "position": 5
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "9dcde8afc395a01f3f21cfc4c110be832a94c3534c9e0e53d1efa634e5b22343",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "9dcde8afc395a01f3f21cfc4c110be832a94c3534c9e0e53d1efa634e5b22343",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6440677966101694,
+      "phase_bin": 2,
+      "position": 38
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "9dcde8afc395a01f3f21cfc4c110be832a94c3534c9e0e53d1efa634e5b22343",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7796610169491526,
+      "phase_bin": 3,
+      "position": 46
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 16,
+      "game_length": 60,
+      "game_sha256": "e0a152053f776374c680b9e7b77402a96db31d6b31e83959e7a1cb9cbaeec090",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.23728813559322035,
+      "phase_bin": 0,
+      "position": 14
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 16,
+      "game_length": 60,
+      "game_sha256": "e0a152053f776374c680b9e7b77402a96db31d6b31e83959e7a1cb9cbaeec090",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.288135593220339,
+      "phase_bin": 1,
+      "position": 17
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 16,
+      "game_length": 60,
+      "game_sha256": "e0a152053f776374c680b9e7b77402a96db31d6b31e83959e7a1cb9cbaeec090",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 16,
+      "game_length": 60,
+      "game_sha256": "e0a152053f776374c680b9e7b77402a96db31d6b31e83959e7a1cb9cbaeec090",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7627118644067796,
+      "phase_bin": 3,
+      "position": 45
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 17,
+      "game_length": 60,
+      "game_sha256": "a6ea69b168c9ef5374c9dbbe14b0a882068aa75b752df72d624fe0e328825e58",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.15254237288135594,
+      "phase_bin": 0,
+      "position": 9
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 17,
+      "game_length": 60,
+      "game_sha256": "a6ea69b168c9ef5374c9dbbe14b0a882068aa75b752df72d624fe0e328825e58",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 17,
+      "game_length": 60,
+      "game_sha256": "a6ea69b168c9ef5374c9dbbe14b0a882068aa75b752df72d624fe0e328825e58",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6610169491525424,
+      "phase_bin": 2,
+      "position": 39
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 17,
+      "game_length": 60,
+      "game_sha256": "a6ea69b168c9ef5374c9dbbe14b0a882068aa75b752df72d624fe0e328825e58",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8983050847457628,
+      "phase_bin": 3,
+      "position": 53
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 18,
+      "game_length": 60,
+      "game_sha256": "22f2e0f7ca845b15360fccdf014e0d9a75ba9a9fe0a11836c8af255a5de87b33",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.01694915254237288,
+      "phase_bin": 0,
+      "position": 1
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 18,
+      "game_length": 60,
+      "game_sha256": "22f2e0f7ca845b15360fccdf014e0d9a75ba9a9fe0a11836c8af255a5de87b33",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 18,
+      "game_length": 60,
+      "game_sha256": "22f2e0f7ca845b15360fccdf014e0d9a75ba9a9fe0a11836c8af255a5de87b33",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.559322033898305,
+      "phase_bin": 2,
+      "position": 33
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 18,
+      "game_length": 60,
+      "game_sha256": "22f2e0f7ca845b15360fccdf014e0d9a75ba9a9fe0a11836c8af255a5de87b33",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9491525423728814,
+      "phase_bin": 3,
+      "position": 56
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 19,
+      "game_length": 60,
+      "game_sha256": "9755bf7fe0630c92b488ee9592170e10a5ece75c114baf85edead8f059d2f3e7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 19,
+      "game_length": 60,
+      "game_sha256": "9755bf7fe0630c92b488ee9592170e10a5ece75c114baf85edead8f059d2f3e7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 19,
+      "game_length": 60,
+      "game_sha256": "9755bf7fe0630c92b488ee9592170e10a5ece75c114baf85edead8f059d2f3e7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.559322033898305,
+      "phase_bin": 2,
+      "position": 33
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 19,
+      "game_length": 60,
+      "game_sha256": "9755bf7fe0630c92b488ee9592170e10a5ece75c114baf85edead8f059d2f3e7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9322033898305084,
+      "phase_bin": 3,
+      "position": 55
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 20,
+      "game_length": 60,
+      "game_sha256": "6339ebd9281542a3fdef9c603c08e6a497cd3677a1b0e276d5a0dfcae825a612",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 20,
+      "game_length": 60,
+      "game_sha256": "6339ebd9281542a3fdef9c603c08e6a497cd3677a1b0e276d5a0dfcae825a612",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3220338983050847,
+      "phase_bin": 1,
+      "position": 19
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 20,
+      "game_length": 60,
+      "game_sha256": "6339ebd9281542a3fdef9c603c08e6a497cd3677a1b0e276d5a0dfcae825a612",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7288135593220338,
+      "phase_bin": 2,
+      "position": 43
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 20,
+      "game_length": 60,
+      "game_sha256": "6339ebd9281542a3fdef9c603c08e6a497cd3677a1b0e276d5a0dfcae825a612",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9152542372881356,
+      "phase_bin": 3,
+      "position": 54
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 21,
+      "game_length": 60,
+      "game_sha256": "b385b918dd0d9a620fb932784d29102f43f51a48b1fce63b7652363a2c763b04",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1016949152542373,
+      "phase_bin": 0,
+      "position": 6
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 21,
+      "game_length": 60,
+      "game_sha256": "b385b918dd0d9a620fb932784d29102f43f51a48b1fce63b7652363a2c763b04",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2711864406779661,
+      "phase_bin": 1,
+      "position": 16
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 21,
+      "game_length": 60,
+      "game_sha256": "b385b918dd0d9a620fb932784d29102f43f51a48b1fce63b7652363a2c763b04",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7288135593220338,
+      "phase_bin": 2,
+      "position": 43
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 21,
+      "game_length": 60,
+      "game_sha256": "b385b918dd0d9a620fb932784d29102f43f51a48b1fce63b7652363a2c763b04",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9152542372881356,
+      "phase_bin": 3,
+      "position": 54
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 22,
+      "game_length": 60,
+      "game_sha256": "6b187d20dbc81f865a226af53e6f125a87ee0d5a36b51a92f866d3240acc339b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.13559322033898305,
+      "phase_bin": 0,
+      "position": 8
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 22,
+      "game_length": 60,
+      "game_sha256": "6b187d20dbc81f865a226af53e6f125a87ee0d5a36b51a92f866d3240acc339b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4067796610169492,
+      "phase_bin": 1,
+      "position": 24
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 22,
+      "game_length": 60,
+      "game_sha256": "6b187d20dbc81f865a226af53e6f125a87ee0d5a36b51a92f866d3240acc339b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6271186440677966,
+      "phase_bin": 2,
+      "position": 37
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 22,
+      "game_length": 60,
+      "game_sha256": "6b187d20dbc81f865a226af53e6f125a87ee0d5a36b51a92f866d3240acc339b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.847457627118644,
+      "phase_bin": 3,
+      "position": 50
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 23,
+      "game_length": 60,
+      "game_sha256": "d3496e58e57b1fc191df22f3b2174a8d8e143d3fddc0559ae41d38cfc978efaf",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.11864406779661017,
+      "phase_bin": 0,
+      "position": 7
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 23,
+      "game_length": 60,
+      "game_sha256": "d3496e58e57b1fc191df22f3b2174a8d8e143d3fddc0559ae41d38cfc978efaf",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 23,
+      "game_length": 60,
+      "game_sha256": "d3496e58e57b1fc191df22f3b2174a8d8e143d3fddc0559ae41d38cfc978efaf",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 23,
+      "game_length": 60,
+      "game_sha256": "d3496e58e57b1fc191df22f3b2174a8d8e143d3fddc0559ae41d38cfc978efaf",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7966101694915254,
+      "phase_bin": 3,
+      "position": 47
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 24,
+      "game_length": 60,
+      "game_sha256": "637af60f34f641d7a79c41f065289321b9716f8ecff941d6151bef7b73bbd266",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.05084745762711865,
+      "phase_bin": 0,
+      "position": 3
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 24,
+      "game_length": 60,
+      "game_sha256": "637af60f34f641d7a79c41f065289321b9716f8ecff941d6151bef7b73bbd266",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3220338983050847,
+      "phase_bin": 1,
+      "position": 19
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 24,
+      "game_length": 60,
+      "game_sha256": "637af60f34f641d7a79c41f065289321b9716f8ecff941d6151bef7b73bbd266",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.559322033898305,
+      "phase_bin": 2,
+      "position": 33
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 24,
+      "game_length": 60,
+      "game_sha256": "637af60f34f641d7a79c41f065289321b9716f8ecff941d6151bef7b73bbd266",
+      "max_eligible_position": 59,
+      "normalized_phase": 1.0,
+      "phase_bin": 3,
+      "position": 59
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 25,
+      "game_length": 60,
+      "game_sha256": "75362d40a94ef80f90587276d1e3834864e08552da74e45d2803b16051850eb4",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2033898305084746,
+      "phase_bin": 0,
+      "position": 12
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 25,
+      "game_length": 60,
+      "game_sha256": "75362d40a94ef80f90587276d1e3834864e08552da74e45d2803b16051850eb4",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3898305084745763,
+      "phase_bin": 1,
+      "position": 23
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 25,
+      "game_length": 60,
+      "game_sha256": "75362d40a94ef80f90587276d1e3834864e08552da74e45d2803b16051850eb4",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5932203389830508,
+      "phase_bin": 2,
+      "position": 35
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 25,
+      "game_length": 60,
+      "game_sha256": "75362d40a94ef80f90587276d1e3834864e08552da74e45d2803b16051850eb4",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8305084745762712,
+      "phase_bin": 3,
+      "position": 49
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 26,
+      "game_length": 60,
+      "game_sha256": "664545dd2ba54fbaba373260a1b3a8ad5d1ded00ed3215679a2feab805b8610f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.13559322033898305,
+      "phase_bin": 0,
+      "position": 8
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 26,
+      "game_length": 60,
+      "game_sha256": "664545dd2ba54fbaba373260a1b3a8ad5d1ded00ed3215679a2feab805b8610f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2542372881355932,
+      "phase_bin": 1,
+      "position": 15
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 26,
+      "game_length": 60,
+      "game_sha256": "664545dd2ba54fbaba373260a1b3a8ad5d1ded00ed3215679a2feab805b8610f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6271186440677966,
+      "phase_bin": 2,
+      "position": 37
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 26,
+      "game_length": 60,
+      "game_sha256": "664545dd2ba54fbaba373260a1b3a8ad5d1ded00ed3215679a2feab805b8610f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8813559322033898,
+      "phase_bin": 3,
+      "position": 52
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 27,
+      "game_length": 60,
+      "game_sha256": "f8100d2e7ea4d73c0eb5f9502a0e89dd9c3f15f2e4096d69dbd88b0c51cb62d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 27,
+      "game_length": 60,
+      "game_sha256": "f8100d2e7ea4d73c0eb5f9502a0e89dd9c3f15f2e4096d69dbd88b0c51cb62d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 27,
+      "game_length": 60,
+      "game_sha256": "f8100d2e7ea4d73c0eb5f9502a0e89dd9c3f15f2e4096d69dbd88b0c51cb62d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6271186440677966,
+      "phase_bin": 2,
+      "position": 37
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 27,
+      "game_length": 60,
+      "game_sha256": "f8100d2e7ea4d73c0eb5f9502a0e89dd9c3f15f2e4096d69dbd88b0c51cb62d0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.847457627118644,
+      "phase_bin": 3,
+      "position": 50
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 28,
+      "game_length": 60,
+      "game_sha256": "33b801aa658ff915b4e042731a568ec11ac36bc4b5b5cc4d9d35019b7004544e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2033898305084746,
+      "phase_bin": 0,
+      "position": 12
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 28,
+      "game_length": 60,
+      "game_sha256": "33b801aa658ff915b4e042731a568ec11ac36bc4b5b5cc4d9d35019b7004544e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4745762711864407,
+      "phase_bin": 1,
+      "position": 28
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 28,
+      "game_length": 60,
+      "game_sha256": "33b801aa658ff915b4e042731a568ec11ac36bc4b5b5cc4d9d35019b7004544e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 28,
+      "game_length": 60,
+      "game_sha256": "33b801aa658ff915b4e042731a568ec11ac36bc4b5b5cc4d9d35019b7004544e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9322033898305084,
+      "phase_bin": 3,
+      "position": 55
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 29,
+      "game_length": 60,
+      "game_sha256": "26960cf28109eac877684fdb657cbab627cea61999e0b14b2a34edbd40ff0c51",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1016949152542373,
+      "phase_bin": 0,
+      "position": 6
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 29,
+      "game_length": 60,
+      "game_sha256": "26960cf28109eac877684fdb657cbab627cea61999e0b14b2a34edbd40ff0c51",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.288135593220339,
+      "phase_bin": 1,
+      "position": 17
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 29,
+      "game_length": 60,
+      "game_sha256": "26960cf28109eac877684fdb657cbab627cea61999e0b14b2a34edbd40ff0c51",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 29,
+      "game_length": 60,
+      "game_sha256": "26960cf28109eac877684fdb657cbab627cea61999e0b14b2a34edbd40ff0c51",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9322033898305084,
+      "phase_bin": 3,
+      "position": 55
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 30,
+      "game_length": 60,
+      "game_sha256": "a15413c07adc55641fb5212bd4db512b01aeeacffdf2ca3271b8c1337ef93f35",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 30,
+      "game_length": 60,
+      "game_sha256": "a15413c07adc55641fb5212bd4db512b01aeeacffdf2ca3271b8c1337ef93f35",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4406779661016949,
+      "phase_bin": 1,
+      "position": 26
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 30,
+      "game_length": 60,
+      "game_sha256": "a15413c07adc55641fb5212bd4db512b01aeeacffdf2ca3271b8c1337ef93f35",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 30,
+      "game_length": 60,
+      "game_sha256": "a15413c07adc55641fb5212bd4db512b01aeeacffdf2ca3271b8c1337ef93f35",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9661016949152542,
+      "phase_bin": 3,
+      "position": 57
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 31,
+      "game_length": 60,
+      "game_sha256": "1f94ecc56269e4e08677950806c6d8ad6f9288157ee30edfbb6b62c78bbb481f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 31,
+      "game_length": 60,
+      "game_sha256": "1f94ecc56269e4e08677950806c6d8ad6f9288157ee30edfbb6b62c78bbb481f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.423728813559322,
+      "phase_bin": 1,
+      "position": 25
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 31,
+      "game_length": 60,
+      "game_sha256": "1f94ecc56269e4e08677950806c6d8ad6f9288157ee30edfbb6b62c78bbb481f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6949152542372882,
+      "phase_bin": 2,
+      "position": 41
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170224.pickle",
+      "game_index": 31,
+      "game_length": 60,
+      "game_sha256": "1f94ecc56269e4e08677950806c6d8ad6f9288157ee30edfbb6b62c78bbb481f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8813559322033898,
+      "phase_bin": 3,
+      "position": 52
+    }
+  ],
+  "train": [
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "1ccd0280e51bd895f60cbbf8748e9614d1a8640bc7a10c2fefa11d8d2bd84945",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2033898305084746,
+      "phase_bin": 0,
+      "position": 12
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "1ccd0280e51bd895f60cbbf8748e9614d1a8640bc7a10c2fefa11d8d2bd84945",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3389830508474576,
+      "phase_bin": 1,
+      "position": 20
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "1ccd0280e51bd895f60cbbf8748e9614d1a8640bc7a10c2fefa11d8d2bd84945",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "1ccd0280e51bd895f60cbbf8748e9614d1a8640bc7a10c2fefa11d8d2bd84945",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7966101694915254,
+      "phase_bin": 3,
+      "position": 47
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "067ab38ce5c9de92ee61a31cf745a1668c2db25864023052811ef20df8427653",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.13559322033898305,
+      "phase_bin": 0,
+      "position": 8
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "067ab38ce5c9de92ee61a31cf745a1668c2db25864023052811ef20df8427653",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "067ab38ce5c9de92ee61a31cf745a1668c2db25864023052811ef20df8427653",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6271186440677966,
+      "phase_bin": 2,
+      "position": 37
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "067ab38ce5c9de92ee61a31cf745a1668c2db25864023052811ef20df8427653",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8983050847457628,
+      "phase_bin": 3,
+      "position": 53
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "5d8dee3430d6b54bc3c61c6fc679a9b55c552e3e7a12ff2acdbe9f4fe834b4f6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "5d8dee3430d6b54bc3c61c6fc679a9b55c552e3e7a12ff2acdbe9f4fe834b4f6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "5d8dee3430d6b54bc3c61c6fc679a9b55c552e3e7a12ff2acdbe9f4fe834b4f6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5423728813559322,
+      "phase_bin": 2,
+      "position": 32
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "5d8dee3430d6b54bc3c61c6fc679a9b55c552e3e7a12ff2acdbe9f4fe834b4f6",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9322033898305084,
+      "phase_bin": 3,
+      "position": 55
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "2cff06688e343dd047bc8cb45dd91e624de91f62effe1cf3d4938c367ed8a0e9",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1016949152542373,
+      "phase_bin": 0,
+      "position": 6
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "2cff06688e343dd047bc8cb45dd91e624de91f62effe1cf3d4938c367ed8a0e9",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4067796610169492,
+      "phase_bin": 1,
+      "position": 24
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "2cff06688e343dd047bc8cb45dd91e624de91f62effe1cf3d4938c367ed8a0e9",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "2cff06688e343dd047bc8cb45dd91e624de91f62effe1cf3d4938c367ed8a0e9",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7796610169491526,
+      "phase_bin": 3,
+      "position": 46
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "8d1f1d5efc72a10ebc635e18003e0bac886dcd2afcf8737040ca5ff37952f1ff",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1016949152542373,
+      "phase_bin": 0,
+      "position": 6
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "8d1f1d5efc72a10ebc635e18003e0bac886dcd2afcf8737040ca5ff37952f1ff",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3728813559322034,
+      "phase_bin": 1,
+      "position": 22
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "8d1f1d5efc72a10ebc635e18003e0bac886dcd2afcf8737040ca5ff37952f1ff",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.576271186440678,
+      "phase_bin": 2,
+      "position": 34
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "8d1f1d5efc72a10ebc635e18003e0bac886dcd2afcf8737040ca5ff37952f1ff",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7796610169491526,
+      "phase_bin": 3,
+      "position": 46
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "bc6be570af399b973fc370957b23800a32311192df1218c644274d7844e3ae95",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1694915254237288,
+      "phase_bin": 0,
+      "position": 10
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "bc6be570af399b973fc370957b23800a32311192df1218c644274d7844e3ae95",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3898305084745763,
+      "phase_bin": 1,
+      "position": 23
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "bc6be570af399b973fc370957b23800a32311192df1218c644274d7844e3ae95",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "bc6be570af399b973fc370957b23800a32311192df1218c644274d7844e3ae95",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9152542372881356,
+      "phase_bin": 3,
+      "position": 54
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "a81a461c891df88ab189d6e1ff172e258e49969e9eb961c3ee7b4726d275e312",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "a81a461c891df88ab189d6e1ff172e258e49969e9eb961c3ee7b4726d275e312",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4915254237288136,
+      "phase_bin": 1,
+      "position": 29
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "a81a461c891df88ab189d6e1ff172e258e49969e9eb961c3ee7b4726d275e312",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6440677966101694,
+      "phase_bin": 2,
+      "position": 38
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "a81a461c891df88ab189d6e1ff172e258e49969e9eb961c3ee7b4726d275e312",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9661016949152542,
+      "phase_bin": 3,
+      "position": 57
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "b9e6bb40c67e6aced60d733b23b4ec6921c64a0769aca319323be5c9a046067f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.13559322033898305,
+      "phase_bin": 0,
+      "position": 8
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "b9e6bb40c67e6aced60d733b23b4ec6921c64a0769aca319323be5c9a046067f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3389830508474576,
+      "phase_bin": 1,
+      "position": 20
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "b9e6bb40c67e6aced60d733b23b4ec6921c64a0769aca319323be5c9a046067f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7288135593220338,
+      "phase_bin": 2,
+      "position": 43
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "b9e6bb40c67e6aced60d733b23b4ec6921c64a0769aca319323be5c9a046067f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8305084745762712,
+      "phase_bin": 3,
+      "position": 49
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "57ae21006e2ff7aef086978bde8935acdb2f700436b3311cfa2e1030d41321a7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2033898305084746,
+      "phase_bin": 0,
+      "position": 12
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "57ae21006e2ff7aef086978bde8935acdb2f700436b3311cfa2e1030d41321a7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "57ae21006e2ff7aef086978bde8935acdb2f700436b3311cfa2e1030d41321a7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "57ae21006e2ff7aef086978bde8935acdb2f700436b3311cfa2e1030d41321a7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9661016949152542,
+      "phase_bin": 3,
+      "position": 57
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "80a152c866a1a0dc0fd11e16e98a20ca75af12b0d9eedfc552477cac45fe86cb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.13559322033898305,
+      "phase_bin": 0,
+      "position": 8
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "80a152c866a1a0dc0fd11e16e98a20ca75af12b0d9eedfc552477cac45fe86cb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3389830508474576,
+      "phase_bin": 1,
+      "position": 20
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "80a152c866a1a0dc0fd11e16e98a20ca75af12b0d9eedfc552477cac45fe86cb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "80a152c866a1a0dc0fd11e16e98a20ca75af12b0d9eedfc552477cac45fe86cb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7966101694915254,
+      "phase_bin": 3,
+      "position": 47
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "a03080bc6f07b83317aef22e53e5a4e46baf1a9be68bc18d81d3b2194d4f1e32",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.11864406779661017,
+      "phase_bin": 0,
+      "position": 7
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "a03080bc6f07b83317aef22e53e5a4e46baf1a9be68bc18d81d3b2194d4f1e32",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3389830508474576,
+      "phase_bin": 1,
+      "position": 20
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "a03080bc6f07b83317aef22e53e5a4e46baf1a9be68bc18d81d3b2194d4f1e32",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.711864406779661,
+      "phase_bin": 2,
+      "position": 42
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "a03080bc6f07b83317aef22e53e5a4e46baf1a9be68bc18d81d3b2194d4f1e32",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8305084745762712,
+      "phase_bin": 3,
+      "position": 49
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "8a5d99911a5072d7d6830a539b914f30595eeb2467e20bb1401472f8c278effb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2033898305084746,
+      "phase_bin": 0,
+      "position": 12
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "8a5d99911a5072d7d6830a539b914f30595eeb2467e20bb1401472f8c278effb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2711864406779661,
+      "phase_bin": 1,
+      "position": 16
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "8a5d99911a5072d7d6830a539b914f30595eeb2467e20bb1401472f8c278effb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "8a5d99911a5072d7d6830a539b914f30595eeb2467e20bb1401472f8c278effb",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9491525423728814,
+      "phase_bin": 3,
+      "position": 56
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "8ec10a0b20f022cf5dcad974ff0fc14e9f1ea6cf4faad0cfa5a1252c2fe02556",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.11864406779661017,
+      "phase_bin": 0,
+      "position": 7
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "8ec10a0b20f022cf5dcad974ff0fc14e9f1ea6cf4faad0cfa5a1252c2fe02556",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "8ec10a0b20f022cf5dcad974ff0fc14e9f1ea6cf4faad0cfa5a1252c2fe02556",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "8ec10a0b20f022cf5dcad974ff0fc14e9f1ea6cf4faad0cfa5a1252c2fe02556",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9661016949152542,
+      "phase_bin": 3,
+      "position": 57
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "9893d7c2e5d39c8f884b6edbc84d5b42171de0cd7053a58da44b69d230f7bfe0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.0847457627118644,
+      "phase_bin": 0,
+      "position": 5
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "9893d7c2e5d39c8f884b6edbc84d5b42171de0cd7053a58da44b69d230f7bfe0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3220338983050847,
+      "phase_bin": 1,
+      "position": 19
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "9893d7c2e5d39c8f884b6edbc84d5b42171de0cd7053a58da44b69d230f7bfe0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7288135593220338,
+      "phase_bin": 2,
+      "position": 43
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "9893d7c2e5d39c8f884b6edbc84d5b42171de0cd7053a58da44b69d230f7bfe0",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7966101694915254,
+      "phase_bin": 3,
+      "position": 47
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "c597662a26c09a8b76bccdb026f3b03bec1b525b29bf06cd52a2e966dbf889f5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.05084745762711865,
+      "phase_bin": 0,
+      "position": 3
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "c597662a26c09a8b76bccdb026f3b03bec1b525b29bf06cd52a2e966dbf889f5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "c597662a26c09a8b76bccdb026f3b03bec1b525b29bf06cd52a2e966dbf889f5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.711864406779661,
+      "phase_bin": 2,
+      "position": 42
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "c597662a26c09a8b76bccdb026f3b03bec1b525b29bf06cd52a2e966dbf889f5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9322033898305084,
+      "phase_bin": 3,
+      "position": 55
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "48ded64afb60a675ce5e88f4ed64fc0ed9ba3c73c1574d8d1e2c377b8741e7bc",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1864406779661017,
+      "phase_bin": 0,
+      "position": 11
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "48ded64afb60a675ce5e88f4ed64fc0ed9ba3c73c1574d8d1e2c377b8741e7bc",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.423728813559322,
+      "phase_bin": 1,
+      "position": 25
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "48ded64afb60a675ce5e88f4ed64fc0ed9ba3c73c1574d8d1e2c377b8741e7bc",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5932203389830508,
+      "phase_bin": 2,
+      "position": 35
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "48ded64afb60a675ce5e88f4ed64fc0ed9ba3c73c1574d8d1e2c377b8741e7bc",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8305084745762712,
+      "phase_bin": 3,
+      "position": 49
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 16,
+      "game_length": 60,
+      "game_sha256": "d323e9f503783b80472eec7b2f58c76d5b9c3714660117ab409fef5b1e940dd5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.15254237288135594,
+      "phase_bin": 0,
+      "position": 9
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 16,
+      "game_length": 60,
+      "game_sha256": "d323e9f503783b80472eec7b2f58c76d5b9c3714660117ab409fef5b1e940dd5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3220338983050847,
+      "phase_bin": 1,
+      "position": 19
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 16,
+      "game_length": 60,
+      "game_sha256": "d323e9f503783b80472eec7b2f58c76d5b9c3714660117ab409fef5b1e940dd5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 16,
+      "game_length": 60,
+      "game_sha256": "d323e9f503783b80472eec7b2f58c76d5b9c3714660117ab409fef5b1e940dd5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7627118644067796,
+      "phase_bin": 3,
+      "position": 45
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 17,
+      "game_length": 60,
+      "game_sha256": "9701fda5deb70a7f348f0398e874d88f23336df533ce66f148507e9b66917939",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.15254237288135594,
+      "phase_bin": 0,
+      "position": 9
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 17,
+      "game_length": 60,
+      "game_sha256": "9701fda5deb70a7f348f0398e874d88f23336df533ce66f148507e9b66917939",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4067796610169492,
+      "phase_bin": 1,
+      "position": 24
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 17,
+      "game_length": 60,
+      "game_sha256": "9701fda5deb70a7f348f0398e874d88f23336df533ce66f148507e9b66917939",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6610169491525424,
+      "phase_bin": 2,
+      "position": 39
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 17,
+      "game_length": 60,
+      "game_sha256": "9701fda5deb70a7f348f0398e874d88f23336df533ce66f148507e9b66917939",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9830508474576272,
+      "phase_bin": 3,
+      "position": 58
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 18,
+      "game_length": 60,
+      "game_sha256": "6b1fdd6cd2128658bff4afe26ab224c250988ae7fba2da22826dff3be88c4e7c",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2033898305084746,
+      "phase_bin": 0,
+      "position": 12
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 18,
+      "game_length": 60,
+      "game_sha256": "6b1fdd6cd2128658bff4afe26ab224c250988ae7fba2da22826dff3be88c4e7c",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2542372881355932,
+      "phase_bin": 1,
+      "position": 15
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 18,
+      "game_length": 60,
+      "game_sha256": "6b1fdd6cd2128658bff4afe26ab224c250988ae7fba2da22826dff3be88c4e7c",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5423728813559322,
+      "phase_bin": 2,
+      "position": 32
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 18,
+      "game_length": 60,
+      "game_sha256": "6b1fdd6cd2128658bff4afe26ab224c250988ae7fba2da22826dff3be88c4e7c",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8813559322033898,
+      "phase_bin": 3,
+      "position": 52
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 19,
+      "game_length": 60,
+      "game_sha256": "a794e8759c0057a65a65b1d9f30a1a68a8758fdbfb5e24e5275a4540e49d26f7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 19,
+      "game_length": 60,
+      "game_sha256": "a794e8759c0057a65a65b1d9f30a1a68a8758fdbfb5e24e5275a4540e49d26f7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4067796610169492,
+      "phase_bin": 1,
+      "position": 24
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 19,
+      "game_length": 60,
+      "game_sha256": "a794e8759c0057a65a65b1d9f30a1a68a8758fdbfb5e24e5275a4540e49d26f7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5932203389830508,
+      "phase_bin": 2,
+      "position": 35
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 19,
+      "game_length": 60,
+      "game_sha256": "a794e8759c0057a65a65b1d9f30a1a68a8758fdbfb5e24e5275a4540e49d26f7",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.864406779661017,
+      "phase_bin": 3,
+      "position": 51
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 20,
+      "game_length": 60,
+      "game_sha256": "5e01ff088b51d35d0939711956970172745254b309fce96e42bed91bf9f64ffe",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.15254237288135594,
+      "phase_bin": 0,
+      "position": 9
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 20,
+      "game_length": 60,
+      "game_sha256": "5e01ff088b51d35d0939711956970172745254b309fce96e42bed91bf9f64ffe",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4745762711864407,
+      "phase_bin": 1,
+      "position": 28
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 20,
+      "game_length": 60,
+      "game_sha256": "5e01ff088b51d35d0939711956970172745254b309fce96e42bed91bf9f64ffe",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7457627118644068,
+      "phase_bin": 2,
+      "position": 44
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 20,
+      "game_length": 60,
+      "game_sha256": "5e01ff088b51d35d0939711956970172745254b309fce96e42bed91bf9f64ffe",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9322033898305084,
+      "phase_bin": 3,
+      "position": 55
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 21,
+      "game_length": 60,
+      "game_sha256": "5350313ac32b2aa848ab1ec60c62cfc4c74484011ba990f56ecb779c7689617b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.05084745762711865,
+      "phase_bin": 0,
+      "position": 3
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 21,
+      "game_length": 60,
+      "game_sha256": "5350313ac32b2aa848ab1ec60c62cfc4c74484011ba990f56ecb779c7689617b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2542372881355932,
+      "phase_bin": 1,
+      "position": 15
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 21,
+      "game_length": 60,
+      "game_sha256": "5350313ac32b2aa848ab1ec60c62cfc4c74484011ba990f56ecb779c7689617b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 21,
+      "game_length": 60,
+      "game_sha256": "5350313ac32b2aa848ab1ec60c62cfc4c74484011ba990f56ecb779c7689617b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7796610169491526,
+      "phase_bin": 3,
+      "position": 46
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 22,
+      "game_length": 60,
+      "game_sha256": "2f39b8e667f24e5a2f3ed1938b616bbffc5142344fbee47f293c7e64d98c2c5b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1694915254237288,
+      "phase_bin": 0,
+      "position": 10
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 22,
+      "game_length": 60,
+      "game_sha256": "2f39b8e667f24e5a2f3ed1938b616bbffc5142344fbee47f293c7e64d98c2c5b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3898305084745763,
+      "phase_bin": 1,
+      "position": 23
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 22,
+      "game_length": 60,
+      "game_sha256": "2f39b8e667f24e5a2f3ed1938b616bbffc5142344fbee47f293c7e64d98c2c5b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7288135593220338,
+      "phase_bin": 2,
+      "position": 43
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 22,
+      "game_length": 60,
+      "game_sha256": "2f39b8e667f24e5a2f3ed1938b616bbffc5142344fbee47f293c7e64d98c2c5b",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8135593220338984,
+      "phase_bin": 3,
+      "position": 48
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 23,
+      "game_length": 60,
+      "game_sha256": "2e66448398a9b755b210b214db394954895c9f814e9c4ae6f678873f6bbc2908",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.23728813559322035,
+      "phase_bin": 0,
+      "position": 14
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 23,
+      "game_length": 60,
+      "game_sha256": "2e66448398a9b755b210b214db394954895c9f814e9c4ae6f678873f6bbc2908",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 23,
+      "game_length": 60,
+      "game_sha256": "2e66448398a9b755b210b214db394954895c9f814e9c4ae6f678873f6bbc2908",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 23,
+      "game_length": 60,
+      "game_sha256": "2e66448398a9b755b210b214db394954895c9f814e9c4ae6f678873f6bbc2908",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8305084745762712,
+      "phase_bin": 3,
+      "position": 49
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 24,
+      "game_length": 60,
+      "game_sha256": "2c7ac90305655f0cf6b7b0cfcd0dc7b6eaa602976d87b2449fce1cfe967bdbe3",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 24,
+      "game_length": 60,
+      "game_sha256": "2c7ac90305655f0cf6b7b0cfcd0dc7b6eaa602976d87b2449fce1cfe967bdbe3",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 24,
+      "game_length": 60,
+      "game_sha256": "2c7ac90305655f0cf6b7b0cfcd0dc7b6eaa602976d87b2449fce1cfe967bdbe3",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5084745762711864,
+      "phase_bin": 2,
+      "position": 30
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 24,
+      "game_length": 60,
+      "game_sha256": "2c7ac90305655f0cf6b7b0cfcd0dc7b6eaa602976d87b2449fce1cfe967bdbe3",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7627118644067796,
+      "phase_bin": 3,
+      "position": 45
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 25,
+      "game_length": 60,
+      "game_sha256": "5b7b63f1d5b9900523ac881ddcccee069e24520e906ae0565136b9b4420f4f30",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 25,
+      "game_length": 60,
+      "game_sha256": "5b7b63f1d5b9900523ac881ddcccee069e24520e906ae0565136b9b4420f4f30",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3728813559322034,
+      "phase_bin": 1,
+      "position": 22
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 25,
+      "game_length": 60,
+      "game_sha256": "5b7b63f1d5b9900523ac881ddcccee069e24520e906ae0565136b9b4420f4f30",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7457627118644068,
+      "phase_bin": 2,
+      "position": 44
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 25,
+      "game_length": 60,
+      "game_sha256": "5b7b63f1d5b9900523ac881ddcccee069e24520e906ae0565136b9b4420f4f30",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8305084745762712,
+      "phase_bin": 3,
+      "position": 49
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 26,
+      "game_length": 60,
+      "game_sha256": "bc652b85d432dc15b046cf57d1a8d7ccd46bfaeb58802ad5946abd7865c0a541",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.03389830508474576,
+      "phase_bin": 0,
+      "position": 2
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 26,
+      "game_length": 60,
+      "game_sha256": "bc652b85d432dc15b046cf57d1a8d7ccd46bfaeb58802ad5946abd7865c0a541",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4915254237288136,
+      "phase_bin": 1,
+      "position": 29
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 26,
+      "game_length": 60,
+      "game_sha256": "bc652b85d432dc15b046cf57d1a8d7ccd46bfaeb58802ad5946abd7865c0a541",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7288135593220338,
+      "phase_bin": 2,
+      "position": 43
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 26,
+      "game_length": 60,
+      "game_sha256": "bc652b85d432dc15b046cf57d1a8d7ccd46bfaeb58802ad5946abd7865c0a541",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.864406779661017,
+      "phase_bin": 3,
+      "position": 51
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 27,
+      "game_length": 60,
+      "game_sha256": "cfacf7677e48aec131ff59970e86c43e6e8030a39e6a460b3e25be2c48b08799",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.05084745762711865,
+      "phase_bin": 0,
+      "position": 3
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 27,
+      "game_length": 60,
+      "game_sha256": "cfacf7677e48aec131ff59970e86c43e6e8030a39e6a460b3e25be2c48b08799",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3898305084745763,
+      "phase_bin": 1,
+      "position": 23
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 27,
+      "game_length": 60,
+      "game_sha256": "cfacf7677e48aec131ff59970e86c43e6e8030a39e6a460b3e25be2c48b08799",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 27,
+      "game_length": 60,
+      "game_sha256": "cfacf7677e48aec131ff59970e86c43e6e8030a39e6a460b3e25be2c48b08799",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.864406779661017,
+      "phase_bin": 3,
+      "position": 51
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 28,
+      "game_length": 60,
+      "game_sha256": "498a93942ca3d2145205927e65aff6ad77133ca17e13adc548859d08f986925f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.01694915254237288,
+      "phase_bin": 0,
+      "position": 1
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 28,
+      "game_length": 60,
+      "game_sha256": "498a93942ca3d2145205927e65aff6ad77133ca17e13adc548859d08f986925f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2542372881355932,
+      "phase_bin": 1,
+      "position": 15
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 28,
+      "game_length": 60,
+      "game_sha256": "498a93942ca3d2145205927e65aff6ad77133ca17e13adc548859d08f986925f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.576271186440678,
+      "phase_bin": 2,
+      "position": 34
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 28,
+      "game_length": 60,
+      "game_sha256": "498a93942ca3d2145205927e65aff6ad77133ca17e13adc548859d08f986925f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9661016949152542,
+      "phase_bin": 3,
+      "position": 57
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 29,
+      "game_length": 60,
+      "game_sha256": "ef792351f301489cfb5c63f956f2d368b48851c90fc6ba3b8b9eea8bad3ed4c4",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.01694915254237288,
+      "phase_bin": 0,
+      "position": 1
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 29,
+      "game_length": 60,
+      "game_sha256": "ef792351f301489cfb5c63f956f2d368b48851c90fc6ba3b8b9eea8bad3ed4c4",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4406779661016949,
+      "phase_bin": 1,
+      "position": 26
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 29,
+      "game_length": 60,
+      "game_sha256": "ef792351f301489cfb5c63f956f2d368b48851c90fc6ba3b8b9eea8bad3ed4c4",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 29,
+      "game_length": 60,
+      "game_sha256": "ef792351f301489cfb5c63f956f2d368b48851c90fc6ba3b8b9eea8bad3ed4c4",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7796610169491526,
+      "phase_bin": 3,
+      "position": 46
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 30,
+      "game_length": 60,
+      "game_sha256": "20a465ea44975e74e76da77bb5e00a627de9cc479eada31fabfca30bb3bb52ef",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.15254237288135594,
+      "phase_bin": 0,
+      "position": 9
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 30,
+      "game_length": 60,
+      "game_sha256": "20a465ea44975e74e76da77bb5e00a627de9cc479eada31fabfca30bb3bb52ef",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3389830508474576,
+      "phase_bin": 1,
+      "position": 20
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 30,
+      "game_length": 60,
+      "game_sha256": "20a465ea44975e74e76da77bb5e00a627de9cc479eada31fabfca30bb3bb52ef",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6779661016949152,
+      "phase_bin": 2,
+      "position": 40
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 30,
+      "game_length": 60,
+      "game_sha256": "20a465ea44975e74e76da77bb5e00a627de9cc479eada31fabfca30bb3bb52ef",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9152542372881356,
+      "phase_bin": 3,
+      "position": 54
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 31,
+      "game_length": 60,
+      "game_sha256": "d3bedd92cf201011955b77f89ff58aa3283fcfe41c20891a33066baf73a3d23e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1864406779661017,
+      "phase_bin": 0,
+      "position": 11
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 31,
+      "game_length": 60,
+      "game_sha256": "d3bedd92cf201011955b77f89ff58aa3283fcfe41c20891a33066baf73a3d23e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.423728813559322,
+      "phase_bin": 1,
+      "position": 25
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 31,
+      "game_length": 60,
+      "game_sha256": "d3bedd92cf201011955b77f89ff58aa3283fcfe41c20891a33066baf73a3d23e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6610169491525424,
+      "phase_bin": 2,
+      "position": 39
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_164435.pickle",
+      "game_index": 31,
+      "game_length": 60,
+      "game_sha256": "d3bedd92cf201011955b77f89ff58aa3283fcfe41c20891a33066baf73a3d23e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7796610169491526,
+      "phase_bin": 3,
+      "position": 46
+    }
+  ],
+  "validation": [
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "a83ccaa12cda8c19fe5390410f390a8438ebda6e21acbbdf96543e10e08d347d",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.15254237288135594,
+      "phase_bin": 0,
+      "position": 9
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "a83ccaa12cda8c19fe5390410f390a8438ebda6e21acbbdf96543e10e08d347d",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4576271186440678,
+      "phase_bin": 1,
+      "position": 27
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "a83ccaa12cda8c19fe5390410f390a8438ebda6e21acbbdf96543e10e08d347d",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 0,
+      "game_length": 60,
+      "game_sha256": "a83ccaa12cda8c19fe5390410f390a8438ebda6e21acbbdf96543e10e08d347d",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8135593220338984,
+      "phase_bin": 3,
+      "position": 48
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "e94ee24c421d09579f54f6986a9b2657c7ead9f99b1a66c0635d6c28d0eab689",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "e94ee24c421d09579f54f6986a9b2657c7ead9f99b1a66c0635d6c28d0eab689",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3050847457627119,
+      "phase_bin": 1,
+      "position": 18
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "e94ee24c421d09579f54f6986a9b2657c7ead9f99b1a66c0635d6c28d0eab689",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6271186440677966,
+      "phase_bin": 2,
+      "position": 37
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 1,
+      "game_length": 60,
+      "game_sha256": "e94ee24c421d09579f54f6986a9b2657c7ead9f99b1a66c0635d6c28d0eab689",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7796610169491526,
+      "phase_bin": 3,
+      "position": 46
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "984a23ca421c2670d70de205119831a6041105ae48905092bd28fe48f872fe11",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "984a23ca421c2670d70de205119831a6041105ae48905092bd28fe48f872fe11",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2711864406779661,
+      "phase_bin": 1,
+      "position": 16
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "984a23ca421c2670d70de205119831a6041105ae48905092bd28fe48f872fe11",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6101694915254238,
+      "phase_bin": 2,
+      "position": 36
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 2,
+      "game_length": 60,
+      "game_sha256": "984a23ca421c2670d70de205119831a6041105ae48905092bd28fe48f872fe11",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8813559322033898,
+      "phase_bin": 3,
+      "position": 52
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "0adf36b46400db201e3f440341a8b3fb22b0a747dd7da1552948c11e97d1d304",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.15254237288135594,
+      "phase_bin": 0,
+      "position": 9
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "0adf36b46400db201e3f440341a8b3fb22b0a747dd7da1552948c11e97d1d304",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "0adf36b46400db201e3f440341a8b3fb22b0a747dd7da1552948c11e97d1d304",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6610169491525424,
+      "phase_bin": 2,
+      "position": 39
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 3,
+      "game_length": 60,
+      "game_sha256": "0adf36b46400db201e3f440341a8b3fb22b0a747dd7da1552948c11e97d1d304",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8305084745762712,
+      "phase_bin": 3,
+      "position": 49
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "5102d2185a36d27a1f3d79e2c93fe077424389611d6b5f51be651cd4c1c80a34",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1016949152542373,
+      "phase_bin": 0,
+      "position": 6
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "5102d2185a36d27a1f3d79e2c93fe077424389611d6b5f51be651cd4c1c80a34",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4915254237288136,
+      "phase_bin": 1,
+      "position": 29
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "5102d2185a36d27a1f3d79e2c93fe077424389611d6b5f51be651cd4c1c80a34",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5423728813559322,
+      "phase_bin": 2,
+      "position": 32
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 4,
+      "game_length": 60,
+      "game_sha256": "5102d2185a36d27a1f3d79e2c93fe077424389611d6b5f51be651cd4c1c80a34",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9661016949152542,
+      "phase_bin": 3,
+      "position": 57
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "96af716d6ed840d8968e12c9face31eab7aff69ba6de907602db7b5a3232efe5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.05084745762711865,
+      "phase_bin": 0,
+      "position": 3
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "96af716d6ed840d8968e12c9face31eab7aff69ba6de907602db7b5a3232efe5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2542372881355932,
+      "phase_bin": 1,
+      "position": 15
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "96af716d6ed840d8968e12c9face31eab7aff69ba6de907602db7b5a3232efe5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.559322033898305,
+      "phase_bin": 2,
+      "position": 33
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 5,
+      "game_length": 60,
+      "game_sha256": "96af716d6ed840d8968e12c9face31eab7aff69ba6de907602db7b5a3232efe5",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9322033898305084,
+      "phase_bin": 3,
+      "position": 55
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "9de43de00e1a6f5784cb623a59f56df8ffe2be9c4aa68a59733c044453ccc845",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "9de43de00e1a6f5784cb623a59f56df8ffe2be9c4aa68a59733c044453ccc845",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3898305084745763,
+      "phase_bin": 1,
+      "position": 23
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "9de43de00e1a6f5784cb623a59f56df8ffe2be9c4aa68a59733c044453ccc845",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7457627118644068,
+      "phase_bin": 2,
+      "position": 44
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 6,
+      "game_length": 60,
+      "game_sha256": "9de43de00e1a6f5784cb623a59f56df8ffe2be9c4aa68a59733c044453ccc845",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8135593220338984,
+      "phase_bin": 3,
+      "position": 48
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "5afd995efb70f387a92ebc88f545e705b267ed4bba3368a331a09c08ed392e72",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "5afd995efb70f387a92ebc88f545e705b267ed4bba3368a331a09c08ed392e72",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.423728813559322,
+      "phase_bin": 1,
+      "position": 25
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "5afd995efb70f387a92ebc88f545e705b267ed4bba3368a331a09c08ed392e72",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6949152542372882,
+      "phase_bin": 2,
+      "position": 41
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 7,
+      "game_length": 60,
+      "game_sha256": "5afd995efb70f387a92ebc88f545e705b267ed4bba3368a331a09c08ed392e72",
+      "max_eligible_position": 59,
+      "normalized_phase": 1.0,
+      "phase_bin": 3,
+      "position": 59
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "b4e33b1745b3061c31a3b636d2ec78b6501c5c64d75d570e71b193f732a65225",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.23728813559322035,
+      "phase_bin": 0,
+      "position": 14
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "b4e33b1745b3061c31a3b636d2ec78b6501c5c64d75d570e71b193f732a65225",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3220338983050847,
+      "phase_bin": 1,
+      "position": 19
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "b4e33b1745b3061c31a3b636d2ec78b6501c5c64d75d570e71b193f732a65225",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.576271186440678,
+      "phase_bin": 2,
+      "position": 34
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 8,
+      "game_length": 60,
+      "game_sha256": "b4e33b1745b3061c31a3b636d2ec78b6501c5c64d75d570e71b193f732a65225",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.8983050847457628,
+      "phase_bin": 3,
+      "position": 53
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "25243e3932dedd3cdaac7cceb33ea2dad0a251f402932a050f1f9abf52ce5a90",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "25243e3932dedd3cdaac7cceb33ea2dad0a251f402932a050f1f9abf52ce5a90",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4915254237288136,
+      "phase_bin": 1,
+      "position": 29
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "25243e3932dedd3cdaac7cceb33ea2dad0a251f402932a050f1f9abf52ce5a90",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6610169491525424,
+      "phase_bin": 2,
+      "position": 39
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 9,
+      "game_length": 60,
+      "game_sha256": "25243e3932dedd3cdaac7cceb33ea2dad0a251f402932a050f1f9abf52ce5a90",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.9491525423728814,
+      "phase_bin": 3,
+      "position": 56
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "d722e75370b8fa63d94208d67241e22123335abe8faf5d1104c95a88e79e478e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.15254237288135594,
+      "phase_bin": 0,
+      "position": 9
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "d722e75370b8fa63d94208d67241e22123335abe8faf5d1104c95a88e79e478e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4067796610169492,
+      "phase_bin": 1,
+      "position": 24
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "d722e75370b8fa63d94208d67241e22123335abe8faf5d1104c95a88e79e478e",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6440677966101694,
+      "phase_bin": 2,
+      "position": 38
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 10,
+      "game_length": 60,
+      "game_sha256": "d722e75370b8fa63d94208d67241e22123335abe8faf5d1104c95a88e79e478e",
+      "max_eligible_position": 59,
+      "normalized_phase": 1.0,
+      "phase_bin": 3,
+      "position": 59
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "47e48593880220aa6b662aeedcd0eba5f5ca46c9b3db2c0abe1e5f7b6f5a2eaa",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.06779661016949153,
+      "phase_bin": 0,
+      "position": 4
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "47e48593880220aa6b662aeedcd0eba5f5ca46c9b3db2c0abe1e5f7b6f5a2eaa",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4406779661016949,
+      "phase_bin": 1,
+      "position": 26
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "47e48593880220aa6b662aeedcd0eba5f5ca46c9b3db2c0abe1e5f7b6f5a2eaa",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5254237288135594,
+      "phase_bin": 2,
+      "position": 31
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 11,
+      "game_length": 60,
+      "game_sha256": "47e48593880220aa6b662aeedcd0eba5f5ca46c9b3db2c0abe1e5f7b6f5a2eaa",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7966101694915254,
+      "phase_bin": 3,
+      "position": 47
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "b754ac6cef469fa6e0289d6e3aac6000471cb2baca8c16b374859dbf0e35b938",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.01694915254237288,
+      "phase_bin": 0,
+      "position": 1
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "b754ac6cef469fa6e0289d6e3aac6000471cb2baca8c16b374859dbf0e35b938",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.2711864406779661,
+      "phase_bin": 1,
+      "position": 16
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "b754ac6cef469fa6e0289d6e3aac6000471cb2baca8c16b374859dbf0e35b938",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6949152542372882,
+      "phase_bin": 2,
+      "position": 41
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 12,
+      "game_length": 60,
+      "game_sha256": "b754ac6cef469fa6e0289d6e3aac6000471cb2baca8c16b374859dbf0e35b938",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7627118644067796,
+      "phase_bin": 3,
+      "position": 45
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "592ed48affcd389e7a40207114e56ec768be48c325c9f573dffe9d2d1643521f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.1864406779661017,
+      "phase_bin": 0,
+      "position": 11
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "592ed48affcd389e7a40207114e56ec768be48c325c9f573dffe9d2d1643521f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4406779661016949,
+      "phase_bin": 1,
+      "position": 26
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "592ed48affcd389e7a40207114e56ec768be48c325c9f573dffe9d2d1643521f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.5423728813559322,
+      "phase_bin": 2,
+      "position": 32
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 13,
+      "game_length": 60,
+      "game_sha256": "592ed48affcd389e7a40207114e56ec768be48c325c9f573dffe9d2d1643521f",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7966101694915254,
+      "phase_bin": 3,
+      "position": 47
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "d286eb21f8738712d76e2dab93f4f580805454596ec4043a8d593397c3533328",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.22033898305084745,
+      "phase_bin": 0,
+      "position": 13
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "d286eb21f8738712d76e2dab93f4f580805454596ec4043a8d593397c3533328",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.4915254237288136,
+      "phase_bin": 1,
+      "position": 29
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "d286eb21f8738712d76e2dab93f4f580805454596ec4043a8d593397c3533328",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.7457627118644068,
+      "phase_bin": 2,
+      "position": 44
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 14,
+      "game_length": 60,
+      "game_sha256": "d286eb21f8738712d76e2dab93f4f580805454596ec4043a8d593397c3533328",
+      "max_eligible_position": 59,
+      "normalized_phase": 1.0,
+      "phase_bin": 3,
+      "position": 59
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "aed18755e8b9b30a4303f47fd6ef3392364d59b836be1ce59895664e5a44e0ac",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.03389830508474576,
+      "phase_bin": 0,
+      "position": 2
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "aed18755e8b9b30a4303f47fd6ef3392364d59b836be1ce59895664e5a44e0ac",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.3559322033898305,
+      "phase_bin": 1,
+      "position": 21
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "aed18755e8b9b30a4303f47fd6ef3392364d59b836be1ce59895664e5a44e0ac",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.6271186440677966,
+      "phase_bin": 2,
+      "position": 37
+    },
+    {
+      "chunk_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8/gen10e5__20220324_170041.pickle",
+      "game_index": 15,
+      "game_length": 60,
+      "game_sha256": "aed18755e8b9b30a4303f47fd6ef3392364d59b836be1ce59895664e5a44e0ac",
+      "max_eligible_position": 59,
+      "normalized_phase": 0.847457627118644,
+      "phase_bin": 3,
+      "position": 50
+    }
+  ]
+}

@@ -85,8 +85,8 @@ cases:
         8:
           base_run_name: transformer_ar_b8_bf16
           checkpoint_every_chunks: 0
-          seed42_reference_status: canonical_bf16_surface_checkpoint_pending
-          note: The completed historical run_001 has unreported precision because it predates explicit precision metadata; do not treat it as the bf16 seed-42 reference.
+          seed42_reference_status: completed
+          note: The canonical bf16 seed-42 rerun completed all 200 training shards and unified_eval_v4; the historical run_001 remains excluded because its precision was not recorded.
         12:
           base_run_name: transformer_ar_b12
           checkpoint_every_chunks: 0
@@ -128,8 +128,8 @@ cases:
         8:
           base_run_name: mamba_ar_8x8_bf16
           checkpoint_every_chunks: 0
-          seed42_reference_status: canonical_bf16_surface_checkpoint_pending
-          note: The completed historical mamba_ar_8x8 checkpoint is fp16; do not mix it with this bf16 seed family.
+          seed42_reference_status: completed
+          note: The canonical bf16 seed-42 rerun completed all 200 training shards and unified_eval_v4; the historical mamba_ar_8x8 fp16 checkpoint remains excluded.
         12:
           base_run_name: mamba_ar_b12
           checkpoint_every_chunks: 0

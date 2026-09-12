@@ -15,8 +15,8 @@ only `BOARD_SIZE` at the top to select 8, 12, or 16.
 
 `common_evaluation.ipynb` runs the shared thesis evaluation without causal
 intervention. The separate `causal_intervention.ipynb` exposes
-`ARCHITECTURE`, `OBJECTIVE`, `BOARD_SIZE`, `RUN_PROFILE`, and `METHODS`, and
-compares three deliberately distinct methods:
+`ARCHITECTURE`, `OBJECTIVE`, `BOARD_SIZE`, `RUN_PROFILE`, `JEPA_READOUT`, and
+`METHODS`, and compares three deliberately distinct methods:
 
 - Li et al.: Adam optimization of the activation through a two-layer nonlinear
   absolute-board probe (`Linear-ReLU-Linear`, hidden width 128);
@@ -28,9 +28,13 @@ compares three deliberately distinct methods:
 The released papers use an 8x8 Transformer-AR model. JEPA, Mamba, 12x12, and
 16x16 runs are labelled extensions. `smoke` is only a small execution gate;
 `full` uses Li's 1,000 optimization steps and is resumable per case batch.
-Outputs stay under the external selected run at
-`causal_intervention/causal_intervention_suite_v1/{smoke|full}`. Existing
-`thesis_eval/final` artifacts are neither deleted nor rewritten.
+For JEPA, `JEPA_READOUT="best"` selects Linear or MLP only by validation-set
+legal-move probability mass. `linear` and `mlp` force one head, while `both`
+runs two independent comparisons. AR always uses its native head. Outputs stay
+under the external selected run at
+`causal_intervention/causal_intervention_suite_v2/{smoke|full}/readout_*`.
+Existing v1 and `thesis_eval/final` artifacts are neither deleted nor
+rewritten.
 
 ## Safety contract
 

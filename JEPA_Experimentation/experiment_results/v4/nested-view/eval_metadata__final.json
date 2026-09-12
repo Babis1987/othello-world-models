@@ -1,0 +1,183 @@
+{
+  "config_name": "jepa_v4_multi_pos_mlp_k4_b8.yml",
+  "config_path": "/content/drive/Othercomputers/MyLaptop/Master_Thesis_Code/configs/jepa_v4_multi_pos_mlp_k4_b8.yml",
+  "run_name": "jepa_v4_multi_pos_mlp_k4_b8_run_001",
+  "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001",
+  "checkpoint_name": "final.pt",
+  "checkpoint_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001/final.pt",
+  "checkpoint_stem": "final",
+  "step": 39200,
+  "games_seen": 19999840,
+  "tokens_seen": 19991318,
+  "experiment_config": {
+    "experiment": {
+      "name": "jepa_v4_multi_pos_mlp_k4_b8_run_001",
+      "variant": "jepa_v2",
+      "description": "JEPA v4 with disjoint future views and multi-position MLP predictor.",
+      "notes": "Primary hypothesis: v2/v3 nested context-target views encouraged shortcut\nlearning. v4 uses disjoint future target positions gathered from the EMA\ntarget encoder. Acknowledged confound: the predictor changes to a\nmulti-position MLP so this is not a single-variable ablation.\n"
+    },
+    "paths": {
+      "data_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8",
+      "out_dir": "/content/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001",
+      "drive_sync_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001",
+      "drive_sync_every_chunks": 5
+    },
+    "data": {
+      "board_size": 8,
+      "li_split_train_chunks": 200
+    },
+    "model": {
+      "n_layers": 8,
+      "n_heads": 8,
+      "d_model": 512,
+      "dropout": 0.1
+    },
+    "predictor": {
+      "predictor_type": "mlp_multi_pos",
+      "predictor_hidden_mult": 4,
+      "predictor_dropout": 0.0
+    },
+    "objective": {
+      "view_mode": "disjoint_future",
+      "loss_type": "smooth_l1",
+      "prediction_horizon": 4,
+      "use_ema_target": true,
+      "ema_momentum": 0.996,
+      "smooth_l1_beta": 1.0,
+      "window_sample_attempts": 8,
+      "log_collapse_stats_every_steps": 100,
+      "collapse_warning_z_std": 0.1,
+      "collapse_warning_cos_sim": 0.95
+    },
+    "optim": {
+      "batch_size": 512,
+      "learning_rate": "3e-4",
+      "min_lr_ratio": 0.1,
+      "weight_decay": 0.01,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "warmup_steps": 1000,
+      "passes_over_data": 1,
+      "precision": "bf16"
+    },
+    "eval": {
+      "eval_chunks": 1,
+      "eval_every_chunks": 5
+    },
+    "checkpointing": {
+      "checkpoint_every_chunks": 0,
+      "milestone_games": "1000000,5000000,10000000,15000000,20000000",
+      "intermediate_checkpoint_fractions": [
+        0.1,
+        0.25,
+        0.5
+      ]
+    },
+    "runtime": {
+      "num_workers": 0,
+      "seed": 42
+    },
+    "wandb": {
+      "wandb_project": "",
+      "wandb_entity": "",
+      "wandb_run_name": "",
+      "wandb_mode": "online"
+    }
+  },
+  "checkpoint_jepa_config": {
+    "variant": "jepa_v2",
+    "loss_type": "smooth_l1",
+    "view_mode": "disjoint_future",
+    "board_size": 8,
+    "n_layers": 8,
+    "n_heads": 8,
+    "d_model": 512,
+    "dropout": 0.1,
+    "predictor_type": "mlp_multi_pos",
+    "predictor_hidden_dim": null,
+    "predictor_hidden_mult": 4,
+    "predictor_n_layers": 4,
+    "predictor_n_heads": 8,
+    "predictor_dropout": 0.0,
+    "predictor_activation": "relu",
+    "vicreg_lambda": 25.0,
+    "vicreg_mu": 25.0,
+    "vicreg_nu": 1.0,
+    "variance_threshold": 1.0,
+    "variance_eps": 0.0001,
+    "prediction_horizon": 4,
+    "ema_momentum": 0.996,
+    "smooth_l1_beta": 1.0,
+    "use_ema_target": true
+  },
+  "checkpoint_train_config": {
+    "out_dir": "/content/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001",
+    "train_dir": null,
+    "val_dir": null,
+    "data_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8",
+    "li_split_train_chunks": 200,
+    "variant": "jepa_v2",
+    "loss_type": "smooth_l1",
+    "board_size": 8,
+    "n_layers": 8,
+    "n_heads": 8,
+    "d_model": 512,
+    "dropout": 0.1,
+    "predictor_type": "mlp_multi_pos",
+    "predictor_hidden_dim": null,
+    "predictor_hidden_mult": 4,
+    "predictor_n_layers": 4,
+    "predictor_n_heads": 8,
+    "predictor_dropout": 0.0,
+    "predictor_activation": "relu",
+    "vicreg_lambda": 25.0,
+    "vicreg_mu": 25.0,
+    "vicreg_nu": 1.0,
+    "variance_threshold": 1.0,
+    "variance_eps": 0.0001,
+    "view_mode": "disjoint_future",
+    "prediction_horizon": 4,
+    "ema_momentum": 0.996,
+    "smooth_l1_beta": 1.0,
+    "use_ema_target": true,
+    "log_collapse_stats_every_steps": 100,
+    "collapse_warning_z_std": 0.1,
+    "collapse_warning_cos_sim": 0.95,
+    "batch_size": 512,
+    "learning_rate": 0.0003,
+    "min_lr_ratio": 0.1,
+    "weight_decay": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "grad_clip": 1.0,
+    "warmup_steps": 1000,
+    "passes_over_data": 1,
+    "total_steps": 0,
+    "games_per_chunk": 100000,
+    "precision": "bf16",
+    "window_sample_attempts": 8,
+    "num_workers": 0,
+    "seed": 42,
+    "eval_chunks": 1,
+    "eval_every_chunks": 5,
+    "checkpoint_every_chunks": 0,
+    "intermediate_checkpoint_fractions": "0.1,0.25,0.5",
+    "milestone_games": "1000000,5000000,10000000,15000000,20000000",
+    "max_chunks": 0,
+    "resume": null,
+    "compile_model": false,
+    "drive_sync_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001",
+    "drive_sync_every_chunks": 5,
+    "wandb_project": "",
+    "wandb_entity": "",
+    "wandb_run_name": "",
+    "wandb_mode": "online"
+  },
+  "expected_outputs": {
+    "next_move": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001/linear_head/eval_next_move__final.json",
+    "legal_moves": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001/eval_legal_moves__final.json",
+    "board_state_probes": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001/eval_board_state_probes__final.json",
+    "plots_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v4_multi_pos_mlp_k4_b8_run_001/eval_plots"
+  }
+}

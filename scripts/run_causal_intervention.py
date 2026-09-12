@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 from pathlib import Path
 import sys
@@ -15,10 +16,13 @@ if str(SOURCE_ROOT) not in sys.path:
 
 from othello_thesis.evaluation.causal_suite import (
     CAUSAL_SUITE_ID,
+    JEPA_READOUT_POLICIES,
     METHODS,
     PROFILES,
     CausalInterventionSuite,
+    causal_output_subdir,
     causal_claim_scope,
+    resolve_causal_readout_runs,
 )
 from othello_thesis.evaluation.thesis import (
     ARCHITECTURES,
@@ -52,6 +56,16 @@ def build_parser() -> argparse.ArgumentParser:
         choices=METHODS,
         default=list(METHODS),
         help="Methods to run; completed methods resume independently.",
+    )
+    parser.add_argument(
+        "--jepa-readout",
+        choices=JEPA_READOUT_POLICIES,
+        default="best",
+        help=(
+            "JEPA post-hoc readout: choose the validation winner (default), force "
+            "Linear/MLP, or run both in isolated output directories. AR always "
+            "uses its native head."
+        ),
     )
     parser.add_argument(
         "--artifacts-root",
@@ -126,19 +140,24 @@ def main() -> None:
         run_dir = resolve_run_dir(case, args.artifacts_root)
     except ModelNotReadyError as exc:
         raise SystemExit(str(exc)) from exc
-    output_subdir = (
-        Path("causal_intervention") / CAUSAL_SUITE_ID / args.profile
-    )
+    readout_runs = resolve_causal_readout_runs(args.objective, args.jepa_readout)
+    output_subdirs = {
+        readout_run: causal_output_subdir(args.profile, readout_run)
+        for readout_run in readout_runs
+    }
     print("=" * 72, flush=True)
     print("STANDALONE CAUSAL-INTERVENTION SUITE", flush=True)
     print("case       :", case.label, flush=True)
     print("profile    :", args.profile, flush=True)
     print("methods    :", ", ".join(args.methods), flush=True)
+    print("JEPA readout policy:", args.jepa_readout, flush=True)
+    print("readout runs:", ", ".join(readout_runs), flush=True)
     print("condition scope:", condition_scope, flush=True)
     print("claim scope    :", claim_scope, flush=True)
     print("checkpoint :", run_dir / "final.pt", flush=True)
     print("data       :", data_dir, flush=True)
-    print("output     :", run_dir / output_subdir, flush=True)
+    for readout_run, output_subdir in output_subdirs.items():
+        print(f"output [{readout_run}]:", run_dir / output_subdir, flush=True)
     print("=" * 72, flush=True)
     if args.profile == "smoke":
         print(
@@ -155,26 +174,32 @@ def main() -> None:
         print("DRY RUN OK: no checkpoint loaded and no result stage executed.")
         return
 
-    prepared = prepare_evaluation(
-        case.architecture,
-        case.objective,
-        case.board_size,
-        artifacts_root=args.artifacts_root,
-        project_root=args.project_root,
-        device=args.device,
-        local_checkpoint_root=args.local_checkpoint_root,
-        registry_path=args.registry,
-        overwrite_incompatible=args.force,
-        allow_source_drift=args.allow_source_drift,
-        config_overrides=_profile_overrides(args.profile),
-        output_subdir=output_subdir,
-    )
-    outputs = CausalInterventionSuite(
-        prepared,
-        profile=args.profile,
-        methods=args.methods,
-        force=args.force,
-    ).run()
+    outputs: dict[str, dict[str, str]] = {}
+    for readout_run, output_subdir in output_subdirs.items():
+        print(f"\nREADOUT RUN: {readout_run.upper()}", flush=True)
+        prepared = prepare_evaluation(
+            case.architecture,
+            case.objective,
+            case.board_size,
+            artifacts_root=args.artifacts_root,
+            project_root=args.project_root,
+            device=args.device,
+            local_checkpoint_root=args.local_checkpoint_root,
+            registry_path=args.registry,
+            overwrite_incompatible=args.force,
+            allow_source_drift=args.allow_source_drift,
+            config_overrides=_profile_overrides(args.profile),
+            output_subdir=output_subdir,
+        )
+        outputs[readout_run] = CausalInterventionSuite(
+            prepared,
+            profile=args.profile,
+            methods=args.methods,
+            jepa_readout=readout_run,
+            force=args.force,
+        ).run()
+        del prepared
+        gc.collect()
     print("\nCAUSAL SUITE COMPLETE", flush=True)
     print(json.dumps(outputs, indent=2), flush=True)
 

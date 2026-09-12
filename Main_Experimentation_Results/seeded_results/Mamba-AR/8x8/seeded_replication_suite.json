@@ -1,0 +1,38 @@
+{
+  "schema_version": "thesis_seeded_replication_suite_v1",
+  "architecture": "mamba",
+  "objective": "ar",
+  "board_size": 8,
+  "seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "records": [
+    {
+      "seed": 0,
+      "status": "trained",
+      "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_000",
+      "checkpoint_sha256": "1d7e725418192720c9ecc3118869efa46170ed5f79ccc2139f9fffb17380cb2a"
+    },
+    {
+      "seed": 1,
+      "status": "trained",
+      "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_001",
+      "checkpoint_sha256": "5992d241b42782f4af086ed71dce537ba8ebc362bf31aecadfb04183e7b031b3"
+    },
+    {
+      "seed": 2,
+      "status": "trained",
+      "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_002",
+      "checkpoint_sha256": "01c0e04cee8c0175e13d8bad97ae414b05eab5b6cdb642db10921a0f627c57ea"
+    },
+    {
+      "seed": 3,
+      "status": "trained",
+      "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_003",
+      "checkpoint_sha256": "fefed6e1bbe8a99dc13bcbde77acb4bb4cc631d4359f08dda325fbd25db3dc2c"
+    }
+  ]
+}

@@ -27,6 +27,58 @@ Design summary:
 
 Keeping this module standalone from ``objectives/jepa.py`` and
 ``objectives/jepa_contrastive.py`` ensures the v1-v5 paths are not perturbed.
+
+Why hard-disjoint views
+-----------------------
+Earlier variants gave the target encoder a prefix that overlapped the context.
+The overlap made the task solvable without any world model: the target
+embedding retains the shared history, so the predictor can match it by
+reproducing what both branches already saw. The result is a loss that falls
+steadily while the representation learns nothing about the board.
+
+Restricting the target to the single token m_{t+1} removes that shortcut
+entirely. The two branches then share no input, so the only way to predict z
+from c_t is to model what the move history implies about which move comes
+next -- which is the hypothesis being tested.
+
+Why distance-margin rather than InfoNCE
+---------------------------------------
+InfoNCE assumes one positive per anchor. Here positives are defined by prefix
+identity, so an anchor can have several, and the number varies per anchor
+within a batch. A softmax over "the" positive would have to pick one and treat
+the rest as negatives -- actively pushing apart representations the objective
+says should match.
+
+The pull/push formulation has no such assumption: every positive pair
+contributes a pull term and every negative pair a hinge push, independently.
+The cost is that the margin becomes a real hyper-parameter (InfoNCE's
+temperature is more forgiving) and the embedding scale has to be controlled,
+which is what ``normalize`` is for.
+
+Why multiple predictor modes
+----------------------------
+A given prefix usually admits several legal continuations. A single-output
+predictor faced with several equally valid targets minimises its loss by
+predicting their average -- an embedding corresponding to no legal move at
+all, and the classic failure mode of deterministic latent prediction. Emitting
+M modes and scoring only the closest one lets different modes specialise to
+different continuations, so the predictor is never rewarded for averaging.
+
+The phantom-token mechanism
+---------------------------
+A structural conflict follows from the target seeing only the action token:
+two samples with different prefixes but the same next move receive *identical*
+target embeddings. The pair is a negative by the prefix rule, yet pushing them
+apart is impossible -- they are the same vector -- and the gradient directly
+contradicts the pull term binding that same vector to its own positives.
+
+Rather than dropping those pairs (which removes exactly the hardest negatives,
+the ones sharing a move), the push term substitutes a phantom target: the
+target encoder applied to a token that appears nowhere in the batch. The
+anchor is then pushed away from a genuinely unrelated point in target space,
+preserving a repulsive signal of the right magnitude without contradicting the
+pull. The substitution is per pair and affects the push only; the anchor's own
+positives always use the real target.
 """
 
 from __future__ import annotations
@@ -70,16 +122,30 @@ class JEPAHardDisjointActionConfig:
     predictor_activation: str = "gelu"
     predictor_dropout: float = 0.0
 
+    # Number of predicted latent modes. Should comfortably exceed the typical
+    # branching factor of an Othello position, so that plausible continuations
+    # can occupy distinct modes instead of collapsing onto a shared average.
     num_modes: int = 10
 
     # Target branch.
     use_ema_target: bool = True
+    # High momentum keeps the target nearly stationary. The predictor is
+    # chasing a moving target, and if it moves at the same rate as the context
+    # encoder the pair can co-adapt into a constant function -- the standard
+    # collapse mode for joint-embedding objectives without a stop-gradient.
     ema_momentum: float = 0.996
 
     # Loss.
+    # Hinge margin. Meaningful only together with ``normalize``: on the unit
+    # sphere distances are bounded by 2, so margin=1.0 asks negatives to sit
+    # roughly a right angle apart. Without normalisation the embedding scale
+    # drifts and the same margin means something different at every step.
     margin: float = 1.0
     lambda_push: float = 1.0
     normalize: bool = True
+    # Enables the phantom-target substitution described in the module
+    # docstring. Turning it off is the ablation that shows the collision
+    # problem is real rather than hypothetical.
     dedup_negative_actions: bool = True
 
     # Identifiers carried through from train_jepa.py without affecting logic.
@@ -108,6 +174,19 @@ class MultiModeMLPPredictor(nn.Module):
 
     Input: context summary ``c_t`` of shape ``(B, d_model)``.
     Output: predicted modes ``(B, num_modes, d_model)``.
+
+    The modes come from a single wide output layer reshaped into M vectors,
+    not from M separate heads. They therefore share all hidden computation and
+    differ only in the final projection, which keeps the parameter count
+    manageable at M=10 and lets whatever the trunk has worked out about the
+    position be reused across modes.
+
+    Nothing explicitly encourages the modes to differ. Specialisation is left
+    to the min-over-modes loss: only the closest mode receives gradient for a
+    given target, so a mode that never wins stops being updated towards that
+    target and drifts towards whatever it does win. This is a soft mechanism,
+    and mode usage is worth watching -- a run where one mode wins everything
+    has effectively reverted to a single-output predictor.
     """
 
     def __init__(
@@ -180,12 +259,20 @@ def _pairwise_min_mode_sq_dist(
     # M = 10, d = 512: ~1.25 GB at float32 — too much). We instead expand
     # only over modes and reduce immediately.
     B, M, d = p.shape
+    # Expanded form of the squared distance, so the only large intermediate is
+    # the (B, M, B) inner-product tensor rather than a (B, M, B, d) difference.
     # ||p - z||^2 = ||p||^2 + ||z||^2 - 2 p . z
     p_sq = p.pow(2).sum(dim=-1)               # (B, M)
     z_sq = z.pow(2).sum(dim=-1)               # (B,)
     pz = torch.einsum("imd,jd->imj", p, z)    # (B, M, B)
     sq = p_sq.unsqueeze(2) + z_sq.unsqueeze(0).unsqueeze(0) - 2.0 * pz
+    # The expanded form can go slightly negative through floating-point
+    # cancellation when p and z nearly coincide; without the clamp the sqrt in
+    # the push term would produce NaNs exactly when the prediction is good.
     sq = sq.clamp_min(0.0)
+    # Reduce over modes here rather than returning all M distances: the loss
+    # only ever uses the closest mode, and this keeps the (B, M, B) tensor from
+    # escaping the function.
     min_sq, mode_idx = sq.min(dim=1)          # (B, B), (B, B)
     return min_sq, mode_idx
 
@@ -243,17 +330,32 @@ def hard_disjoint_action_loss(
 
     # collision[i, j] = exists k such that same_prefix[i, k] and same_action[k, j].
     # Equivalent boolean matmul.
+    #
+    # In words: j collides with anchor i when j's next action is the action of
+    # *some* positive of i. Because the target encoder sees only the action
+    # token, that positive and j then share an identical target embedding, so
+    # pushing i away from z_j would directly oppose pulling i towards its own
+    # positive. Note the condition is not simply "i and j share an action" --
+    # the conflict runs through i's positive set, which is why this is a
+    # two-hop reachability test and not an elementwise comparison. The float
+    # matmul is a boolean OR over k done on the GPU.
     collision = (same_prefix.float() @ same_action.float()) > 0.0
     # Drop the trivial same-prefix-same-sample contribution from collisions: it
     # is irrelevant because collisions matter only for negative pairs.
 
+    # Positives are defined by prefix identity, and the anchor's own target is
+    # one of them -- the base case of the prediction task, before any
+    # cross-sample structure is involved.
     pull_mask = same_prefix                                                 # includes self
     neg_mask = ~same_prefix
 
     min_sq, _ = _pairwise_min_mode_sq_dist(p, z)                            # (B, B)
     min_dist = min_sq.clamp_min(1e-12).sqrt()                                # used by push
 
-    # Pull: per-pair MSE in latent space.
+    # Pull on squared distance, push on distance. The squared form gives the
+    # pull a gradient that vanishes as the prediction gets close, while the
+    # hinge needs the unsquared distance for the margin to be interpretable as
+    # a length.
     pull_count = pull_mask.float().sum().clamp_min(1.0)
     pull_loss = (min_sq * pull_mask.float()).sum() / pull_count
 
@@ -266,6 +368,11 @@ def hard_disjoint_action_loss(
         phantom_min_dist = phantom_min_sq.clamp_min(1e-12).sqrt()                  # (B,)
         # For colliding pairs we use the phantom distance for anchor i, which is
         # a function of i alone. Broadcast to (B, B) along j.
+        #
+        # The substitution is per (i, j) entry, so a colliding pair still
+        # contributes a push term of the right magnitude instead of being
+        # dropped -- it is simply pushed away from an unrelated point in target
+        # space rather than from a vector the pull term is binding it to.
         phantom_dist_grid = phantom_min_dist.unsqueeze(1).expand(B, B)             # (B, B)
         push_dist = torch.where(collision, phantom_dist_grid, min_dist)
     else:
@@ -281,7 +388,26 @@ def hard_disjoint_action_loss(
 
     total = pull_loss + lambda_push * push_loss
 
-    # Diagnostics.
+    # Diagnostics. A falling loss proves nothing on its own for this objective:
+    # collapse -- every embedding mapping to the same point -- also drives the
+    # pull term to zero. These are the quantities that distinguish learning
+    # from collapse and must be read together with the loss curve:
+    #
+    #   z_std / p_std        near zero means the embeddings have collapsed.
+    #   cos_sim_offdiag      near 1.0 means every target points the same way,
+    #                        the same failure seen on the sphere.
+    #   mean_pos_dist vs     the separation the objective is actually buying.
+    #   mean_neg_dist        a healthy run shows a widening gap; equal means
+    #                        the representation carries no prefix information.
+    #   dedup_fraction       share of negatives that hit the action collision.
+    #                        If this approaches 1 the push term is almost
+    #                        entirely phantom-driven, and the batch is too
+    #                        small (or too correlated) for the loss to mean
+    #                        what it is supposed to mean.
+    #   positives_per_anchor how many positives each anchor actually had --
+    #                        near 1 means prefix grouping is not producing
+    #                        multi-positive structure and the objective has
+    #                        degenerated towards single-positive contrast.
     with torch.no_grad():
         pos_dist_sum = (min_dist * pull_mask.float()).sum()
         mean_pos_dist = pos_dist_sum / pull_count
@@ -323,7 +449,23 @@ def _first_unused_token(used: set[int], vocab_actions: int) -> int | None:
 
 
 def select_phantom_token(next_actions: torch.Tensor, vocab_actions: int) -> int | None:
-    """Return a token id present in ``[0, vocab_actions)`` but unused in the batch."""
+    """Return a token id present in ``[0, vocab_actions)`` but unused in the batch.
+
+    The phantom must be absent from the batch, otherwise it is some sample's
+    real target and pushing towards-away from it would interfere with that
+    sample's pull term -- reintroducing the conflict the phantom exists to
+    avoid.
+
+    Choosing the smallest unused token rather than a random one makes the
+    phantom deterministic given the batch, which keeps runs reproducible. The
+    specific identity does not matter: what the push needs is a point in target
+    space unrelated to this batch's positives.
+
+    Returns ``None`` when the batch happens to use every action token, at which
+    point the caller drops colliding negatives instead. On 8x8 with 60 actions
+    and typical batch sizes this is possible; the loss handles it rather than
+    assuming it away.
+    """
     used = set(next_actions.detach().cpu().tolist())
     return _first_unused_token(used, vocab_actions)
 
@@ -380,7 +522,14 @@ class OthelloJEPAHardDisjointAction(nn.Module):
             expand=cfg.expand,
             mamba_backend=cfg.mamba_backend,
         )
+        # The target starts as an exact copy so the EMA trajectory begins from
+        # the context encoder rather than from an unrelated initialisation --
+        # otherwise the first thousands of steps are spent pulling towards
+        # noise.
         self.target_encoder.load_state_dict(self.context_encoder.state_dict())
+        # No gradient reaches the target: it is updated only by EMA. This is
+        # the stop-gradient that keeps the objective from being satisfied by
+        # both branches agreeing on a constant.
         for parameter in self.target_encoder.parameters():
             parameter.requires_grad_(False)
         self.target_encoder.eval()
@@ -403,12 +552,31 @@ class OthelloJEPAHardDisjointAction(nn.Module):
         return self.context_encoder.config
 
     def train(self, mode: bool = True) -> "OthelloJEPAHardDisjointAction":
+        """Put the module in train mode while forcing the target to stay eval.
+
+        Overridden because ``nn.Module.train`` recurses into every child.
+        Without this, calling ``model.train()`` would enable dropout inside the
+        target encoder and the same action token would produce a different
+        target embedding on every step -- turning a fixed prediction target
+        into a noisy one and breaking the collision logic, which assumes equal
+        actions give equal targets.
+        """
         super().train(mode)
         self.target_encoder.eval()
         return self
 
     @torch.no_grad()
     def update_target_encoder(self, momentum: float | None = None) -> None:
+        """EMA step: target <- m * target + (1 - m) * context.
+
+        Called once per optimiser step by the trainer, never inside the forward
+        pass -- the target must be constant for the whole batch, or samples
+        early and late in a step would be scored against different targets.
+
+        Parameters are zipped in order, which relies on both encoders having
+        identical architecture; that is why the target is built from the same
+        factory call rather than being any compatible module.
+        """
         m = self.cfg.ema_momentum if momentum is None else momentum
         for ctx_param, tgt_param in zip(
             self.context_encoder.parameters(),
@@ -461,6 +629,13 @@ class OthelloJEPAHardDisjointAction(nn.Module):
 
         Returns:
             Target embeddings ``(B, d_model)``.
+
+        The length-1 sequence is what makes the views hard-disjoint: the target
+        encoder is architecturally capable of consuming history and is
+        deliberately given none. A direct consequence, relied on throughout the
+        loss, is that z depends only on the action token -- equal actions
+        always produce equal targets, which is precisely the collision the
+        phantom mechanism exists to handle.
         """
         if action_tokens.ndim != 1:
             raise ValueError(f"Expected (B,) action_tokens, got {action_tokens.shape}")
@@ -492,6 +667,13 @@ class OthelloJEPAHardDisjointAction(nn.Module):
 
         Returns:
             Dict with scalar ``loss`` plus detached diagnostics.
+
+        Note what the batch has to be: positives are defined by shared prefix,
+        so a batch assembled by independent sampling would contain almost no
+        positive pairs and the pull term would reduce to each anchor matching
+        its own target. The dataloader groups samples by prefix on purpose, and
+        ``positives_per_anchor`` in the diagnostics is the check that it
+        actually did.
         """
         if next_actions.size(0) != x_context.size(0):
             raise ValueError("next_actions and x_context batch size mismatch")
@@ -502,6 +684,9 @@ class OthelloJEPAHardDisjointAction(nn.Module):
         p_modes = self.predictor(c_summary)                       # (B, M, d_model)
         z_target = self._encode_target_action(next_actions)       # (B, d_model)
 
+        # The phantom is encoded by the same frozen target encoder, so it lands
+        # in the same embedding space as the real targets and the push distance
+        # remains comparable.
         phantom_token = select_phantom_token(next_actions, self._vocab_actions)
         if phantom_token is None:
             z_phantom = None
@@ -563,6 +748,22 @@ class OthelloJEPAHardDisjointAction(nn.Module):
         counts the same); ``hard_disjoint_action_loss`` already normalizes
         per-pair within each boundary. The returned dict mirrors ``forward`` so
         the shared trainer's metric plumbing is unchanged.
+
+        Why this variant exists at all: ``forward`` extracts one training
+        signal from a full forward pass over a length-t prefix, which is a
+        factor of t less supervision per unit of compute than the AR objective
+        it is being compared against. Any difference in downstream
+        representation quality would then partly reflect that budget gap rather
+        than the objective. Supervising every boundary closes it, at no extra
+        encoder cost -- causality means the intermediate hidden states are
+        already exactly the context summaries for the shallower boundaries.
+
+        The prefix regrouping at each depth is a second benefit rather than
+        bookkeeping. Rows that differ deep in the game often share a shallow
+        prefix, so at small t' they merge into one positive group whose members
+        have *different* next actions. That is the multi-modal case the
+        multi-mode predictor was built for, and it appears here without having
+        to be constructed by the sampler.
         """
         if x_context.ndim != 2:
             raise ValueError(f"Expected x_context (B, t), got {tuple(x_context.shape)}")
@@ -592,6 +793,9 @@ class OthelloJEPAHardDisjointAction(nn.Module):
 
         # Per-boundary phantom token (or None if that boundary's targets exhaust
         # the vocab, which is the common case at large B). One CPU sync total.
+        # One transfer for every boundary at once: phantom selection needs host
+        # -side set operations, and doing it per boundary would insert t
+        # device syncs into every training step.
         targets_by_pos = full_x[:, 1:].t().detach().cpu().tolist()       # (t, B)
         phantom_tokens: list[int | None] = [
             _first_unused_token(set(row), self._vocab_actions) for row in targets_by_pos
@@ -610,6 +814,10 @@ class OthelloJEPAHardDisjointAction(nn.Module):
         for tp in range(1, t + 1):
             pos = tp - 1
             # Regroup by exact prefix at this depth; equal ids => positives.
+            # Positives are recomputed from the actual token prefix at this
+            # depth, not inherited from the caller's prefix_ids -- those describe
+            # grouping at depth t only, and would understate the positive sets
+            # at every shallower boundary.
             pid = torch.unique(x_context[:, :tp], dim=0, return_inverse=True)[1]
             z_phantom = (
                 z_phantom_all[pos]
@@ -655,6 +863,21 @@ class OthelloJEPAHardDisjointAction(nn.Module):
 # ============================================================================
 
 def _smoke() -> None:
+    """Minimal end-to-end check of the invariants that are easy to break.
+
+    The assertions, not the printed numbers, are the point. Three properties
+    must hold for the objective to be what it claims: the context encoder and
+    predictor receive gradients, and the target encoder receives none. A
+    regression in the freezing logic -- an EMA copy that accidentally leaves
+    requires_grad set, a refactor that drops the no_grad -- produces a model
+    that still trains and still reports a falling loss while quietly permitting
+    the collapse the stop-gradient exists to prevent.
+
+    The batch is constructed to exercise the collision path deliberately: two
+    prefix groups, and one sample whose next action matches a sample from the
+    other group, so the phantom substitution is actually taken rather than
+    skipped over by an easy batch.
+    """
     torch.manual_seed(42)
     cfg = JEPAHardDisjointActionConfig(
         board_size=8,

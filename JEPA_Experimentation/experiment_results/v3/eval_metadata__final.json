@@ -1,0 +1,158 @@
+{
+  "config_name": "jepa_v3_mlp_k8_b8.yml",
+  "config_path": "/content/drive/Othercomputers/MyLaptop/Master_Thesis_Code/configs/jepa_v3_mlp_k8_b8.yml",
+  "run_name": "jepa_v3_mlp_k8_b8_run_001",
+  "run_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001",
+  "checkpoint_name": "final.pt",
+  "checkpoint_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001/final.pt",
+  "checkpoint_stem": "final",
+  "step": 39200,
+  "games_seen": 19999840,
+  "tokens_seen": 19990670,
+  "experiment_config": {
+    "experiment": {
+      "name": "jepa_v3_mlp_k8_b8_run_001",
+      "variant": "jepa_v2",
+      "description": "EMA-target JEPA with weak MLP predictor (2-layer 512) and K=8 horizon on 8x8 Othello.",
+      "notes": "v3 reduces predictor capacity 5x vs v2 (~12M -> ~2.4M params) to test the\nhypothesis that the v2 transformer predictor was too powerful and let the\ncontext encoder skip board-state learning. K=8 increases prediction horizon\nto make the task harder. EMA momentum lowered from 0.996 to 0.990 so the\ntarget encoder tracks context updates faster. Warmup doubled (1000 -> 2000\nsteps) for stability with the weaker predictor at the start of training.\n"
+    },
+    "paths": {
+      "data_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8",
+      "out_dir": "/content/runs/jepa_v3_mlp_k8_b8_run_001",
+      "drive_sync_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001",
+      "drive_sync_every_chunks": 5
+    },
+    "data": {
+      "board_size": 8,
+      "li_split_train_chunks": 200
+    },
+    "model": {
+      "n_layers": 8,
+      "n_heads": 8,
+      "d_model": 512,
+      "dropout": 0.1
+    },
+    "predictor": {
+      "predictor_type": "mlp",
+      "predictor_hidden_dim": 512,
+      "predictor_n_layers": 2,
+      "predictor_dropout": 0.1,
+      "predictor_activation": "gelu"
+    },
+    "objective": {
+      "loss_type": "smooth_l1",
+      "prediction_horizon": 8,
+      "ema_momentum": 0.99,
+      "smooth_l1_beta": 1.0,
+      "window_sample_attempts": 8
+    },
+    "optim": {
+      "batch_size": 512,
+      "learning_rate": "3e-4",
+      "min_lr_ratio": 0.1,
+      "weight_decay": 0.01,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "warmup_steps": 2000,
+      "passes_over_data": 1,
+      "precision": "bf16"
+    },
+    "eval": {
+      "eval_chunks": 1,
+      "eval_every_chunks": 5
+    },
+    "checkpointing": {
+      "milestone_games": "1000000,5000000,10000000,15000000,20000000"
+    },
+    "runtime": {
+      "num_workers": 0,
+      "seed": 42
+    }
+  },
+  "checkpoint_jepa_config": {
+    "variant": "jepa_v2",
+    "loss_type": "smooth_l1",
+    "board_size": 8,
+    "n_layers": 8,
+    "n_heads": 8,
+    "d_model": 512,
+    "dropout": 0.1,
+    "predictor_type": "mlp",
+    "predictor_hidden_dim": 512,
+    "predictor_n_layers": 2,
+    "predictor_n_heads": 8,
+    "predictor_dropout": 0.1,
+    "predictor_activation": "gelu",
+    "vicreg_lambda": 25.0,
+    "vicreg_mu": 25.0,
+    "vicreg_nu": 1.0,
+    "variance_threshold": 1.0,
+    "variance_eps": 0.0001,
+    "prediction_horizon": 8,
+    "ema_momentum": 0.99,
+    "smooth_l1_beta": 1.0
+  },
+  "checkpoint_train_config": {
+    "out_dir": "/content/runs/jepa_v3_mlp_k8_b8_run_001",
+    "train_dir": null,
+    "val_dir": null,
+    "data_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/data/othello_8x8",
+    "li_split_train_chunks": 200,
+    "variant": "jepa_v2",
+    "loss_type": "smooth_l1",
+    "board_size": 8,
+    "n_layers": 8,
+    "n_heads": 8,
+    "d_model": 512,
+    "dropout": 0.1,
+    "predictor_type": "mlp",
+    "predictor_hidden_dim": 512,
+    "predictor_n_layers": 2,
+    "predictor_n_heads": 8,
+    "predictor_dropout": 0.1,
+    "predictor_activation": "gelu",
+    "vicreg_lambda": 25.0,
+    "vicreg_mu": 25.0,
+    "vicreg_nu": 1.0,
+    "variance_threshold": 1.0,
+    "variance_eps": 0.0001,
+    "prediction_horizon": 8,
+    "ema_momentum": 0.99,
+    "smooth_l1_beta": 1.0,
+    "batch_size": 512,
+    "learning_rate": 0.0003,
+    "min_lr_ratio": 0.1,
+    "weight_decay": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "grad_clip": 1.0,
+    "warmup_steps": 2000,
+    "passes_over_data": 1,
+    "total_steps": 0,
+    "games_per_chunk": 100000,
+    "precision": "bf16",
+    "window_sample_attempts": 8,
+    "num_workers": 0,
+    "seed": 42,
+    "eval_chunks": 1,
+    "eval_every_chunks": 5,
+    "checkpoint_every_chunks": 0,
+    "milestone_games": "1000000,5000000,10000000,15000000,20000000",
+    "max_chunks": 0,
+    "resume": "/content/runs/jepa_v3_mlp_k8_b8_run_001/latest.pt",
+    "compile_model": false,
+    "drive_sync_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001",
+    "drive_sync_every_chunks": 5,
+    "wandb_project": null,
+    "wandb_entity": null,
+    "wandb_run_name": null,
+    "wandb_mode": "online"
+  },
+  "expected_outputs": {
+    "next_move": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001/linear_head/eval_next_move__final.json",
+    "legal_moves": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001/eval_legal_moves__final.json",
+    "board_state_probes": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001/eval_board_state_probes__final.json",
+    "plots_dir": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v3_mlp_k8_b8_run_001/eval_plots"
+  }
+}

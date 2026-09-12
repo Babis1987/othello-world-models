@@ -1,0 +1,13 @@
+system,board,readout,baseline_percent,top1_per_token_percent,normalized_lift_percent,source_results
+Mamba-AR,8,native,14.12559548562719,99.84706492872188,99.82190843459937,G:\My Drive\Master_Thesis_Artifacts\runs\Mamba-AR\mamba_ar_8x8_bf16\thesis_eval\final\results__unified_eval_v4.json
+Mamba-JEPA,8,mlp,14.12559548562719,99.71916114655515,99.67296558848587,G:\My Drive\Master_Thesis_Artifacts\runs\Mamba-JEPA\mamba_jepa_v5_hd_infonce_allpos_b8\thesis_eval\final\results__unified_eval_v4.json
+Transformer-AR,8,native,14.12559548562719,99.72567335185242,99.68054899512967,G:\My Drive\Master_Thesis_Artifacts\runs\Transformer-AR\transformer_ar_b8_bf16\thesis_eval\final\results__unified_eval_v4.json
+Transformer-JEPA,8,linear,14.12559548562719,99.41552957456985,99.3193892537184,G:\My Drive\Master_Thesis_Artifacts\runs\Transformer-JEPA\jepa_v5_infonce_b8_run_001_hd_allpos_bf16\thesis_eval\final\results__unified_eval_v4.json
+Mamba-AR,12,native,11.85616480375324,99.51147395492428,99.44576266282488,G:\My Drive\Master_Thesis_Artifacts\runs\Mamba-AR\mamba_ar_b12\thesis_eval\final\results__unified_eval_v4.json
+Mamba-JEPA,12,linear,11.85616480375324,98.99189130273899,98.85629131632801,G:\My Drive\Master_Thesis_Artifacts\runs\Mamba-JEPA\mamba_jepa_v5_hd_infonce_allpos_b12\thesis_eval\final\results__unified_eval_v4.json
+Transformer-AR,12,native,11.85616480375324,99.41532373597305,99.33667934606521,G:\My Drive\Master_Thesis_Artifacts\runs\Transformer-AR\transformer_ar_b12\thesis_eval\final\results__unified_eval_v4.json
+Transformer-JEPA,12,linear,11.85616480375324,98.52300420624812,98.32433454879353,G:\My Drive\Master_Thesis_Artifacts\runs\Transformer-JEPA\transformer_jepa_v5_hd_infonce_allpos_b12\thesis_eval\final\results__unified_eval_v4.json
+Mamba-AR,16,native,10.28895383101882,99.04866172579223,98.93955280332389,G:\My Drive\Master_Thesis_Artifacts\runs\Mamba-AR\mamba_ar_b16\thesis_eval\final\results__unified_eval_v4.json
+Mamba-JEPA,16,linear,10.28895383101882,98.41221150047066,98.2301081446107,G:\My Drive\Master_Thesis_Artifacts\runs\Mamba-JEPA\mamba_jepa_v5_hd_infonce_allpos_b16\thesis_eval\final\results__unified_eval_v4.json
+Transformer-AR,16,native,10.28895383101882,98.99009366504092,98.87426757563745,G:\My Drive\Master_Thesis_Artifacts\runs\Transformer-AR\transformer_ar_b16\thesis_eval\final\results__unified_eval_v4.json
+Transformer-JEPA,16,linear,10.28895383101882,97.53785294831778,97.255469469117,G:\My Drive\Master_Thesis_Artifacts\runs\Transformer-JEPA\transformer_jepa_v5_hd_infonce_allpos_b16\thesis_eval\final\results__unified_eval_v4.json

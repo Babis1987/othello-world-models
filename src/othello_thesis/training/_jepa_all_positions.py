@@ -1,4 +1,25 @@
-"""Internal implementation module extracted from the canonical JEPA trainer."""
+"""Internal implementation module extracted from the canonical JEPA trainer.
+
+The all-position machinery. Autoregressive training gets a gradient signal at
+every ply of every game for free -- one forward pass, T predictions. A naive
+JEPA step gets one (context, target) pair per game, which is a factor of ~T
+less supervision for the same compute, and would make any comparison between
+the two objectives a comparison of sample budgets rather than of objectives.
+
+``forward_all_position_v1`` closes that gap: one causal pass over the batch
+produces the context state at *every* prefix boundary, and each of those is
+paired with its own target. A batch of 256 games at 8x8 therefore yields on the
+order of 10^4 training pairs from a single encoder pass.
+
+Two consequences shape the rest of the file. The target side now has to encode
+tens of thousands of independent length-one sequences, so it is chunked (and on
+Mamba it uses the algebraic length-one path in models/mamba.py). And statistics
+are computed *per absolute position* rather than over the flattened pool -- see
+the note in ``forward_all_position_v1``.
+
+This module also holds the view construction and the collapse monitor shared
+with the single-window path.
+"""
 
 from __future__ import annotations
 
@@ -44,7 +65,18 @@ def sample_valid_window(
     pad_token: int,
     attempts: int,
 ) -> tuple[int, torch.Tensor]:
-    """Sample a batch context length and keep rows with a valid K-token target."""
+    """Sample a batch context length and keep rows with a valid K-token target.
+
+    Retries because a uniformly drawn ``t`` is often longer than most games in
+    the batch, leaving no valid row at all. The first draw that keeps at least
+    one row wins; if every attempt fails, the best seen is returned and the
+    caller decides whether to skip.
+
+    Note the asymmetry: the early return fires on ``count > 0``, so the sampled
+    ``t`` is not the one that maximises valid rows. That is deliberate -- always
+    taking the best ``t`` would bias training toward short contexts, which are
+    the ones most games survive.
+    """
     _, seq_len = x.shape
     best_t = 1
     best_mask = valid_window_mask(
@@ -115,6 +147,17 @@ def build_jepa_views(
     removing the prefix is the only target-side information change.
     ``disjoint_future`` retains the v4/v5 behavior where target sees full
     history and target embeddings are gathered from absolute future positions.
+
+    The distinction is the whole point of "hard". Under ``disjoint_future`` the
+    target encoder still reads the prefix, so a target embedding contains the
+    context the predictor was given -- the predictor can partly succeed by
+    reproducing what it already has. ``hard_disjoint_future`` cuts the prefix
+    away entirely, leaving genuine prediction as the only route to a low loss.
+
+    Absolute positions are preserved on the target even though it is now a
+    length-one sequence: the ply index is legitimate information about *when*
+    the move happens, and stripping it would change two things at once and make
+    the ablation uninterpretable.
     """
     x_ctx = x_valid[:, :context_length].contiguous()
     view_mode = jepa_view_mode(cfg)
@@ -151,7 +194,20 @@ def build_jepa_views(
     return x_ctx, x_tgt, target_positions
 
 def maybe_warn_collapse(cfg: TrainConfig, out: dict[str, torch.Tensor], step: int) -> None:
-    """Print collapse warnings without aborting the run."""
+    """Print collapse warnings without aborting the run.
+
+    Warns rather than raises on purpose. Collapse is a matter of degree and the
+    thresholds are heuristic, so an automatic abort would kill runs that recover
+    during warmup. The signals are logged periodically instead, and the decision
+    to discard a run is made by the researcher looking at the trajectory.
+
+    The three signals, in order of how early they move: ``z_std`` falling means
+    the target embeddings are losing spread; ``cos_sim_offdiag`` rising toward 1
+    means distinct positions are becoming indistinguishable; contrastive
+    ``positive_accuracy`` falling means the objective itself has stopped being
+    solvable. The accuracy check is suppressed until after warmup, when it is
+    expected to be low for benign reasons.
+    """
     every = int(cfg.log_collapse_stats_every_steps)
     if every <= 0 or step % every != 0:
         return
@@ -244,6 +300,18 @@ def forward_all_position_v1(
     first would let absolute positional embeddings manufacture variance (or
     trivial in-batch negatives) and would mix highly correlated positions from
     the same game in the estimates.
+
+    That last paragraph is the subtle part and worth restating. Pool all
+    boundaries from all games together and the contrastive task becomes easy for
+    the wrong reason: ply 3 and ply 40 differ in their positional embedding
+    alone, so telling them apart requires no board understanding at all. The
+    variance statistics are inflated the same way. Grouping by absolute position
+    means every negative in a comparison comes from the *same* ply of a
+    *different* game, so the only thing distinguishing them is the position on
+    the board -- which is exactly what the objective is supposed to be learning.
+
+    Returns ``(outputs, effective_batch_size)``; the second value is the number
+    of pairs that contributed, which the caller uses to weight the loss.
     """
     raw_model = unwrap_model(model)
     # Validate the v1 JEPA interface rather than the concrete Python class.
@@ -301,6 +369,11 @@ def forward_all_position_v1(
     # random-boundary domain to all available boundaries in x.
     context_hidden = raw_model.encode_hidden(raw_model.context_encoder, x)
     phase_started_at = finish_profile_phase("context", phase_started_at)
+    # A boundary is usable when the token being predicted is a real move, so
+    # validity is tested on x[:, 1:] (every token except the first, which can
+    # only ever be a context token). nonzero flattens the (game, boundary)
+    # grid into one list of pairs, which is what lets every boundary in the
+    # batch be processed as a single flat batch.
     valid = x[:, 1:] != pad_token
     pair_indices = valid.nonzero(as_tuple=False)
     if pair_indices.numel() == 0:
@@ -350,6 +423,10 @@ def forward_all_position_v1(
         z_tgt = torch.cat(target_parts, dim=0)
     phase_started_at = finish_profile_phase("target", phase_started_at)
 
+    # Scatter the flat list of pairs back onto a (game, position) grid. The
+    # statistics below are all per-position across games, and the grid makes
+    # that a masked reduction over dim 0 instead of a gather per position.
+    # Invalid cells stay zero and are excluded by the mask, never by slicing.
     batch_size, seq_len = x.shape
     n_positions = seq_len - 1
     d_model = context_summary.size(-1)
@@ -372,7 +449,12 @@ def forward_all_position_v1(
     for start in range(0, n_positions, position_chunk):
         end = min(start + position_chunk, n_positions)
         mask = valid[:, start:end]
+        # How many games in the batch actually reach this ply. Falls off sharply
+        # toward the end of the sequence, which is why late positions often have
+        # too few games to contribute.
         counts = mask.sum(dim=0)
+        # Two is the minimum for anything here to be defined: a variance needs
+        # two samples, and InfoNCE needs at least one negative.
         eligible = counts >= 2
         if not bool(eligible.any()):
             continue
@@ -384,6 +466,9 @@ def forward_all_position_v1(
         target = target_grid[:, start:end, :].float()
         context = context_grid[:, start:end, :].float()
 
+        # Masked mean/variance: multiplying by the 0/1 mask and dividing by the
+        # true count gives the statistic over participating games only, without
+        # materialising a ragged tensor.
         pred_mean = (pred * mask_f).sum(dim=0) / denom_e
         target_mean = (target * mask_f).sum(dim=0) / denom_e
         context_mean = (context * mask_f).sum(dim=0) / denom_e
@@ -398,6 +483,11 @@ def forward_all_position_v1(
         target_std = torch.sqrt(target_var + eps)
         context_std = torch.sqrt(context_var + eps)
 
+        # Mean off-diagonal cosine without forming the n x n similarity matrix.
+        # For unit vectors, ||sum_i u_i||^2 = sum_ij <u_i,u_j> = n + sum_(i!=j),
+        # so subtracting n and dividing by n(n-1) gives the off-diagonal mean
+        # directly. With tens of thousands of pairs the explicit matrix would
+        # not fit.
         normalized_target = torch.nn.functional.normalize(target, dim=-1) * mask_f
         target_sum = normalized_target.sum(dim=0)
         cos_offdiag = (
@@ -455,7 +545,12 @@ def forward_all_position_v1(
                 "smooth_l1_loss": loss_at_position,
                 **base_metrics,
             }
-        else:  # infonce
+        else:  # infonce -- the thesis loss
+            # One independent contrastive problem per absolute position: the
+            # negatives for a game at ply j are the other games' targets at the
+            # *same* ply j. Hence the Python loop rather than one batched
+            # matmul -- each position has a different number of participants and
+            # they must not be mixed.
             temperature = float(jcfg.contrastive_temperature)
             n_chunk = end - start
             loss_at_position = torch.zeros(n_chunk, device=x.device)
@@ -485,6 +580,10 @@ def forward_all_position_v1(
                 "negative_sim": neg_sim_at_position,
                 **base_metrics,
             }
+        # Positions are weighted by how many games contributed to them, so a
+        # ply reached by 250 games counts far more than one reached by 3. A
+        # plain mean over positions would give the sparse, noisy late plies the
+        # same influence as the dense early ones.
         eligible_weights = counts[eligible].to(torch.float32)
         chunk_weight = int(counts[eligible].sum().item())
         loss_contribution = (loss_at_position[eligible] * eligible_weights).sum()
@@ -511,8 +610,11 @@ def forward_all_position_v1(
             f"target_chunks={target_chunks} {timings}",
             flush=True,
         )
+    # Divide out the accumulated weights once, at the end.
     out = {"loss": weighted_loss / used_pairs}
     out.update({key: value / used_pairs for key, value in weighted_metrics.items()})
+    # Logged on the progress bar: how much supervision each game actually
+    # yielded. A sudden drop means shards of unusually short games.
     out["positions_per_game"] = torch.tensor(
         used_pairs / max(1, x.size(0)), device=x.device
     )
@@ -544,6 +646,11 @@ def _forward_all_position_kstep(
     smooth-L1 metric keys, collapse diagnostics, and ``positions_per_game``.
     A (game, boundary) pair is one supervised position, exactly as in the
     horizon-1 path; each such pair carries K future targets.
+
+    Not on the thesis path. The reported cells all use horizon 1; this
+    generalisation is kept because the v3/v4 checkpoints were produced with it
+    and it documents what a multi-step latent rollout looked like in this
+    codebase.
     """
     jcfg = raw_model.jepa_config
     view_mode = normalize_jepa_view_mode(jcfg.view_mode)
@@ -571,6 +678,8 @@ def _forward_all_position_kstep(
     d_model = context_hidden.size(-1)
 
     # A boundary is valid for a game iff its whole K-token future window is real.
+    # unfold builds every sliding window as a view, so the all-real test is one
+    # reduction rather than a loop over boundaries.
     non_pad_future = (x[:, 1:] != pad_token)                          # (B, T-1)
     windows = non_pad_future.unfold(dimension=1, size=K, step=1)      # (B, n_boundaries, K)
     valid_bt = windows.all(dim=2)                                     # (B, n_boundaries)

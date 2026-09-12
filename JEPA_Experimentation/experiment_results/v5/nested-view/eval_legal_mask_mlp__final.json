@@ -1,0 +1,899 @@
+{
+  "checkpoint_path": "/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_contrastive_prefix_mask/final.pt",
+  "probe_type": "mlp_legal_mask",
+  "hidden_dim": 512,
+  "n_layers": 1,
+  "dropout": 0.1,
+  "layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "n_train_examples": 5000,
+  "n_val_examples": 512,
+  "positions_per_game": 1,
+  "train_sample_info": {
+    "loaded_games": 5000,
+    "examples": 5000,
+    "skipped": 0
+  },
+  "val_sample_info": {
+    "loaded_games": 512,
+    "examples": 512,
+    "skipped": 0
+  },
+  "metrics": {
+    "0": {
+      "train": {
+        "bce_loss": 0.3501968181610107,
+        "f1": 0.0,
+        "top1_legal_hit_rate": 0.2828,
+        "top3_legal_hit_rate": 0.597,
+        "top5_legal_hit_rate": 0.7552,
+        "legal_probability_mass": 0.1829192388534546,
+        "auroc": 0.6938519843801856,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.3561166487634182,
+        "f1": 0.0,
+        "top1_legal_hit_rate": 0.279296875,
+        "top3_legal_hit_rate": 0.57421875,
+        "top5_legal_hit_rate": 0.72265625,
+        "legal_probability_mass": 0.182839872315526,
+        "auroc": 0.686453416099539,
+        "n_examples": 512
+      }
+    },
+    "1": {
+      "train": {
+        "bce_loss": 0.32419851565361024,
+        "f1": 0.0806968596369028,
+        "top1_legal_hit_rate": 0.4818,
+        "top3_legal_hit_rate": 0.7706,
+        "top5_legal_hit_rate": 0.8812,
+        "legal_probability_mass": 0.24368769173622132,
+        "auroc": 0.7700607656136155,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.3564772345125675,
+        "f1": 0.07004930078983307,
+        "top1_legal_hit_rate": 0.298828125,
+        "top3_legal_hit_rate": 0.572265625,
+        "top5_legal_hit_rate": 0.73046875,
+        "legal_probability_mass": 0.21921100839972496,
+        "auroc": 0.6830133066978306,
+        "n_examples": 512
+      }
+    },
+    "2": {
+      "train": {
+        "bce_loss": 0.30118692932128904,
+        "f1": 0.11896588125228882,
+        "top1_legal_hit_rate": 0.6226,
+        "top3_legal_hit_rate": 0.872,
+        "top5_legal_hit_rate": 0.9366,
+        "legal_probability_mass": 0.2795600595712662,
+        "auroc": 0.8249707668304443,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.36051689460873604,
+        "f1": 0.08815803658217192,
+        "top1_legal_hit_rate": 0.306640625,
+        "top3_legal_hit_rate": 0.59375,
+        "top5_legal_hit_rate": 0.72265625,
+        "legal_probability_mass": 0.22953755781054497,
+        "auroc": 0.6794390449358616,
+        "n_examples": 512
+      }
+    },
+    "3": {
+      "train": {
+        "bce_loss": 0.2870058669090271,
+        "f1": 0.15854621988534928,
+        "top1_legal_hit_rate": 0.693,
+        "top3_legal_hit_rate": 0.9098,
+        "top5_legal_hit_rate": 0.9512,
+        "legal_probability_mass": 0.303523051905632,
+        "auroc": 0.85192422991395,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.36281221732497215,
+        "f1": 0.09892825782299042,
+        "top1_legal_hit_rate": 0.330078125,
+        "top3_legal_hit_rate": 0.580078125,
+        "top5_legal_hit_rate": 0.720703125,
+        "legal_probability_mass": 0.23448357731103897,
+        "auroc": 0.6777706965222023,
+        "n_examples": 512
+      }
+    },
+    "4": {
+      "train": {
+        "bce_loss": 0.27744228734970094,
+        "f1": 0.21462553415298463,
+        "top1_legal_hit_rate": 0.7438,
+        "top3_legal_hit_rate": 0.9282,
+        "top5_legal_hit_rate": 0.9614,
+        "legal_probability_mass": 0.31827944197654723,
+        "auroc": 0.8673598891377449,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.36144180595874786,
+        "f1": 0.12547500152140856,
+        "top1_legal_hit_rate": 0.361328125,
+        "top3_legal_hit_rate": 0.60546875,
+        "top5_legal_hit_rate": 0.748046875,
+        "legal_probability_mass": 0.24034230038523674,
+        "auroc": 0.6798137811128981,
+        "n_examples": 512
+      }
+    },
+    "5": {
+      "train": {
+        "bce_loss": 0.26987261943817137,
+        "f1": 0.23209835543632507,
+        "top1_legal_hit_rate": 0.774,
+        "top3_legal_hit_rate": 0.9364,
+        "top5_legal_hit_rate": 0.9674,
+        "legal_probability_mass": 0.3343366097211838,
+        "auroc": 0.8781915717303753,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.3637377396225929,
+        "f1": 0.11843940243124962,
+        "top1_legal_hit_rate": 0.328125,
+        "top3_legal_hit_rate": 0.59375,
+        "top5_legal_hit_rate": 0.728515625,
+        "legal_probability_mass": 0.2414994966238737,
+        "auroc": 0.6776582242455333,
+        "n_examples": 512
+      }
+    },
+    "6": {
+      "train": {
+        "bce_loss": 0.2623633020401001,
+        "f1": 0.26123862900733946,
+        "top1_legal_hit_rate": 0.7988,
+        "top3_legal_hit_rate": 0.9448,
+        "top5_legal_hit_rate": 0.969,
+        "legal_probability_mass": 0.3475361915588379,
+        "auroc": 0.8895350747704506,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.36510664969682693,
+        "f1": 0.12129192799329758,
+        "top1_legal_hit_rate": 0.353515625,
+        "top3_legal_hit_rate": 0.580078125,
+        "top5_legal_hit_rate": 0.693359375,
+        "legal_probability_mass": 0.245065713301301,
+        "auroc": 0.6783517554431455,
+        "n_examples": 512
+      }
+    },
+    "7": {
+      "train": {
+        "bce_loss": 0.2575710969924927,
+        "f1": 0.2892938574314117,
+        "top1_legal_hit_rate": 0.8148,
+        "top3_legal_hit_rate": 0.9482,
+        "top5_legal_hit_rate": 0.9716,
+        "legal_probability_mass": 0.35349256143569946,
+        "auroc": 0.8941317038089037,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.36933576315641403,
+        "f1": 0.11528871953487396,
+        "top1_legal_hit_rate": 0.314453125,
+        "top3_legal_hit_rate": 0.576171875,
+        "top5_legal_hit_rate": 0.728515625,
+        "legal_probability_mass": 0.24030146189033985,
+        "auroc": 0.6706321542151272,
+        "n_examples": 512
+      }
+    },
+    "8": {
+      "train": {
+        "bce_loss": 0.25276095170974733,
+        "f1": 0.30549533410072327,
+        "top1_legal_hit_rate": 0.8302,
+        "top3_legal_hit_rate": 0.9496,
+        "top5_legal_hit_rate": 0.972,
+        "legal_probability_mass": 0.3687898251056671,
+        "auroc": 0.8991071811035275,
+        "n_examples": 5000
+      },
+      "val": {
+        "bce_loss": 0.37303366139531136,
+        "f1": 0.11306783370673656,
+        "top1_legal_hit_rate": 0.30078125,
+        "top3_legal_hit_rate": 0.560546875,
+        "top5_legal_hit_rate": 0.6796875,
+        "legal_probability_mass": 0.24236822500824928,
+        "auroc": 0.6666597095609177,
+        "n_examples": 512
+      }
+    }
+  },
+  "history": {
+    "0": [
+      {
+        "epoch": 1,
+        "train_loss": 0.45124801691574384,
+        "train": {
+          "bce_loss": 0.3772425483703613,
+          "f1": 0.00047742486745119096,
+          "top1_legal_hit_rate": 0.246,
+          "top3_legal_hit_rate": 0.5258,
+          "top5_legal_hit_rate": 0.6986,
+          "legal_probability_mass": 0.153142143702507,
+          "auroc": 0.6561139385476709,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.38018620759248734,
+          "f1": 0.0005022321711294353,
+          "top1_legal_hit_rate": 0.24609375,
+          "top3_legal_hit_rate": 0.515625,
+          "top5_legal_hit_rate": 0.6796875,
+          "legal_probability_mass": 0.1551128253340721,
+          "auroc": 0.6512644823233131,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3617885882341409,
+        "train": {
+          "bce_loss": 0.35412901639938354,
+          "f1": 0.0,
+          "top1_legal_hit_rate": 0.2676,
+          "top3_legal_hit_rate": 0.5542,
+          "top5_legal_hit_rate": 0.7306,
+          "legal_probability_mass": 0.17687862253189088,
+          "auroc": 0.6874368963956833,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.35923830047249794,
+          "f1": 0.0,
+          "top1_legal_hit_rate": 0.259765625,
+          "top3_legal_hit_rate": 0.529296875,
+          "top5_legal_hit_rate": 0.701171875,
+          "legal_probability_mass": 0.1772686280310154,
+          "auroc": 0.680917383520864,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.35308636215668693,
+        "train": {
+          "bce_loss": 0.3501968181610107,
+          "f1": 0.0,
+          "top1_legal_hit_rate": 0.2828,
+          "top3_legal_hit_rate": 0.597,
+          "top5_legal_hit_rate": 0.7552,
+          "legal_probability_mass": 0.1829192388534546,
+          "auroc": 0.6938519843801856,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3561166487634182,
+          "f1": 0.0,
+          "top1_legal_hit_rate": 0.279296875,
+          "top3_legal_hit_rate": 0.57421875,
+          "top5_legal_hit_rate": 0.72265625,
+          "legal_probability_mass": 0.182839872315526,
+          "auroc": 0.686453416099539,
+          "n_examples": 512
+        }
+      }
+    ],
+    "1": [
+      {
+        "epoch": 1,
+        "train_loss": 0.38649077656902847,
+        "train": {
+          "bce_loss": 0.3401468882083893,
+          "f1": 0.05692717955112457,
+          "top1_legal_hit_rate": 0.3908,
+          "top3_legal_hit_rate": 0.6898,
+          "top5_legal_hit_rate": 0.826,
+          "legal_probability_mass": 0.2131576477050781,
+          "auroc": 0.7310960858300328,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3569940775632858,
+          "f1": 0.052128792740404606,
+          "top1_legal_hit_rate": 0.3203125,
+          "top3_legal_hit_rate": 0.5703125,
+          "top5_legal_hit_rate": 0.7109375,
+          "legal_probability_mass": 0.20259092934429646,
+          "auroc": 0.6842297031544149,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3442086166218866,
+        "train": {
+          "bce_loss": 0.33049768295288084,
+          "f1": 0.06869571933746338,
+          "top1_legal_hit_rate": 0.446,
+          "top3_legal_hit_rate": 0.7368,
+          "top5_legal_hit_rate": 0.8606,
+          "legal_probability_mass": 0.2335202037334442,
+          "auroc": 0.7558593948841095,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3556712418794632,
+          "f1": 0.05880153411999345,
+          "top1_legal_hit_rate": 0.298828125,
+          "top3_legal_hit_rate": 0.595703125,
+          "top5_legal_hit_rate": 0.734375,
+          "legal_probability_mass": 0.21466128900647163,
+          "auroc": 0.6884315024944954,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.33839134966270834,
+        "train": {
+          "bce_loss": 0.32419851565361024,
+          "f1": 0.0806968596369028,
+          "top1_legal_hit_rate": 0.4818,
+          "top3_legal_hit_rate": 0.7706,
+          "top5_legal_hit_rate": 0.8812,
+          "legal_probability_mass": 0.24368769173622132,
+          "auroc": 0.7700607656136155,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3564772345125675,
+          "f1": 0.07004930078983307,
+          "top1_legal_hit_rate": 0.298828125,
+          "top3_legal_hit_rate": 0.572265625,
+          "top5_legal_hit_rate": 0.73046875,
+          "legal_probability_mass": 0.21921100839972496,
+          "auroc": 0.6830133066978306,
+          "n_examples": 512
+        }
+      }
+    ],
+    "2": [
+      {
+        "epoch": 1,
+        "train_loss": 0.3871555234057994,
+        "train": {
+          "bce_loss": 0.3328246084690094,
+          "f1": 0.05727545142173767,
+          "top1_legal_hit_rate": 0.4642,
+          "top3_legal_hit_rate": 0.7562,
+          "top5_legal_hit_rate": 0.871,
+          "legal_probability_mass": 0.2274202271938324,
+          "auroc": 0.7561186832323671,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.35986966267228127,
+          "f1": 0.05436498252674937,
+          "top1_legal_hit_rate": 0.283203125,
+          "top3_legal_hit_rate": 0.56640625,
+          "top5_legal_hit_rate": 0.70703125,
+          "legal_probability_mass": 0.207903154194355,
+          "auroc": 0.6717881197982933,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.33770895117445837,
+        "train": {
+          "bce_loss": 0.31503456478118896,
+          "f1": 0.09252086617350579,
+          "top1_legal_hit_rate": 0.5612,
+          "top3_legal_hit_rate": 0.8364,
+          "top5_legal_hit_rate": 0.9184,
+          "legal_probability_mass": 0.2565088734149933,
+          "auroc": 0.7971340611249208,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3581938073039055,
+          "f1": 0.07288354868069291,
+          "top1_legal_hit_rate": 0.306640625,
+          "top3_legal_hit_rate": 0.572265625,
+          "top5_legal_hit_rate": 0.732421875,
+          "legal_probability_mass": 0.22194126434624195,
+          "auroc": 0.6788325241941493,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.32519135859948173,
+        "train": {
+          "bce_loss": 0.30118692932128904,
+          "f1": 0.11896588125228882,
+          "top1_legal_hit_rate": 0.6226,
+          "top3_legal_hit_rate": 0.872,
+          "top5_legal_hit_rate": 0.9366,
+          "legal_probability_mass": 0.2795600595712662,
+          "auroc": 0.8249707668304443,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36051689460873604,
+          "f1": 0.08815803658217192,
+          "top1_legal_hit_rate": 0.306640625,
+          "top3_legal_hit_rate": 0.59375,
+          "top5_legal_hit_rate": 0.72265625,
+          "legal_probability_mass": 0.22953755781054497,
+          "auroc": 0.6794390449358616,
+          "n_examples": 512
+        }
+      }
+    ],
+    "3": [
+      {
+        "epoch": 1,
+        "train_loss": 0.3931673006920875,
+        "train": {
+          "bce_loss": 0.3283802237987518,
+          "f1": 0.05913431239128113,
+          "top1_legal_hit_rate": 0.5064,
+          "top3_legal_hit_rate": 0.7858,
+          "top5_legal_hit_rate": 0.8852,
+          "legal_probability_mass": 0.23665461344718933,
+          "auroc": 0.7688506034195424,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36308735609054565,
+          "f1": 0.054338897578418255,
+          "top1_legal_hit_rate": 0.30859375,
+          "top3_legal_hit_rate": 0.59375,
+          "top5_legal_hit_rate": 0.689453125,
+          "legal_probability_mass": 0.21226361952722073,
+          "auroc": 0.6685441908775829,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.33616090235830864,
+        "train": {
+          "bce_loss": 0.30475068197250366,
+          "f1": 0.11185456388294697,
+          "top1_legal_hit_rate": 0.6234,
+          "top3_legal_hit_rate": 0.8636,
+          "top5_legal_hit_rate": 0.9328,
+          "legal_probability_mass": 0.27252559642791746,
+          "auroc": 0.8192839911520481,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3596678450703621,
+          "f1": 0.08680030470713973,
+          "top1_legal_hit_rate": 0.35546875,
+          "top3_legal_hit_rate": 0.62109375,
+          "top5_legal_hit_rate": 0.759765625,
+          "legal_probability_mass": 0.2278412152081728,
+          "auroc": 0.6756561602524016,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.31781596888469743,
+        "train": {
+          "bce_loss": 0.2870058669090271,
+          "f1": 0.15854621988534928,
+          "top1_legal_hit_rate": 0.693,
+          "top3_legal_hit_rate": 0.9098,
+          "top5_legal_hit_rate": 0.9512,
+          "legal_probability_mass": 0.303523051905632,
+          "auroc": 0.85192422991395,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36281221732497215,
+          "f1": 0.09892825782299042,
+          "top1_legal_hit_rate": 0.330078125,
+          "top3_legal_hit_rate": 0.580078125,
+          "top5_legal_hit_rate": 0.720703125,
+          "legal_probability_mass": 0.23448357731103897,
+          "auroc": 0.6777706965222023,
+          "n_examples": 512
+        }
+      }
+    ],
+    "4": [
+      {
+        "epoch": 1,
+        "train_loss": 0.394888175439231,
+        "train": {
+          "bce_loss": 0.3259807501792908,
+          "f1": 0.07332193620204926,
+          "top1_legal_hit_rate": 0.5392,
+          "top3_legal_hit_rate": 0.8082,
+          "top5_legal_hit_rate": 0.8984,
+          "legal_probability_mass": 0.24157373423576356,
+          "auroc": 0.7758813562139869,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.363566130399704,
+          "f1": 0.06611566618084908,
+          "top1_legal_hit_rate": 0.314453125,
+          "top3_legal_hit_rate": 0.5703125,
+          "top5_legal_hit_rate": 0.7265625,
+          "legal_probability_mass": 0.2137891985476017,
+          "auroc": 0.6685203964007087,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3333252619338941,
+        "train": {
+          "bce_loss": 0.2982383286476135,
+          "f1": 0.13040834491252898,
+          "top1_legal_hit_rate": 0.6614,
+          "top3_legal_hit_rate": 0.8966,
+          "top5_legal_hit_rate": 0.9434,
+          "legal_probability_mass": 0.2865617558956146,
+          "auroc": 0.8323000986069441,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3605228662490845,
+          "f1": 0.09723499976098537,
+          "top1_legal_hit_rate": 0.353515625,
+          "top3_legal_hit_rate": 0.630859375,
+          "top5_legal_hit_rate": 0.76171875,
+          "legal_probability_mass": 0.2332527209073305,
+          "auroc": 0.6763889313151594,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.31232954165603544,
+        "train": {
+          "bce_loss": 0.27744228734970094,
+          "f1": 0.21462553415298463,
+          "top1_legal_hit_rate": 0.7438,
+          "top3_legal_hit_rate": 0.9282,
+          "top5_legal_hit_rate": 0.9614,
+          "legal_probability_mass": 0.31827944197654723,
+          "auroc": 0.8673598891377449,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36144180595874786,
+          "f1": 0.12547500152140856,
+          "top1_legal_hit_rate": 0.361328125,
+          "top3_legal_hit_rate": 0.60546875,
+          "top5_legal_hit_rate": 0.748046875,
+          "legal_probability_mass": 0.24034230038523674,
+          "auroc": 0.6798137811128981,
+          "n_examples": 512
+        }
+      }
+    ],
+    "5": [
+      {
+        "epoch": 1,
+        "train_loss": 0.3984484133086627,
+        "train": {
+          "bce_loss": 0.32407030167579653,
+          "f1": 0.07390194730758667,
+          "top1_legal_hit_rate": 0.5436,
+          "top3_legal_hit_rate": 0.8132,
+          "top5_legal_hit_rate": 0.898,
+          "legal_probability_mass": 0.25056203808784483,
+          "auroc": 0.7785981724441051,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.366555817425251,
+          "f1": 0.06075688125565648,
+          "top1_legal_hit_rate": 0.302734375,
+          "top3_legal_hit_rate": 0.53515625,
+          "top5_legal_hit_rate": 0.69140625,
+          "legal_probability_mass": 0.21728078089654446,
+          "auroc": 0.6600653497444,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3313138666032236,
+        "train": {
+          "bce_loss": 0.29300225086212156,
+          "f1": 0.1415719408765435,
+          "top1_legal_hit_rate": 0.673,
+          "top3_legal_hit_rate": 0.8996,
+          "top5_legal_hit_rate": 0.946,
+          "legal_probability_mass": 0.2972951392173767,
+          "auroc": 0.8421950149178505,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36407720670104027,
+          "f1": 0.08782569132745266,
+          "top1_legal_hit_rate": 0.314453125,
+          "top3_legal_hit_rate": 0.572265625,
+          "top5_legal_hit_rate": 0.7109375,
+          "legal_probability_mass": 0.23279724270105362,
+          "auroc": 0.6671051743032876,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.30797513036788265,
+        "train": {
+          "bce_loss": 0.26987261943817137,
+          "f1": 0.23209835543632507,
+          "top1_legal_hit_rate": 0.774,
+          "top3_legal_hit_rate": 0.9364,
+          "top5_legal_hit_rate": 0.9674,
+          "legal_probability_mass": 0.3343366097211838,
+          "auroc": 0.8781915717303753,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3637377396225929,
+          "f1": 0.11843940243124962,
+          "top1_legal_hit_rate": 0.328125,
+          "top3_legal_hit_rate": 0.59375,
+          "top5_legal_hit_rate": 0.728515625,
+          "legal_probability_mass": 0.2414994966238737,
+          "auroc": 0.6776582242455333,
+          "n_examples": 512
+        }
+      }
+    ],
+    "6": [
+      {
+        "epoch": 1,
+        "train_loss": 0.4048307289051104,
+        "train": {
+          "bce_loss": 0.32267830801010133,
+          "f1": 0.08815460747182369,
+          "top1_legal_hit_rate": 0.5522,
+          "top3_legal_hit_rate": 0.8186,
+          "top5_legal_hit_rate": 0.902,
+          "legal_probability_mass": 0.253670062494278,
+          "auroc": 0.7853539620190859,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36673248186707497,
+          "f1": 0.06630630418658257,
+          "top1_legal_hit_rate": 0.296875,
+          "top3_legal_hit_rate": 0.556640625,
+          "top5_legal_hit_rate": 0.712890625,
+          "legal_probability_mass": 0.21757356449961662,
+          "auroc": 0.6644528206670657,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3285574049134798,
+        "train": {
+          "bce_loss": 0.28837801856994627,
+          "f1": 0.17658159244060517,
+          "top1_legal_hit_rate": 0.714,
+          "top3_legal_hit_rate": 0.9122,
+          "top5_legal_hit_rate": 0.954,
+          "legal_probability_mass": 0.3024080717563629,
+          "auroc": 0.8516510089337825,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3631601966917515,
+          "f1": 0.09687577141448855,
+          "top1_legal_hit_rate": 0.34375,
+          "top3_legal_hit_rate": 0.578125,
+          "top5_legal_hit_rate": 0.71484375,
+          "legal_probability_mass": 0.2332372572273016,
+          "auroc": 0.6745263112679822,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.3024144146261336,
+        "train": {
+          "bce_loss": 0.2623633020401001,
+          "f1": 0.26123862900733946,
+          "top1_legal_hit_rate": 0.7988,
+          "top3_legal_hit_rate": 0.9448,
+          "top5_legal_hit_rate": 0.969,
+          "legal_probability_mass": 0.3475361915588379,
+          "auroc": 0.8895350747704506,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36510664969682693,
+          "f1": 0.12129192799329758,
+          "top1_legal_hit_rate": 0.353515625,
+          "top3_legal_hit_rate": 0.580078125,
+          "top5_legal_hit_rate": 0.693359375,
+          "legal_probability_mass": 0.245065713301301,
+          "auroc": 0.6783517554431455,
+          "n_examples": 512
+        }
+      }
+    ],
+    "7": [
+      {
+        "epoch": 1,
+        "train_loss": 0.40836748556245733,
+        "train": {
+          "bce_loss": 0.3228170466423035,
+          "f1": 0.08386138761341572,
+          "top1_legal_hit_rate": 0.5486,
+          "top3_legal_hit_rate": 0.8166,
+          "top5_legal_hit_rate": 0.8954,
+          "legal_probability_mass": 0.2525231523990631,
+          "auroc": 0.7818252337947488,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3675700016319752,
+          "f1": 0.06594598619267344,
+          "top1_legal_hit_rate": 0.287109375,
+          "top3_legal_hit_rate": 0.556640625,
+          "top5_legal_hit_rate": 0.689453125,
+          "legal_probability_mass": 0.2163556758314371,
+          "auroc": 0.6599807430466171,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3288063308860682,
+        "train": {
+          "bce_loss": 0.28527117342948916,
+          "f1": 0.1839282956123352,
+          "top1_legal_hit_rate": 0.7182,
+          "top3_legal_hit_rate": 0.9128,
+          "top5_legal_hit_rate": 0.9532,
+          "legal_probability_mass": 0.30853028335571286,
+          "auroc": 0.8555760399803519,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.3663939759135246,
+          "f1": 0.09139695065096021,
+          "top1_legal_hit_rate": 0.28125,
+          "top3_legal_hit_rate": 0.58984375,
+          "top5_legal_hit_rate": 0.748046875,
+          "legal_probability_mass": 0.2315550372004509,
+          "auroc": 0.6659605942259077,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.3009665457508232,
+        "train": {
+          "bce_loss": 0.2575710969924927,
+          "f1": 0.2892938574314117,
+          "top1_legal_hit_rate": 0.8148,
+          "top3_legal_hit_rate": 0.9482,
+          "top5_legal_hit_rate": 0.9716,
+          "legal_probability_mass": 0.35349256143569946,
+          "auroc": 0.8941317038089037,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36933576315641403,
+          "f1": 0.11528871953487396,
+          "top1_legal_hit_rate": 0.314453125,
+          "top3_legal_hit_rate": 0.576171875,
+          "top5_legal_hit_rate": 0.728515625,
+          "legal_probability_mass": 0.24030146189033985,
+          "auroc": 0.6706321542151272,
+          "n_examples": 512
+        }
+      }
+    ],
+    "8": [
+      {
+        "epoch": 1,
+        "train_loss": 0.4172520614877532,
+        "train": {
+          "bce_loss": 0.3211295554637909,
+          "f1": 0.09141225369870663,
+          "top1_legal_hit_rate": 0.5628,
+          "top3_legal_hit_rate": 0.8248,
+          "top5_legal_hit_rate": 0.9026,
+          "legal_probability_mass": 0.26169034519195555,
+          "auroc": 0.7876322173431516,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36946825310587883,
+          "f1": 0.0719652809202671,
+          "top1_legal_hit_rate": 0.279296875,
+          "top3_legal_hit_rate": 0.529296875,
+          "top5_legal_hit_rate": 0.69140625,
+          "legal_probability_mass": 0.22132568433880806,
+          "auroc": 0.6603394683043007,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3282866195032868,
+        "train": {
+          "bce_loss": 0.2819557146072388,
+          "f1": 0.20461546076536177,
+          "top1_legal_hit_rate": 0.7342,
+          "top3_legal_hit_rate": 0.9142,
+          "top5_legal_hit_rate": 0.9498,
+          "legal_probability_mass": 0.31780346846580504,
+          "auroc": 0.8590546482309699,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.36956505104899406,
+          "f1": 0.10591200925409794,
+          "top1_legal_hit_rate": 0.298828125,
+          "top3_legal_hit_rate": 0.556640625,
+          "top5_legal_hit_rate": 0.712890625,
+          "legal_probability_mass": 0.23490741476416588,
+          "auroc": 0.6627962001948617,
+          "n_examples": 512
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.29734906893742236,
+        "train": {
+          "bce_loss": 0.25276095170974733,
+          "f1": 0.30549533410072327,
+          "top1_legal_hit_rate": 0.8302,
+          "top3_legal_hit_rate": 0.9496,
+          "top5_legal_hit_rate": 0.972,
+          "legal_probability_mass": 0.3687898251056671,
+          "auroc": 0.8991071811035275,
+          "n_examples": 5000
+        },
+        "val": {
+          "bce_loss": 0.37303366139531136,
+          "f1": 0.11306783370673656,
+          "top1_legal_hit_rate": 0.30078125,
+          "top3_legal_hit_rate": 0.560546875,
+          "top5_legal_hit_rate": 0.6796875,
+          "legal_probability_mass": 0.24236822500824928,
+          "auroc": 0.6666597095609177,
+          "n_examples": 512
+        }
+      }
+    ]
+  }
+}
