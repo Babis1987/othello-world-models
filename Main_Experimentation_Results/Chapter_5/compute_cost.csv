@@ -1,0 +1,13 @@
+condition,board,training_hours,evaluation_hours,train_run,eval_run
+Transformer · AR,8x8,0.6779,0.4194,Transformer-AR/transformer_ar_b8_bf16,Transformer-AR/transformer_ar_b8_bf16
+Transformer · AR,12x12,1.8452,1.7208,Transformer-AR/transformer_ar_b12,Transformer-AR/transformer_ar_b12
+Transformer · AR,16x16,4.3873,5.1769,Transformer-AR/transformer_ar_b16,Transformer-AR/transformer_ar_b16
+Mamba · AR,8x8,2.1118,0.4592,Mamba-AR/mamba_ar_8x8_bf16,Mamba-AR/mamba_ar_8x8_bf16
+Mamba · AR,12x12,3.6228,1.7660,Mamba-AR/mamba_ar_b12,Mamba-AR/mamba_ar_b12
+Mamba · AR,16x16,4.7046,5.2165,Mamba-AR/mamba_ar_b16,Mamba-AR/mamba_ar_b16
+Transformer · JEPA,8x8,1.5385,0.9944,Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16,Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16
+Transformer · JEPA,12x12,4.5758,4.0376,Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b12,Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b12
+Transformer · JEPA,16x16,9.5264,12.1321,Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16,Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16
+Mamba · JEPA,8x8,3.2705,1.5774,Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8,Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8
+Mamba · JEPA,12x12,6.6214,4.3647,Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b12,Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b12
+Mamba · JEPA,16x16,11.3988,12.0632,Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b16,Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b16

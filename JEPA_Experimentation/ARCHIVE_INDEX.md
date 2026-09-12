@@ -1,8 +1,8 @@
 # Historical JEPA Archive Index
 
-This index is generated from the same locked inventory that produces
-`provenance/archive_manifest.json`. Archived files are byte-exact and
-must not be edited in place.
+This compact index lists the historical files retained to document the JEPA
+experimentation path. Archived files preserve the implementations and notebook
+states used during that exploratory phase.
 
 Total archived files: **135**.
 

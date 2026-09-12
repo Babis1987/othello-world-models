@@ -84,10 +84,8 @@ othello-world-models/
 |   |-- evaluation/               # unified and causal evaluation
 |   `-- probes/                   # board-state probes
 |-- scripts/                      # command-line entry points
-|-- tests/
-|   |-- unit/                     # standalone smoke tests
-|   `-- equivalence/              # detailed behavioural contracts
-`-- docs/                         # thesis material, figures, and codebase atlas
+|-- tests/unit/                   # standalone smoke tests
+`-- tools/                        # result organisation and Mamba validation
 ```
 
 More detail is available in:
@@ -95,7 +93,6 @@ More detail is available in:
 - [`Main_Experimental_Setup/README.md`](Main_Experimental_Setup/README.md)
 - [`JEPA_Experimentation/README.md`](JEPA_Experimentation/README.md)
 - [`Main_Experimentation_Results/README.md`](Main_Experimentation_Results/README.md)
-- the offline [`codebase atlas`](docs/codebase_atlas/index.html)
 
 ## Installation
 
@@ -233,10 +230,6 @@ Run the standalone repository checks with:
 ```bash
 python -m pytest tests/unit -q
 ```
-
-The larger `tests/equivalence` suite documents the behavioural comparison made
-during the codebase reconstruction. Some of those tests require the preserved
-historical source tree and are not needed to use the published package.
 
 The official Mamba construction and BF16 update gate can be repeated in a
 compatible CUDA environment with:

@@ -51,9 +51,7 @@ single-variable ablation. Several configs explicitly record their confounds.
 - `archive/source_tree/reports/`: four small audit/protocol reports.
 - `archive/source_tree/results/`: small JSON results/config records for the v1–v5 prefix-mask runs; no checkpoints.
 - `archive/source_tree/tests/`: the historical variant tests and regression references.
-- `provenance/archive_manifest.json`: source/target path, byte size and SHA-256 for every file.
-- `ARCHIVE_INDEX.md`: generated, compact inventory.
-- `tools/snapshot_historical_jepa.py`: reproducible snapshot builder and boundary validator.
+- `ARCHIVE_INDEX.md`: compact inventory of the retained experimental files.
 
 Large datasets, checkpoints, caches and run directories are excluded. They
 remain external research artifacts, as required by the repository rules.
@@ -68,20 +66,5 @@ kept because their locations are part of the historical record:
 2. `notebooks/othello_gpt_jepa_evaluation_v2.ipynb` and
    `notebooks/Transformer-JEPA/8x8/othello_gpt_jepa_evaluation_v2.ipynb`
 
-The integrity test verifies that each pair remains byte-identical. The manifest
-also reports every duplicate group it discovers, so a future divergence cannot
-be hidden.
-
-## Verification
-
-From the final repository root:
-
-```powershell
-python JEPA_Experimentation/tools/snapshot_historical_jepa.py
-python -m pytest tests/equivalence/test_jepa_experimentation_archive.py -q
-```
-
-The first command snapshots the current source working tree. The second checks
-every archived byte against its recorded source file, rejects canonical config
-leakage, verifies the 43-config contract, and checks that the archive contains
-no unmanifested files.
+The duplicate paths are retained because both were used during the exploratory
+phase and make the original execution history easier to follow.

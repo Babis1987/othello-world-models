@@ -1,8 +1,7 @@
 """Small, source-independent smoke tests for the thesis runtime.
 
-These tests intentionally import only :mod:`othello_thesis`.  The larger
-``tests/equivalence`` suite remains the old-vs-final migration proof; this file
-keeps a minimal behavioural safety net when the legacy repository is absent.
+These tests intentionally import only :mod:`othello_thesis` and provide a
+compact behavioural safety net for a standalone checkout of the repository.
 """
 
 from __future__ import annotations
