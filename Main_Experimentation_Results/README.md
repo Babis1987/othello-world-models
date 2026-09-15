@@ -121,28 +121,6 @@ values are rounded to two decimal places.
 
 All rows in this table use bf16-trained canonical checkpoints.
 
-## What was copied, and what stayed on Drive
-
-Copied: `.md`, `.png`, `.csv`, `.tex`, and the small `.json` files
-(including `train_config.json`, `factorial_2x2_*.json`,
-`seeded_evaluation_*.json`, replication manifests, and compact causal
-results). The lean copier manifest records 471 files, approximately 111 MiB;
-it excludes the separately generated Chapter 5 files.
-
-Left on Drive, because copying the bulk dumps adds no concise reportable
-summary:
-
-- `results__unified_eval_v*.json` — the per-position dump behind each summary.
-  The sibling `summary__*.md` already contains every metric it reports.
-- `position_manifest__unified_eval_v*.json` — the sampled evaluation position
-  set, an evaluation *input* rather than a result; many copies are identical.
-- `case_manifest__causal_intervention_suite_v*.json` — the intervention case
-  list, likewise an input.
-- `.pt` checkpoints and probe weights, which the repository excludes by rule.
-
-Each omitted file's Drive path is reachable from the "Artifacts and timing"
-section at the end of every `summary__*.md`.
-
 ## Regenerating
 
 ```powershell
