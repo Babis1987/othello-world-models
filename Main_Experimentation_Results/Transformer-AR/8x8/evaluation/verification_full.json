@@ -1,0 +1,8 @@
+{
+  "key_inventory": true,
+  "checkpoints": true,
+  "engine": true,
+  "jepa_loss": true,
+  "evaluation_primitives": true,
+  "evaluation": false
+}

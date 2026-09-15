@@ -22,8 +22,11 @@ intervention. The separate `causal_intervention.ipynb` exposes
   absolute-board probe (`Linear-ReLU-Linear`, hidden width 128);
 - Nanda et al.: a normalized target-class linear relative-board direction at
   the released residual-branch depths and scale 2.3;
-- adapted: the earlier thesis-specific target-minus-source, residual-std-scaled
-  sequential edit with held-out strength selection and random control.
+- adapted: the thesis-specific target-minus-source, residual-std-scaled
+  sequential edit with held-out strength selection. Its current primary random
+  control applies the same signed coordinate permutation at every layer,
+  preserving cross-layer geometry; independently sampled layer directions
+  remain a labelled sensitivity control.
 
 The released papers use an 8x8 Transformer-AR model. JEPA, Mamba, 12x12, and
 16x16 runs are labelled extensions. `smoke` is only a small execution gate;

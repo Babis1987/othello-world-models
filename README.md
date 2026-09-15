@@ -209,9 +209,13 @@ readout is selected only from the validation split; AR uses its native head.
 
 Ready-to-read outputs are collected in
 [`Main_Experimentation_Results`](Main_Experimentation_Results), including the
-Chapter 5 tables and figures, the five-seed comparisons, and the Power BI
-report definition. Full per-position evaluation dumps and trained weights stay
-in the external artifact store.
+Chapter 5 tables and figures and the five-seed comparisons. The Power BI
+project is kept locally and is not part of this Git checkout. Full
+per-position evaluation dumps and trained weights stay in the external
+artifact store. The retained earlier `Full_Comparison/all_boards/` report
+still uses legacy 8x8 AR runs; see the
+[`Main_Experimentation_Results` README](Main_Experimentation_Results/README.md)
+for the current bf16-backed summaries and this snapshot caveat.
 
 ## Reproducibility and validation
 

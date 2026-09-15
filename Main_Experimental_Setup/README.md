@@ -34,10 +34,13 @@ this repository.
   only for deliberate reuse of known completed pre-refactor stages.
 - `notebooks/causal_intervention.ipynb` independently selects Architecture,
   Objective, and board size and compares the Li et al., Nanda et al., and
-  historical adapted interventions. It writes below the selected run's
-  separate `causal_intervention/` tree and never rewrites existing common
-  evaluation results. Its last cell reads the saved JSON and displays all
-  three methods and their counterfactual deltas without rerunning the model.
+  thesis-adapted interventions. The adapted method's current primary random
+  control preserves cross-layer probe geometry; the earlier independent-layer
+  control is retained only as sensitivity analysis. It writes below the
+  selected run's separate `causal_intervention/` tree and never rewrites
+  existing common evaluation results. Its last cell reads the saved JSON and
+  displays all three methods and their counterfactual deltas without rerunning
+  the model.
 - `notebooks/comparative_analysis_v3.ipynb` builds the controlled comparison
   reports from completed common evaluations.
 

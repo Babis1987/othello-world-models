@@ -204,7 +204,7 @@ The lift compares independently selection-chosen trained and random layers under
 - Evaluation GPU: `NVIDIA L4`
 - Training hardware: `unreported`
 - Training precision: `bf16`
-- Python / PyTorch / CUDA: `3.12.13` / `2.11.0+cu128` / `12.8`
+- Python / PyTorch / CUDA: `3.13.15` / `2.11.0+cu128` / `12.8`
 - Median training chunk: `24.83 s`
 - Estimated training loop: `1.38 h`
 - Median games/s: `4027.27`
@@ -221,10 +221,10 @@ The lift compares independently selection-chosen trained and random layers under
 
 ## Artifact index
 
-- Unified JSON: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/results__unified_eval_v4.json`
-- Unified summary: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/summary__unified_eval_v4.md`
-- Position manifest: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/position_manifest__unified_eval_v4.json`
-- Legal-by-move figure: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/legal_accuracy_by_move__thesis_eval_suite_v1.png`
-- Board-by-move figure: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/board_accuracy_by_move__thesis_eval_suite_v1.png`
-- Random-control JSON: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/results__unified_eval_v4.json`
-- Causal-intervention JSON: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/results__unified_eval_v4.json` (`causal_intervention` key)
+- Unified JSON: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/results__unified_eval_v4.json`
+- Unified summary: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/summary__unified_eval_v4.md`
+- Position manifest: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/position_manifest__unified_eval_v4.json`
+- Legal-by-move figure: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/legal_accuracy_by_move__thesis_eval_suite_v1.png`
+- Board-by-move figure: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/board_accuracy_by_move__thesis_eval_suite_v1.png`
+- Random-control JSON: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/results__unified_eval_v4.json`
+- Causal-intervention JSON: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/results__unified_eval_v4.json` (`causal_intervention` key)

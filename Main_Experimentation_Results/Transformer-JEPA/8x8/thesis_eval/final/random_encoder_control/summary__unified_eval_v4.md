@@ -8,7 +8,7 @@
 - **Split manifest SHA-256:** `9b203eaa68ee72bda13dbeae13566df1869b618995743b21c52397aaf9b5146f`
 - **Data-manifest SHA-256:** `a0994e3e27b032e593894e0fc9f2626094b4b75e91179f4803fd0f23939b1325`
 - **Per-shard corpus identity:** `unavailable-counts-only`
-- **Project-source SHA-256:** `d6c865f5c3ef1ef7834aaadedb7a01e3bcdb20c134f4745164d6f2b8b41285c7`
+- **Project-source SHA-256:** `9e5740023d9dcdeff04fd8aae7f60bd51382e5f6062cd0c6ec2941a8c2de6225`
 - **Exact pretraining budget:** `0` games / `0` shards
 - **Checkpoint-reported training precision:** `bf16`
 - **Precision:** frozen encoder bf16; cached features/readouts/metrics fp32
@@ -66,19 +66,19 @@ Each layer table reports untouched test-split accuracy. `Selected` marks validat
 
 ## Artifacts and timing
 
-- Results JSON: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/results__unified_eval_v4.json`
-- linear next-move head: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/linear_next_move_head__unified_eval_v4.pt`
-- mlp next-move head: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/mlp_next_move_head__unified_eval_v4.pt`
-- linear board probe: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/linear_board_probe__unified_eval_v4.pt`
-- mlp board probe: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/mlp_board_probe__unified_eval_v4.pt`
-- Position manifest: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/position_manifest__unified_eval_v4.json`
+- Results JSON: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/results__unified_eval_v4.json`
+- linear next-move head: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/linear_next_move_head__unified_eval_v4.pt`
+- mlp next-move head: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/mlp_next_move_head__unified_eval_v4.pt`
+- linear board probe: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/linear_board_probe__unified_eval_v4.pt`
+- mlp board probe: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/mlp_board_probe__unified_eval_v4.pt`
+- Position manifest: `/content/drive/MyDrive/Master_Thesis_Artifacts/runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/position_manifest__unified_eval_v4.json`
 
 | Stage | Wall time |
 |---|---:|
-| head_tuning_linear | 91.7 s |
-| frozen_head_linear | 1966.5 s |
+| board_feature_extraction | 142.0 s |
+| board_probe_linear | 55.1 s |
+| board_probe_mlp | 65.9 s |
+| frozen_head_linear | 2037.4 s |
+| frozen_head_mlp | 2866.5 s |
+| head_tuning_linear | 96.0 s |
 | head_tuning_mlp | 2.1 s |
-| frozen_head_mlp | 2793.5 s |
-| board_feature_extraction | 158.5 s |
-| board_probe_linear | 57.3 s |
-| board_probe_mlp | 67.0 s |

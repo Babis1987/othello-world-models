@@ -13,18 +13,69 @@
     ".png",
     ".tex"
   ],
-  "cells_trained_but_not_evaluated": [
-    "Transformer-AR/8x8",
-    "Mamba-AR/8x8"
-  ],
-  "file_count": 425,
-  "total_bytes": 54267128,
+  "cells_trained_but_not_evaluated": [],
+  "file_count": 471,
+  "total_bytes": 116460845,
   "files": [
+    {
+      "target": "Transformer-AR/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "bytes": 1606933,
+      "sha256": "f7200b7205627f78abd95f33f97a8e649c9feaabd179307bfcacb695d6b44a19"
+    },
+    {
+      "target": "Transformer-AR/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "bytes": 1765,
+      "sha256": "b1b19b460177303633bfa95e18d8698edf6d9f238a8e9e24b446169395730f22"
+    },
+    {
+      "target": "Transformer-AR/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 1272802,
+      "sha256": "5cd86b09d23de6be63df412c4009378ec8c333a773bfc37d9fb5ce0249e2363e"
+    },
+    {
+      "target": "Transformer-AR/8x8/evaluation/results_full.json",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/evaluation/results_full.json",
+      "bytes": 21586,
+      "sha256": "aeec8c3679ae56d76cb4103489083cfb0533d3c8c529eb14aac04fd5339cf850"
+    },
+    {
+      "target": "Transformer-AR/8x8/evaluation/verification_full.json",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/evaluation/verification_full.json",
+      "bytes": 145,
+      "sha256": "8615578b275d4b99ad3e2d3ef104d09275730d95bd7b29f21d87679cb300e84b"
+    },
     {
       "target": "Transformer-AR/8x8/metrics.csv",
       "source": "runs/Transformer-AR/transformer_ar_b8_bf16/metrics.csv",
       "bytes": 39274,
       "sha256": "4552577c0b902d367173d024bcd51ef087863426364410e8affc530d6347a326"
+    },
+    {
+      "target": "Transformer-AR/8x8/thesis_eval/final/board_accuracy_by_move__thesis_eval_suite_v1.png",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/thesis_eval/final/board_accuracy_by_move__thesis_eval_suite_v1.png",
+      "bytes": 204835,
+      "sha256": "d865cee814b46e5ba573f9312ddb3dbfdb42ffed28aa6b74e2a10eb3dde4a6e2"
+    },
+    {
+      "target": "Transformer-AR/8x8/thesis_eval/final/legal_accuracy_by_move__thesis_eval_suite_v1.png",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/thesis_eval/final/legal_accuracy_by_move__thesis_eval_suite_v1.png",
+      "bytes": 75196,
+      "sha256": "f860b234910e463053f8b5ed4848dc13bbae41a7d7fb228d4f40dffc158dcbf2"
+    },
+    {
+      "target": "Transformer-AR/8x8/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
+      "bytes": 10184,
+      "sha256": "d16adb91cc3d0aab6adf73323529a12bdac1ae9e9e67c4385ad15b79fe3a781c"
+    },
+    {
+      "target": "Transformer-AR/8x8/thesis_eval/final/summary__unified_eval_v4.md",
+      "source": "runs/Transformer-AR/transformer_ar_b8_bf16/thesis_eval/final/summary__unified_eval_v4.md",
+      "bytes": 4327,
+      "sha256": "8468c3732f4a99129fca2557c6d986c15ec1a241a9423aef8e9266b7412f9e12"
     },
     {
       "target": "Transformer-AR/8x8/train_config.json",
@@ -43,6 +94,24 @@
       "source": "runs/Transformer-AR/transformer_ar_b12/causal_intervention/causal_intervention_suite_v1/full/summary__causal_intervention_suite_v1.md",
       "bytes": 1096,
       "sha256": "0f43466486c9972387eb4e0e2231c615d248a45c1dd2799ae15c5a9844884507"
+    },
+    {
+      "target": "Transformer-AR/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "source": "runs/Transformer-AR/transformer_ar_b12/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "bytes": 2745463,
+      "sha256": "270fc593a4e2c6aba8bb90cdad98e2df853cc368854bf49a2aedcb4b11759d0b"
+    },
+    {
+      "target": "Transformer-AR/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Transformer-AR/transformer_ar_b12/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "bytes": 1754,
+      "sha256": "7e2c7ee40244e0146c6a1061e65c5b3a090475499c62f744ced02c334a7e9e3d"
+    },
+    {
+      "target": "Transformer-AR/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Transformer-AR/transformer_ar_b12/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 2140129,
+      "sha256": "a73d57fc9b7d9b6459b186722cbf0f0bbd6c127b335af8ba2bb9b22bec08970d"
     },
     {
       "target": "Transformer-AR/12x12/eval_board_state_probes__final.json",
@@ -141,6 +210,24 @@
       "sha256": "3560b8fb9ad2e6f9484ce804969c862fdb3edf116b75de6430cbbe8c4e798554"
     },
     {
+      "target": "Transformer-AR/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "source": "runs/Transformer-AR/transformer_ar_b16/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "bytes": 4291251,
+      "sha256": "8e5cb42d644fcf27d53eaf8a8a0dd53b58845e1c2e1c6b576a9a821f87644594"
+    },
+    {
+      "target": "Transformer-AR/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Transformer-AR/transformer_ar_b16/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "bytes": 1755,
+      "sha256": "faecf49a0efad3d5cafd94a489ace2f0f64df1f4ce4f12536933a3da7ee50cb9"
+    },
+    {
+      "target": "Transformer-AR/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Transformer-AR/transformer_ar_b16/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 3325035,
+      "sha256": "b4d600afffe708acbdd162adfb0713db1109da475bf85dc249fbe36033bc4df2"
+    },
+    {
       "target": "Transformer-AR/16x16/metrics.csv",
       "source": "runs/Transformer-AR/transformer_ar_b16/metrics.csv",
       "bytes": 39951,
@@ -207,6 +294,24 @@
       "sha256": "65c56a1521086a04ed3ff6ee569ac5b6d5da72590174c4c33b327e853d5b221d"
     },
     {
+      "target": "Transformer-JEPA/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "source": "runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "bytes": 1607029,
+      "sha256": "777ff2631e22e1ceedc509b1f4417c00b6ebd53e3eda88d37f519f0e16f1b690"
+    },
+    {
+      "target": "Transformer-JEPA/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "bytes": 1870,
+      "sha256": "17b05a53bdb66b002de2850f51541733fd5d17d6cd80555ccbdca86eb9dea66c"
+    },
+    {
+      "target": "Transformer-JEPA/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 1272805,
+      "sha256": "fe5b79f33f36a4ef7af340ea95bcf32370ac384c22dba3714c66ed67997c35ae"
+    },
+    {
       "target": "Transformer-JEPA/8x8/metrics.csv",
       "source": "runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/metrics.csv",
       "bytes": 94850,
@@ -233,14 +338,14 @@
     {
       "target": "Transformer-JEPA/8x8/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
-      "bytes": 11832,
-      "sha256": "7573de3619ab377ef8e086a76c245a0d35125e46260e14b3234d07cbd5eb54e8"
+      "bytes": 11951,
+      "sha256": "2b0b41ab1ba9e92685c56392a5405a814b3b943e22b73d2eece58184dfe96670"
     },
     {
       "target": "Transformer-JEPA/8x8/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
-      "bytes": 4640,
-      "sha256": "bb5366f441f72cafd84cf3eecc6f6f864233a374a38a9edd48f05defa831d3b0"
+      "bytes": 4742,
+      "sha256": "f8e49f1e793734ec37ab8659a5393612a4ac210b5fe21a44229ad25961fe72c0"
     },
     {
       "target": "Transformer-JEPA/8x8/thesis_eval/final/summary__unified_eval_v2.md",
@@ -251,8 +356,8 @@
     {
       "target": "Transformer-JEPA/8x8/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/thesis_eval/final/summary__unified_eval_v4.md",
-      "bytes": 4927,
-      "sha256": "525eac885f8285334514966ebd4af77cf3245f35678c355e309141d1cc976ed8"
+      "bytes": 5029,
+      "sha256": "357071feef004451613f3b090db02271e296378815610d6707b802d624a0a8e1"
     },
     {
       "target": "Transformer-JEPA/8x8/train_config.json",
@@ -277,6 +382,24 @@
       "source": "runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b12/causal_intervention/causal_intervention_suite_v1/full/summary__causal_intervention_suite_v1.md",
       "bytes": 1108,
       "sha256": "ca24abb4180d51d184e2be451df83867910b45399e5b701cfbf21b41128f6d02"
+    },
+    {
+      "target": "Transformer-JEPA/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "source": "runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b12/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "bytes": 2745657,
+      "sha256": "e0ab3abed20839e2c5dc41f55a059f9422ec29dbd6789745082b9d532b838bba"
+    },
+    {
+      "target": "Transformer-JEPA/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b12/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "bytes": 1878,
+      "sha256": "faa58e8252a239d4cf10adf6f4ebc570f69b432a84da4f98c3f7e05c26f61863"
+    },
+    {
+      "target": "Transformer-JEPA/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b12/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 2140159,
+      "sha256": "8b9aff03df032911168435d7cbab2632ff5a8ca66868500b4595a81e0eba0915"
     },
     {
       "target": "Transformer-JEPA/12x12/metrics.csv",
@@ -339,6 +462,24 @@
       "sha256": "5bd3ff19af7568c9764a09837646ba377fb5301318d0df74641498a1f2030d7a"
     },
     {
+      "target": "Transformer-JEPA/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "source": "runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "bytes": 4291420,
+      "sha256": "a1827e746e3e98abbfbd632655cf2147fe0840700915b0fc627671d16aa6377c"
+    },
+    {
+      "target": "Transformer-JEPA/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "bytes": 1879,
+      "sha256": "7ce6237a02eeea7dbc45118346cfa5428edadd62d9562f89858e2204fb88180f"
+    },
+    {
+      "target": "Transformer-JEPA/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 3325059,
+      "sha256": "8e3536dc9f62533bd88a5a547a15192d695cf48bce082743a7ff280b3ed894c9"
+    },
+    {
       "target": "Transformer-JEPA/16x16/metrics.csv",
       "source": "runs/Transformer-JEPA/transformer_jepa_v5_hd_infonce_allpos_b16/metrics.csv",
       "bytes": 96356,
@@ -381,10 +522,52 @@
       "sha256": "98cf8fe8dd7a3b522375ad386d77ffccb86590fc655242ae9a54afeb0b5e8bcb"
     },
     {
+      "target": "Mamba-AR/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "source": "runs/Mamba-AR/mamba_ar_8x8_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "bytes": 1606949,
+      "sha256": "38bf2dbe7ac5d2b30670c2e4773630d5a475c44980130307a5c9b4036cef9ab6"
+    },
+    {
+      "target": "Mamba-AR/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Mamba-AR/mamba_ar_8x8_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "bytes": 1753,
+      "sha256": "7e03e54cb87ba8159e1aca5c1cb064bd26a0c8d3eef6c506e183b66d6cabd59f"
+    },
+    {
+      "target": "Mamba-AR/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Mamba-AR/mamba_ar_8x8_bf16/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 1272800,
+      "sha256": "f54ca460e9363f80fa2e253813e4c067a4dedda343258657db826c97fbafc1d7"
+    },
+    {
       "target": "Mamba-AR/8x8/metrics.csv",
       "source": "runs/Mamba-AR/mamba_ar_8x8_bf16/metrics.csv",
       "bytes": 42751,
       "sha256": "f73838c7389250ca290ea0326197b61c45016309424d543f56e2d7458371f195"
+    },
+    {
+      "target": "Mamba-AR/8x8/thesis_eval/final/board_accuracy_by_move__thesis_eval_suite_v1.png",
+      "source": "runs/Mamba-AR/mamba_ar_8x8_bf16/thesis_eval/final/board_accuracy_by_move__thesis_eval_suite_v1.png",
+      "bytes": 199939,
+      "sha256": "166bd87ef1d1c3bfe7655dda991eb1a8d8636a681f5aeb06ff8a2420cccfb5a6"
+    },
+    {
+      "target": "Mamba-AR/8x8/thesis_eval/final/legal_accuracy_by_move__thesis_eval_suite_v1.png",
+      "source": "runs/Mamba-AR/mamba_ar_8x8_bf16/thesis_eval/final/legal_accuracy_by_move__thesis_eval_suite_v1.png",
+      "bytes": 73468,
+      "sha256": "93e9cdddb633d93ea9cfeb03f0045dbf0d1532d33ad001b7b6adfb51a05f10d6"
+    },
+    {
+      "target": "Mamba-AR/8x8/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
+      "source": "runs/Mamba-AR/mamba_ar_8x8_bf16/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
+      "bytes": 10766,
+      "sha256": "3f463ae5dbcbd0a48b0bb4a1258490b2755e00834f9ebd4dd6ae272be08eba21"
+    },
+    {
+      "target": "Mamba-AR/8x8/thesis_eval/final/summary__unified_eval_v4.md",
+      "source": "runs/Mamba-AR/mamba_ar_8x8_bf16/thesis_eval/final/summary__unified_eval_v4.md",
+      "bytes": 4994,
+      "sha256": "2c35a096b9aa304a8c0e70ce8af63d068795995f3ef3ec2e912ea0b54e0e56e4"
     },
     {
       "target": "Mamba-AR/8x8/train_config.json",
@@ -403,6 +586,24 @@
       "source": "runs/Mamba-AR/mamba_ar_b12/causal_intervention/causal_intervention_suite_v1/full/summary__causal_intervention_suite_v1.md",
       "bytes": 1103,
       "sha256": "3c24852ec3daf10f07ce42c6cb8532ce40bacd570d0b9f98356b3f2696a8ed0c"
+    },
+    {
+      "target": "Mamba-AR/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "source": "runs/Mamba-AR/mamba_ar_b12/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "bytes": 2745620,
+      "sha256": "db15731fdadfc600f635735cd9c4d4a780b610af44bd1a4aebb6fff0075b7fda"
+    },
+    {
+      "target": "Mamba-AR/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Mamba-AR/mamba_ar_b12/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "bytes": 1761,
+      "sha256": "db64cf04528b76acccbde691b03cffb9faa9c0a89ffe8a1e207ce08233d05dca"
+    },
+    {
+      "target": "Mamba-AR/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Mamba-AR/mamba_ar_b12/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 2140136,
+      "sha256": "311fc6cd0f723900d76185007b0d7b786d133200d9f61d819617b3f752e55b4c"
     },
     {
       "target": "Mamba-AR/12x12/eval_board_state_probes__final.json",
@@ -483,6 +684,24 @@
       "sha256": "495c219c36a55fb282f4872e0c96b5fe6b61f3293e058c784ff73e932db0ef9f"
     },
     {
+      "target": "Mamba-AR/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "source": "runs/Mamba-AR/mamba_ar_b16/causal_intervention/causal_intervention_suite_v2/full/readout_native/results__causal_intervention_suite_v2.json",
+      "bytes": 4291391,
+      "sha256": "2bfce2b6b1be4200ca81a138685d37cfa7e3a9ade2f3f41335578fe83972860e"
+    },
+    {
+      "target": "Mamba-AR/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Mamba-AR/mamba_ar_b16/causal_intervention/causal_intervention_suite_v2/full/readout_native/summary__causal_intervention_suite_v2.md",
+      "bytes": 1761,
+      "sha256": "65660e1c0196878364a43d458dab8ca1515a2ac06cd87b7721986ae4262bdc0a"
+    },
+    {
+      "target": "Mamba-AR/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Mamba-AR/mamba_ar_b16/causal_intervention/causal_intervention_suite_v2/full/readout_native/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 3325043,
+      "sha256": "9935a24d748ec87e3aa6e6a385046c61315fdac245a519597d3e6d2faad0012f"
+    },
+    {
       "target": "Mamba-AR/16x16/metrics.csv",
       "source": "runs/Mamba-AR/mamba_ar_b16/metrics.csv",
       "bytes": 42591,
@@ -543,6 +762,24 @@
       "sha256": "9bf654efce6712d5fe9d6863d42c09f90333510ac515fd071615aee8d7069afb"
     },
     {
+      "target": "Mamba-JEPA/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "bytes": 1607118,
+      "sha256": "4439b87599d243ef12a85afd8c494baf4cebe1ffaf9489e6581be427181b7cf4"
+    },
+    {
+      "target": "Mamba-JEPA/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "bytes": 1874,
+      "sha256": "fff0e3526a3ba78090a43017560f4ac6dab348e976213bb6f1a1a4be3fbb43a9"
+    },
+    {
+      "target": "Mamba-JEPA/8x8/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 1272819,
+      "sha256": "05cec0764cc43bed0547f57a91143e41fe57d1b1de3fced5c91b4c16cda51e90"
+    },
+    {
       "target": "Mamba-JEPA/8x8/metrics.csv",
       "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/metrics.csv",
       "bytes": 94670,
@@ -570,19 +807,19 @@
       "target": "Mamba-JEPA/8x8/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 12502,
-      "sha256": "66d9a19d320445031b0b3213920789ed2dcaa8a8952a831a24900faac7a5a79b"
+      "sha256": "061aaed1b952f55307212e88492c7dea203d6da24091e4e01584df60d3f170a2"
     },
     {
       "target": "Mamba-JEPA/8x8/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 5366,
-      "sha256": "d5e2e8bf3e3a0365df6a3d9db5817844f62c61ceb3a1beb8620e99b9e117781d"
+      "sha256": "63cafc811f4ffc9d9913e7fcff10c0c0eb9150db4d1b577bcdbad8fc5535ca36"
     },
     {
       "target": "Mamba-JEPA/8x8/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 5659,
-      "sha256": "d72e1e5f1bc0aa8760426f3eac29e050444a0c898dfc08c1c11a2cd7e0993826"
+      "sha256": "1f29b550a6f7ee5a1d7e874e3090fe7776f1021bd0700f838396b7811404eac8"
     },
     {
       "target": "Mamba-JEPA/8x8/train_config.json",
@@ -607,6 +844,24 @@
       "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b12/causal_intervention/causal_intervention_suite_v1/full/summary__causal_intervention_suite_v1.md",
       "bytes": 1115,
       "sha256": "3f55d43af0c96db8fa71dba2441d1b2d8a9200d7667f450ef6e0a6df770e9ec7"
+    },
+    {
+      "target": "Mamba-JEPA/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b12/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "bytes": 2745798,
+      "sha256": "e096714e97c3285ed650cefe06e872fbad966256180b7df34345abd454ee0f17"
+    },
+    {
+      "target": "Mamba-JEPA/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b12/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "bytes": 1885,
+      "sha256": "29de4f8b9e915bbc400767b3bfe4495b1ded8fa448a8380f1a5ff990d2d365d1"
+    },
+    {
+      "target": "Mamba-JEPA/12x12/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b12/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 2140170,
+      "sha256": "5bc7c1b88274323ab492d9de4eb3d27db7ffaa7597f8d7f36a3f8d8f1c429a6f"
     },
     {
       "target": "Mamba-JEPA/12x12/metrics.csv",
@@ -667,6 +922,24 @@
       "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b16/causal_intervention/causal_intervention_suite_v1/full/summary__causal_intervention_suite_v1.md",
       "bytes": 1115,
       "sha256": "bcea0c00e7d9395640c332620720b8f25dcce56380004ee070d73d7bb2728a85"
+    },
+    {
+      "target": "Mamba-JEPA/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b16/causal_intervention/causal_intervention_suite_v2/full/readout_best/results__causal_intervention_suite_v2.json",
+      "bytes": 4291574,
+      "sha256": "8236439115eea6678ca2124b59db611901181e2936a3c8d85dc8926581be4eb7"
+    },
+    {
+      "target": "Mamba-JEPA/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b16/causal_intervention/causal_intervention_suite_v2/full/readout_best/summary__causal_intervention_suite_v2.md",
+      "bytes": 1885,
+      "sha256": "5b4e74b588e45d6dcdb55c37c330cd3cbffaa5fa5f5717036245036dcfed8e5e"
+    },
+    {
+      "target": "Mamba-JEPA/16x16/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "source": "runs/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b16/causal_intervention/causal_intervention_suite_v2/full/readout_best/superseded_adapted__adapted_linear_sequential_residual_v1.json",
+      "bytes": 3325078,
+      "sha256": "27136e5d3c883858c8288c73433096ac11deb8b05bea6a414a0239c4a9799326"
     },
     {
       "target": "Mamba-JEPA/16x16/metrics.csv",
@@ -773,20 +1046,20 @@
     {
       "target": "Full_Comparison/8x8/factorial_2x2_b8.json",
       "source": "reports/thesis_eval/b8/factorial_2x2_b8.json",
-      "bytes": 5410,
-      "sha256": "8d8b2b28a3839779c2698e8ebbaa39693a6f76aaa6d633040c2c5d4cba8f1996"
+      "bytes": 5447,
+      "sha256": "e8cf1477dfcd1724a7cb3d25c1d173827c8e4037dd3656e1ef9b08ae6235dd75"
     },
     {
       "target": "Full_Comparison/8x8/factorial_2x2_b8.md",
       "source": "reports/thesis_eval/b8/factorial_2x2_b8.md",
-      "bytes": 2148,
-      "sha256": "2712cc825d00d94f2fff2f39c447801a1d542fdebda6cb50b37ea2945d447ccc"
+      "bytes": 2045,
+      "sha256": "a9e27d7984fcf9459e39f4e29a0918bfa08e539bc8631790776ea2178cda5e28"
     },
     {
       "target": "Full_Comparison/8x8/training_time_2x2_b8.png",
       "source": "reports/thesis_eval/b8/training_time_2x2_b8.png",
-      "bytes": 41310,
-      "sha256": "87588a614cd349f44305e16de6d8d25e21cc17250df60510098c43e891088407"
+      "bytes": 45000,
+      "sha256": "a6e045695520d0c5becc6b4f26ccfd41bd36a16c70a5a5fb3e54701ff90db9e2"
     },
     {
       "target": "Full_Comparison/12x12/factorial_2x2_b12.json",
@@ -858,13 +1131,13 @@
       "target": "seeded_results/Transformer-AR/8x8/seed_000/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Transformer-AR/transformer_ar_b8_bf16/seed_000/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 10060,
-      "sha256": "22e16b3a182dbca4242b2bf07d37349749c2d08d06e3cbb56fcfe44878f23258"
+      "sha256": "e54b236831cebe2011a4828275320ceb50237e3500a858ab09be10a09608552e"
     },
     {
       "target": "seeded_results/Transformer-AR/8x8/seed_000/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-AR/transformer_ar_b8_bf16/seed_000/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4237,
-      "sha256": "cda5e7876c7f3501412a9ef0375e442f0398c34328ec5e947ba66ccf5acff3ee"
+      "sha256": "87889b863f213b72fa518086a8709a2fe1172bd8d5f82000336b2e18e72e7670"
     },
     {
       "target": "seeded_results/Transformer-AR/8x8/seed_000/train_config.json",
@@ -900,13 +1173,13 @@
       "target": "seeded_results/Transformer-AR/8x8/seed_001/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Transformer-AR/transformer_ar_b8_bf16/seed_001/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 10060,
-      "sha256": "67023c72e3d5189675aec3534141a5c5340edcf8f08fad33768001794d39a3cc"
+      "sha256": "ed003b7e582b2947a2f29970509aaefd98a07cb1bfdea7db7e6bcf30c665b3e0"
     },
     {
       "target": "seeded_results/Transformer-AR/8x8/seed_001/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-AR/transformer_ar_b8_bf16/seed_001/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4237,
-      "sha256": "fbac154b8d8db937a221a8b9bae00cc02eb3f54cd2b4653819a97a5b7577ed92"
+      "sha256": "4f312e5e6aaef1f35eb7cfbdf3809b36dd91cc7408366f631235a367e0994862"
     },
     {
       "target": "seeded_results/Transformer-AR/8x8/seed_001/train_config.json",
@@ -942,13 +1215,13 @@
       "target": "seeded_results/Transformer-AR/8x8/seed_002/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Transformer-AR/transformer_ar_b8_bf16/seed_002/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 10064,
-      "sha256": "49001ce7a0fcf0ad143fbc58a5519f0ba222fbd17105c96d0cd2a080f7824714"
+      "sha256": "1aea942de149a31df0efc2888646ff7b8f3a14dba7e4b2c83346f133ea57b0a7"
     },
     {
       "target": "seeded_results/Transformer-AR/8x8/seed_002/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-AR/transformer_ar_b8_bf16/seed_002/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4237,
-      "sha256": "498fc55fd7a7646a21ddb495a1c79885799ed2c7b546c70bd558c9e6280d3583"
+      "sha256": "e0292231d3949a38c1ba1e9fa6c36b136a3fe455ae57f530b000ea34740c19b3"
     },
     {
       "target": "seeded_results/Transformer-AR/8x8/seed_002/train_config.json",
@@ -984,13 +1257,13 @@
       "target": "seeded_results/Transformer-AR/8x8/seed_003/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Transformer-AR/transformer_ar_b8_bf16/seed_003/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 10065,
-      "sha256": "263f51ca7bd0dfcb0382b1b632c0caa959184427c6a246225aead7cae1f0e179"
+      "sha256": "4e5a341f25bd78e064f46f61859949e8093ab2e861e25ceca9129099e7b511d1"
     },
     {
       "target": "seeded_results/Transformer-AR/8x8/seed_003/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-AR/transformer_ar_b8_bf16/seed_003/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4237,
-      "sha256": "62602c89c2f3d44987543f861bb36c220213b45aa85597d0d648ad5ccfb9b262"
+      "sha256": "2972f06d3ecb8451060eb1fa4cd4350ae7d1b02ab4c3cc1fff3bf21093ec420e"
     },
     {
       "target": "seeded_results/Transformer-AR/8x8/seed_003/train_config.json",
@@ -1236,19 +1509,19 @@
       "target": "seeded_results/Transformer-JEPA/8x8/seed_000/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_000/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 11652,
-      "sha256": "770b121eb45c187f76606e539dfaaec653cde587b324884bc898d5433e6a300d"
+      "sha256": "e89ac13c93e858e8a226d5c562c9f9d03c0c43f684b061c1c0dfcf277ba80969"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_000/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_000/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 4481,
-      "sha256": "90dcd125ca4f9ce33865c7f40527857d85744d322ea6de36b37f83f3786de51d"
+      "sha256": "42b87b380a4988f894ce1eabb18855ff065a228b42f347fbd5a31c3d46a8ea56"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_000/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_000/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4768,
-      "sha256": "c2f27ddc383eea0f881e56521eaeacf6e33d4f912524c25e0cb19cc875280100"
+      "sha256": "02845fb55c561add6ec95fdd0d519c705e0d7a20e0fd6d62f2302c9adb6de8ad"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_000/train_config.json",
@@ -1290,19 +1563,19 @@
       "target": "seeded_results/Transformer-JEPA/8x8/seed_001/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_001/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 11644,
-      "sha256": "cedfe3d84c3011665fe2701af65445eb845b9cb5ed3183757f68bb3ecbaa6ba2"
+      "sha256": "1845c7949674eec5ab84cb46ccbac9fceb697599d718b410d0ae3381a2539e83"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_001/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_001/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 4481,
-      "sha256": "cf4915e4814615d9820ef9354a4a247aa4aa612c7bfb8885342d3f91cf98150e"
+      "sha256": "819932d3bb31c76ca3ae03ab547b9f3e60071c47903095fdc2bd95e0a8240c0a"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_001/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_001/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4768,
-      "sha256": "9d138d9277e344338d4b09a75d17f96df5a792dc18f06fbe76dbaf721e730558"
+      "sha256": "d250a8f1adb3acb18f607ec7dfbb648e63a782c6e8309d23693965c2d1ce4e76"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_001/train_config.json",
@@ -1344,19 +1617,19 @@
       "target": "seeded_results/Transformer-JEPA/8x8/seed_002/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_002/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 11650,
-      "sha256": "434313b7a3e1e6a8c7d102875bf0253e20999240962928ae2cbca1759ff62d85"
+      "sha256": "42c4e8587ad3935e96aaaec0958f649660076d4fe1f2c6441eae8a5f1d30651f"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_002/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_002/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 4481,
-      "sha256": "a647980dcf38610beea741cc39bbfbd768cee91636ef1cfb5c321ebfd7f11c04"
+      "sha256": "9f729fee2c022e0ed650375b06f68f690c57b2f9343336bd0f5d4400fd3d46cf"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_002/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_002/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4768,
-      "sha256": "deec8c0f4e7c30b2e1268944a8ab8f2e336b86538de8038437bb1f5814d48f46"
+      "sha256": "4186df7f48cdf2f89ae43ce8a3776eb7a3729c6bb9c12e64db8bcc79b373a8e2"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_002/train_config.json",
@@ -1398,19 +1671,19 @@
       "target": "seeded_results/Transformer-JEPA/8x8/seed_003/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_003/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 11653,
-      "sha256": "3510c653f244eddf57b3760517542889e0e74cba739ce102a877c2f7a9f84896"
+      "sha256": "9d7205f8f451b8edcbd2c5e9ec6eb1b26c25a9b1ed10526cdcf87834e975ee9c"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_003/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_003/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 4481,
-      "sha256": "8358da5e4af4f201b0dc59f1850e3324957f4e6861024c7de352a86a0cd6213b"
+      "sha256": "767ba466e367ab878aa834e3c711650fd90dc7a0bb403df5068764d8221eb0a6"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_003/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Transformer-JEPA/jepa_v5_infonce_b8_run_001_hd_allpos_bf16/seed_003/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4768,
-      "sha256": "cdc322ffbd4c76b459f638e13317e48562565be5ef2a3025366f1b02acb19d66"
+      "sha256": "e1e29f67bfc59ad60c03d27dfd281d41d5f73cd00e585ef75d4c8a761b357a29"
     },
     {
       "target": "seeded_results/Transformer-JEPA/8x8/seed_003/train_config.json",
@@ -1674,13 +1947,13 @@
       "target": "seeded_results/Mamba-AR/8x8/seed_000/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_000/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 10688,
-      "sha256": "fa3ce3fd1656f06a4b80042cdcbaafbcf5f0784ca9a6c70aa14dd0d4927441fe"
+      "sha256": "0884ac34f2ae7a0fe370e4908894dc575825884ed297518f5a74f6ba84b072bf"
     },
     {
       "target": "seeded_results/Mamba-AR/8x8/seed_000/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_000/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4935,
-      "sha256": "f76aa54d307a69b0c30e20c6e7b45976c256008d328d91b91963225e8264acda"
+      "sha256": "33f335812ae10043f01c97cf0cc645101d324fab2290a212599e0d67dc1b1262"
     },
     {
       "target": "seeded_results/Mamba-AR/8x8/seed_000/train_config.json",
@@ -1716,13 +1989,13 @@
       "target": "seeded_results/Mamba-AR/8x8/seed_001/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_001/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 10675,
-      "sha256": "bd5092482d80fd86dc9875662eec1cf0d013358ff848ca088070295a54b905b9"
+      "sha256": "737130d4a6cf45dcb7a89ef971cd765d7c16aff4127a267a4f4be093d18b8070"
     },
     {
       "target": "seeded_results/Mamba-AR/8x8/seed_001/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_001/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4928,
-      "sha256": "75e140792b118dfcab1843b41c6f8894bdd8ca031c7408d2d5ee31ea52e826e1"
+      "sha256": "ff1378bd7d7c22a36b150bec7c4daf3787db8827618cf0f6828ffc503aba6f2d"
     },
     {
       "target": "seeded_results/Mamba-AR/8x8/seed_001/train_config.json",
@@ -1758,13 +2031,13 @@
       "target": "seeded_results/Mamba-AR/8x8/seed_002/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_002/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 10677,
-      "sha256": "7cee489528e215dab955b90b83b90e075ab14a0aa91898c834ce33debb100109"
+      "sha256": "58244c947a56f35c4671593dc498f393d4efc8437ad29e1bafbb639ea3b05a22"
     },
     {
       "target": "seeded_results/Mamba-AR/8x8/seed_002/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_002/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4929,
-      "sha256": "cfa49b7c03dd7abdf505244c44e9c23cc6620fa9746385e7f222dde4078477ab"
+      "sha256": "be8c7b9b6a1701db596da588f49c244de6d888bb7bfd48220ec98d74df791663"
     },
     {
       "target": "seeded_results/Mamba-AR/8x8/seed_002/train_config.json",
@@ -1800,13 +2073,13 @@
       "target": "seeded_results/Mamba-AR/8x8/seed_003/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_003/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 10675,
-      "sha256": "ef1d994d0435237854534c8a50cee961e47847b741c14adf9c8f906642d1b8ce"
+      "sha256": "1ba79fd60d753e2409233a169c7eb740d2376b138bddc84b410a673680520a06"
     },
     {
       "target": "seeded_results/Mamba-AR/8x8/seed_003/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-AR/mamba_ar_8x8_bf16/seed_003/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 4931,
-      "sha256": "c52ce5e02a34eeb7ee2cc9c284d3c6a4cbc15189be7b00b18f37e931228cc332"
+      "sha256": "5b6665347da15b8a36dd78e2290a868d63351fe6726042f8bb8e5dd9d36a4bc2"
     },
     {
       "target": "seeded_results/Mamba-AR/8x8/seed_003/train_config.json",
@@ -2052,19 +2325,19 @@
       "target": "seeded_results/Mamba-JEPA/8x8/seed_000/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_000/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 12276,
-      "sha256": "8d70c7a5aadf3e9503c1a75ba2d6366f936a01a6ef1da58f913556bb6f73a2e2"
+      "sha256": "33dc0cebf56194763900d608c65133795484855fe2fc4f4024f19ad4c9b7eeb8"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_000/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_000/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 5154,
-      "sha256": "8d22abc78e8004c6b528fec7793e627fa76f7b52359271dc4d3dc259238d66d3"
+      "sha256": "243d6fb6b2a8401751b51a8c6bc1ca2b75fdf3de7cc57623f6c7304d50134c8c"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_000/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_000/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 5455,
-      "sha256": "4f7f2b4305b01414535ebafc28d87c096987711627cd1a970c190b6c02b0f552"
+      "sha256": "ce26c0d469b30acc5ce9e4fcbd10de3d3d3e3a02514a824b76a3036f7e4901c7"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_000/train_config.json",
@@ -2106,19 +2379,19 @@
       "target": "seeded_results/Mamba-JEPA/8x8/seed_001/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_001/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 12277,
-      "sha256": "e0e6434583579ef41e561f81d25afd21707d71d1c175fe4b732799dcb70fc5e9"
+      "sha256": "1e392e81510fcb3790dc2b5f15e375828798c56a7fb25706eb808621203a57c0"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_001/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_001/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 5155,
-      "sha256": "fa26a99a4b7bd5c20812970b9b28cbc7b4cf44d19f3eb61539f216c86143e15d"
+      "sha256": "b53e23352927a431fdff9a15596d99103426b7e8b480ba599e38ad0051c07d9c"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_001/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_001/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 5454,
-      "sha256": "9e5604e8a4b75921ad2dda1ca8a1426b0afe051611c915bbb692c05eb402d01c"
+      "sha256": "ede79e7234139a029436dfd5afa090d80bb06fdd53e5a21c50d2b077e8d2aec4"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_001/train_config.json",
@@ -2160,19 +2433,19 @@
       "target": "seeded_results/Mamba-JEPA/8x8/seed_002/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_002/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 12277,
-      "sha256": "87f7c09e1b7108224e2ab1430545bbffffa46e6daf8c94de894902af848783d2"
+      "sha256": "66d11957f17abd31ea6856fbff6446b13ed5563dbece76b63217dbaa8ea5c554"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_002/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_002/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 5155,
-      "sha256": "aaff98d2456e2b41da6174d359c71020fd33d2e513230ca5046049a7ace61748"
+      "sha256": "9ab738d13d834b1f2fa1c47fef71dd007f45729ad20b22dc0941e0fdf9f69a2b"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_002/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_002/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 5454,
-      "sha256": "48d209dcc4f813dd770cb742ac0f5fd48f14c76e6218191a22fd204ab69c6a3e"
+      "sha256": "8f7870ef65794ca2c4106e91b24b107d1913de9b6f30c9ade247dfc34fea82c4"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_002/train_config.json",
@@ -2214,19 +2487,19 @@
       "target": "seeded_results/Mamba-JEPA/8x8/seed_003/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_003/thesis_eval/final/proposal_report__thesis_eval_suite_v1.md",
       "bytes": 12283,
-      "sha256": "1ccd657425446589f858195c1d6fa7146e9829b36eed8ad0b28c001c9a959303"
+      "sha256": "6f36d87193a6fbb0bb143dfca82d38fd2ff91c84ac0214f1e2facdf8a1c86162"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_003/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_003/thesis_eval/final/random_encoder_control/summary__unified_eval_v4.md",
       "bytes": 5154,
-      "sha256": "f75a8ebe03eb19c1be2e85ad6be5b2bc882e6e8dd4618de62fdc64aa67a7df34"
+      "sha256": "041c2c06559be11a80115afff59b248b0e7380654efdb4b8c16a11ab9da4f42c"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_003/thesis_eval/final/summary__unified_eval_v4.md",
       "source": "runs/seeded_replications/Mamba-JEPA/mamba_jepa_v5_hd_infonce_allpos_b8/seed_003/thesis_eval/final/summary__unified_eval_v4.md",
       "bytes": 5458,
-      "sha256": "c998ca110b4aca5b97ef3341a0138c0991fe458c849cd1c0d86680a1077aab9a"
+      "sha256": "86ed7e191d253b8664a3996b984dcbe56219082fd8e7608fde348a256d26ee49"
     },
     {
       "target": "seeded_results/Mamba-JEPA/8x8/seed_003/train_config.json",
@@ -2459,56 +2732,56 @@
     {
       "target": "seeded_results/aggregate/8x8/cell_summaries_b8.csv",
       "source": "reports/thesis_eval/multiseed/b8/cell_summaries_b8.csv",
-      "bytes": 7174,
-      "sha256": "5d9c69f5b0ebf27776f1e9087340eb6bbe1247b70ec5bb53e4dd2646975398fe"
+      "bytes": 7169,
+      "sha256": "cb8e87bc7af2ce6a949c138c63cd7f72201bd4daec9f057ee4d9033e99a7aa24"
     },
     {
       "target": "seeded_results/aggregate/8x8/factorial_effects_b8.csv",
       "source": "reports/thesis_eval/multiseed/b8/factorial_effects_b8.csv",
-      "bytes": 6855,
-      "sha256": "a449604cee8228962dec4060b4948e355d1ae0a2edc31e656b1097db860208ab"
+      "bytes": 6897,
+      "sha256": "da987bc677540d0c3256056dd23a2040b9af0a6e5c3b4713b1d1a93606217592"
     },
     {
       "target": "seeded_results/aggregate/8x8/factorial_forest_b8.png",
       "source": "reports/thesis_eval/multiseed/b8/factorial_forest_b8.png",
-      "bytes": 104306,
-      "sha256": "050ac92582827f40f67234888faeeff5f33a2566c160b7c89f06b85d7e1fc459"
+      "bytes": 104990,
+      "sha256": "9707cf8aa9de427ec8cdd3d73d481f937db958d175b45040e28e5c952021a2c4"
     },
     {
       "target": "seeded_results/aggregate/8x8/pairwise_effects_b8.csv",
       "source": "reports/thesis_eval/multiseed/b8/pairwise_effects_b8.csv",
-      "bytes": 13093,
-      "sha256": "d30ac9c7d4c6200c0cb2bc36f255251c45309589d6589c4948c17daf182045d3"
+      "bytes": 13128,
+      "sha256": "1c3fc5a27d9a6f9fe06c1d931781c91497cbef2bce483d141f3b63009c3ff25e"
     },
     {
       "target": "seeded_results/aggregate/8x8/raw_per_seed_b8.csv",
       "source": "reports/thesis_eval/multiseed/b8/raw_per_seed_b8.csv",
-      "bytes": 11212,
-      "sha256": "771790ce774209cf49951e2a6a38342847595773186d9436fca35ab6f9ec4b3d"
+      "bytes": 13788,
+      "sha256": "64c39cfa383fad76c696b88a77e2a07376a46e177c0ed417626ee06d0c77ed40"
     },
     {
       "target": "seeded_results/aggregate/8x8/seed_distributions_b8.png",
       "source": "reports/thesis_eval/multiseed/b8/seed_distributions_b8.png",
-      "bytes": 144159,
-      "sha256": "c766a94a6597323c78dca01d29aa292723430ae9c17e9721e97c816d5eb4c2a7"
+      "bytes": 160030,
+      "sha256": "8f985a23581504d7d24a8dba60b3993da201c37dca414703d20aaf0255a66cca"
     },
     {
       "target": "seeded_results/aggregate/8x8/seed_win_heatmap_b8.png",
       "source": "reports/thesis_eval/multiseed/b8/seed_win_heatmap_b8.png",
-      "bytes": 146698,
-      "sha256": "740a0dd00d397d75b540339e62c4b6f6eb5dd3ac709b0befac603efebd58a24d"
+      "bytes": 152865,
+      "sha256": "93ef82b405555910f42c77c6f7b4bd36f19e349c843af29ccf76ce0d8b0be8eb"
     },
     {
       "target": "seeded_results/aggregate/8x8/seeded_evaluation_b8.json",
       "source": "reports/thesis_eval/multiseed/b8/seeded_evaluation_b8.json",
-      "bytes": 105938,
-      "sha256": "dbe9bea5034c65ae2dbe942d43d0466f29de5f5e1b82834223c910575fc33ff0"
+      "bytes": 114244,
+      "sha256": "32ac6e1eee945faec33f70aa2c2e720d856d17fd9612336a047c476180fb3d1a"
     },
     {
       "target": "seeded_results/aggregate/8x8/seeded_evaluation_b8.md",
       "source": "reports/thesis_eval/multiseed/b8/seeded_evaluation_b8.md",
-      "bytes": 17520,
-      "sha256": "8949b994c398f8f5ace0c363648a1a93d6ec826eeb6f258e433f8863782a8ff8"
+      "bytes": 18108,
+      "sha256": "4d88a806dc0176c5b8f0a605b8484f38a858eaeb59edd7369d8938d2bf923dd3"
     },
     {
       "target": "seeded_results/aggregate/16x16/cell_summaries_b16.csv",
@@ -2567,8 +2840,8 @@
     {
       "target": "Full_Comparison/training_time_by_board_size.png",
       "source": "reports/thesis_eval/training_time_by_board_size.png",
-      "bytes": 57994,
-      "sha256": "f5a0605a3a5ea90326dc616c22a209bacc80cb72162485be5f8b8089d6ca65d2"
+      "bytes": 58002,
+      "sha256": "a6e997edc21e18219db075d80c4e09286e8ebb4ebe78d4a6e8abbfff6bfe1b01"
     }
   ]
 }

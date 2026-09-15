@@ -186,7 +186,7 @@ For AR this edits the native prediction path. For JEPA it establishes causal ste
 - Evaluation GPU: `NVIDIA L4`
 - Training hardware: `unreported`
 - Training precision: `bf16`
-- Python / PyTorch / CUDA: `3.12.13` / `2.11.0+cu128` / `12.8`
+- Python / PyTorch / CUDA: `3.13.15` / `2.11.0+cu128` / `12.8`
 - Median training chunk: `35.37 s`
 - Estimated training loop: `1.96 h`
 - Median games/s: `2827.41`

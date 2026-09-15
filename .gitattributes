@@ -7,6 +7,12 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 
+# Organized report copies carry SHA-256 hashes of the external source bytes.
+# Preserve their original line endings in Git as well as in the working tree.
+Main_Experimentation_Results/** -text !eol
+# Chapter 5 tables are generated separately and have no copier hash contract.
+Main_Experimentation_Results/Chapter_5/** text=auto eol=lf
+
 # These source-oracle relocations intentionally retain their exact bytes,
 # including legacy or mixed line endings recorded by the provenance contract.
 src/othello_thesis/data/move_vocabulary.py -text !eol

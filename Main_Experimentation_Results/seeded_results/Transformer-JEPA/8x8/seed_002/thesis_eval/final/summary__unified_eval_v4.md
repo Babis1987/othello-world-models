@@ -8,7 +8,7 @@
 - **Split manifest SHA-256:** `11b5caa28bf97a4427edae226c56379272dbb54d28e97ec5afa6acc08e39f808`
 - **Data-manifest SHA-256:** `a0994e3e27b032e593894e0fc9f2626094b4b75e91179f4803fd0f23939b1325`
 - **Per-shard corpus identity:** `unavailable-counts-only`
-- **Project-source SHA-256:** `3de85ba0c54c02ccde18de35609415525e0553c52a3a009de764d5034018cf1d`
+- **Project-source SHA-256:** `9e5740023d9dcdeff04fd8aae7f60bd51382e5f6062cd0c6ec2941a8c2de6225`
 - **Exact pretraining budget:** `19,999,840` games / `200` shards
 - **Checkpoint-reported training precision:** `bf16`
 - **Precision:** frozen encoder bf16; cached features/readouts/metrics fp32

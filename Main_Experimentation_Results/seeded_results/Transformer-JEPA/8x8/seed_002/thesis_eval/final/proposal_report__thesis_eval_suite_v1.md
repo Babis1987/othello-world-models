@@ -204,7 +204,7 @@ The lift compares independently selection-chosen trained and random layers under
 - Evaluation GPU: `NVIDIA L4`
 - Training hardware: `unreported`
 - Training precision: `bf16`
-- Python / PyTorch / CUDA: `3.12.13` / `2.11.0+cu128` / `12.8`
+- Python / PyTorch / CUDA: `3.13.15` / `2.11.0+cu128` / `12.8`
 - Median training chunk: `24.72 s`
 - Estimated training loop: `1.37 h`
 - Median games/s: `4044.58`

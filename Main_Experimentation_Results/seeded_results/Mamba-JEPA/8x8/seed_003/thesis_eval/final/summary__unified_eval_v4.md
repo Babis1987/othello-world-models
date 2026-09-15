@@ -8,7 +8,7 @@
 - **Split manifest SHA-256:** `7cd5eadbc9d4d528b7de1f989a0fa8abc596b3801f3cca52299d290b833669de`
 - **Data-manifest SHA-256:** `a0994e3e27b032e593894e0fc9f2626094b4b75e91179f4803fd0f23939b1325`
 - **Per-shard corpus identity:** `unavailable-counts-only`
-- **Project-source SHA-256:** `3de85ba0c54c02ccde18de35609415525e0553c52a3a009de764d5034018cf1d`
+- **Project-source SHA-256:** `9e5740023d9dcdeff04fd8aae7f60bd51382e5f6062cd0c6ec2941a8c2de6225`
 - **Exact pretraining budget:** `19,999,840` games / `200` shards
 - **Checkpoint-reported training precision:** `bf16`
 - **Precision:** frozen encoder bf16; cached features/readouts/metrics fp32
@@ -102,11 +102,11 @@ Each layer table reports untouched test-split accuracy. `Selected` marks validat
 
 | Stage | Wall time |
 |---|---:|
-| frozen_head_linear | 2105.7 s |
-| head_tuning_linear | 93.6 s |
-| head_tuning_mlp | 108.9 s |
-| frozen_head_mlp | 3271.8 s |
 | board_feature_extraction | 191.2 s |
 | board_probe_linear | 95.4 s |
 | board_probe_mlp | 113.5 s |
 | causal_intervention | 104.5 s |
+| frozen_head_linear | 2105.7 s |
+| frozen_head_mlp | 3271.8 s |
+| head_tuning_linear | 93.6 s |
+| head_tuning_mlp | 108.9 s |
